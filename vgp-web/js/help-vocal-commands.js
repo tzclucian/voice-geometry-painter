@@ -8,7 +8,7 @@ var vocalCommand = (function() {
 
     return {
         // Board speciifc
-        clearBoard : "",
+        clearBoard : "clean whiteboard",
         deleteShape : "",
         deselectShape : "",
 

@@ -53,11 +53,11 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <div id="toolbox" class="panel list-group">
 
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">Board instruments
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">Instruments
                     <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="instruments" class="sublinks collapse">
-                    <a class="list-group-item small" onclick="app.clearBoard() ">Clean
+                    <a class="list-group-item small" onclick="app.clearBoard() ">Clean whiteboard
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span>
@@ -66,11 +66,20 @@
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
-                    <a class="list-group-item small" onclick="app.deleteShape()">Delete element
+                    <a class="list-group-item small">Select shape
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
                     <a class="list-group-item small" onclick="app.deselectShape()">Deselect element
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <!--TODO add duplicate-->
+                    <a class="list-group-item small" onclick="app.deselectShape()">Duplicate element
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small" onclick="app.deleteShape()">Delete element
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
@@ -145,6 +154,17 @@
                         class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="rounded" class="sublinks collapse">
+                    <a class="list-group-item small">Circle
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#custom"
+                   data-parent="#menu">Custom shapes<span
+                        class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+
+                <div id="custom" class="sublinks collapse">
                     <a class="list-group-item small">Circle
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"

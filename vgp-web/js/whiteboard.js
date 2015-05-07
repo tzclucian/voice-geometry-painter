@@ -29,6 +29,7 @@ var app = (function() {
 
         axisX = board.createElement('axis', [[0, 0], [1, 0]], {});
         axisY = board.createElement('axis', [[0, 0], [0, 1]], {});
+        shapes = {};
     }
 
     function deleteShape() {
