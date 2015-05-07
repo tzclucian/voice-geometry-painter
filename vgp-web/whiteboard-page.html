@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Lucian Tuca">
+
+    <title>Whiteboard</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/whiteboard.css" rel="stylesheet">
+    <link href="./css/jsxgraph.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Voice Geometry Painter</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <div id="toolbox" class="panel list-group">
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">Board instruments
+                    <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+
+                <div id="instruments" class="sublinks collapse">
+                    <a class="list-group-item small" onclick="app.clearBoard() ">Clean
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span>
+                    </a>
+                    <a><input type="color" id="colorpicker" class="form-control" value="#ff0000">
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small" onclick="app.deleteShape()">Delete element
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small" onclick="app.deselectShape()">Deselect element
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#basics"
+                   data-parent="#menu">Basic<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+
+                <div id="basics" class="sublinks collapse">
+                    <a class="list-group-item small" onclick="app.drawPoint(3, 3)">Point
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small" onclick="app.drawLineSegment()">Line segment
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#triangles" data-parent="#menu">Triangle
+                    <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+
+                <div id="triangles" class="sublinks collapse">
+                    <a class="list-group-item small">Regular
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Isosceles
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Equilateral
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Right
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sn" data-parent="#menu">Quadrilaterals
+                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
+
+                <div id="sn" class="sublinks collapse">
+                    <a class="list-group-item small">Quadrilateral
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Parallelogram
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Rectangle
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Square
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">Right
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#rounded"
+                   data-parent="#menu">Round shapes<span
+                        class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+
+                <div id="rounded" class="sublinks collapse">
+                    <a class="list-group-item small">Circle
+                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                              rel="popover" data-placement="right" data-original-title="Title"
+                              data-trigger="hover"></span></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main container-fluid">
+            <h1 class="page-header">Whiteboard</h1>
+
+            <div id="workspace">
+                <div id="canvas">
+                    <div id="jxgbox" class="jxgbox"></div>
+                </div>
+                <div id="details-bar">DETAILS BAR</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
+<script type="text/javascript" src="./js/whiteboard.js"></script>
+<script type="text/javascript" src="./js/help-vocal-commands.js"></script>
+
+</body>
+</html>
