@@ -72,8 +72,7 @@ var app = (function() {
      * @param y
      * @param name
      */
-    function drawPoint(x, y, name) {
-        updateDrawingColor();
+    function drawPoint(drawingColor, x, y, name) {
 
         var point = board.create('point', [x, y], {
             name: 'A',
@@ -94,11 +93,10 @@ var app = (function() {
      * @param Bx
      * @param By
      */
-    function drawLineSegment(Ax, Ay, Bx, By) {
-        updateDrawingColor();
+    function drawLineSegment(drawingColor, Ax, Ay, Bx, By) {
 
-        var pointA = board.create('point', [-1, 1], {name: 'A', size: 4});
-        var pointB = board.create('point', [2, -1], {name: 'B', size: 4});
+        var pointA = board.create('point', [Ax, Ay], {name: 'A', size: 4});
+        var pointB = board.create('point', [Bx, By], {name: 'B', size: 4});
 
         var line = board.create('line', [pointA, pointB],
             {straightFirst: false, straightLast: false, strokeWidth: 2, strokeColor: drawingColor});
@@ -111,10 +109,6 @@ var app = (function() {
 
     function getDrawingColor() {
         return document.getElementById('colorpicker').value;
-    }
-
-    function updateDrawingColor() {
-        drawingColor = getDrawingColor();
     }
 
     function selection() {
@@ -140,6 +134,7 @@ var app = (function() {
         clearBoard: clearBoard,
         deleteShape: deleteShape,
         deselectShape: deselectShape,
+        getDrawingColor: getDrawingColor,
 
         // Basic shapes
         drawLineSegment: drawLineSegment,

@@ -90,11 +90,11 @@
                    data-parent="#menu">Basic<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="basics" class="sublinks collapse">
-                    <a class="list-group-item small" onclick="app.drawPoint(3, 3)">Point
+                    <a class="list-group-item small" onclick="app.drawPoint(app.getDrawingColor(), 3, 3)">Point
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
-                    <a class="list-group-item small" onclick="app.drawLineSegment()">Line segment
+                    <a class="list-group-item small" onclick="app.drawLineSegment(app.getDrawingColor(), -1,1,3,5)">Line segment
                         <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
