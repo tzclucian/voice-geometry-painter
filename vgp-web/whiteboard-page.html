@@ -165,8 +165,8 @@
                         class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="custom" class="sublinks collapse">
-                    <a class="list-group-item small">Circle
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
+                    <a class="list-group-item small">Add custom shape
+                        <span class="glyphicon glyphicon-plus pull-right" data-content="THE VOCAL COMMAND"
                               rel="popover" data-placement="right" data-original-title="Title"
                               data-trigger="hover"></span></a>
                 </div>
@@ -180,16 +180,25 @@
                 <div id="canvas">
                     <div id="jxgbox" class="jxgbox"></div>
                 </div>
-                <div id="details-bar">DETAILS BAR</div>
+                <div id="details-bar">DETAILS BAR
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                            <input type="text" class="form-control" placeholder="This helps us test vocal commands...">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-
+<script src="./js/lib/bootstrap.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
+
 <script type="text/javascript" src="./js/whiteboard.js"></script>
 <script type="text/javascript" src="./js/help-vocal-commands.js"></script>
 

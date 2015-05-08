@@ -35,6 +35,19 @@ var app = (function() {
     function deleteShape() {
         if (selectedShape != null) {
             var shapeId = selectedShape['id'];
+
+            if (selectedShape.type == JXG.OBJECT_TYPE_POINT) {
+
+            } else if (selectedShape.type == JXG.OBJECT_TYPE_LINE) {
+                selectedShape.point1.remove();
+                selectedShape.point2.remove();
+
+            } else if (selectedShape.type == JXG.OBJECT_TYPE_POLYGON) {
+                for (var i = 0; i < selectedShape.borders.length; i++) {
+                    board.removeObject(selectedShape.borders[i]);
+                }
+            }
+
             shapes[shapeId].remove();
             shapes[shapeId] = null;
             selectedShape = null;
@@ -68,20 +81,10 @@ var app = (function() {
             fillColor: drawingColor,
             strokeColor: drawingColor
         });
+
         shapes[point.id] = point;
 
-        point.on('mousedown', function(e) {
-            if (selectedShape != null) {
-                selectedShape.setProperty({strokeColor: selectedShape['oldStrokeColor']});
-            }
-
-            var object_id = e.target['id'].replace(canvas_id + '_', '');
-
-            selectedShape = shapes[object_id];
-            selectedShape['oldStrokeColor'] = selectedShape.getProperty('strokeColor');
-            selectedShape.setProperty({strokeColor: selectedColor});
-        });
-
+        JXG.addEvent(point.rendNode, 'mousedown', selection, point);
     }
 
     /**
@@ -100,15 +103,10 @@ var app = (function() {
         var line = board.create('line', [pointA, pointB],
             {straightFirst: false, straightLast: false, strokeWidth: 2, strokeColor: drawingColor});
 
-        console.log(line);
+        shapes[line.id] = line;
 
-        line.on('mousedown', function(e) {
-            console.log(e.target);
-            var object_id = e.target['id'].replace(canvas_id + '_', '');
+        JXG.addEvent(line.rendNode, 'mousedown', selection, line);
 
-            selectedShape = shapes[object_id];
-            selectedShape.setProperty({strokeColor: selectedColor});
-        });
     }
 
     function getDrawingColor() {
@@ -117,6 +115,22 @@ var app = (function() {
 
     function updateDrawingColor() {
         drawingColor = getDrawingColor();
+    }
+
+    function selection() {
+        console.log(this.id);
+
+        if (selectedShape != null) {
+            selectedShape.setProperty({strokeColor: selectedShape['oldStrokeColor']});
+        }
+
+        var object_id = this.id;
+
+        selectedShape = shapes[object_id];
+        selectedShape['oldStrokeColor'] = selectedShape.getProperty('strokeColor');
+        selectedShape.setProperty({strokeColor: selectedColor});
+
+
     }
 
     return {

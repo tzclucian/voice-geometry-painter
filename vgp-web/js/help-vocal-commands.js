@@ -8,11 +8,11 @@ var vocalCommand = (function() {
 
     return {
         // Board speciifc
-        clearBoard : "clean whiteboard",
-        deleteShape : "",
-        deselectShape : "",
+        clearBoard: "clean whiteboard",
+        deleteShape: "delete",
+        deselectShape: "deselect",
 
-        point : "",
-        line : ""
+        point: "new point [Name] [x] [y]",
+        line: "new line [Point A] [Point B]"
     }
 })();
