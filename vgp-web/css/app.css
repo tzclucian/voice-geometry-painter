@@ -1,0 +1,62 @@
+.sidebar {
+    overflow: visible;
+}
+
+.sublinks a {
+    padding-left: 25px;
+    padding-right: 5px;
+}
+
+.whiteboard-header {
+    position: relative;
+}
+
+.share-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.color-picker,
+.line-stroke {
+    display: inline-block;
+    width: 60px;
+}
+
+.whiteboard-header .page-header {
+    margin-right: 50px;
+}
+
+/* =========================== MENU =================================== */
+.list-group-item {
+
+    background-color: #C8E3FA;
+}
+
+div.sublinks .list-group-item {
+    background-color: #fff;
+}
+
+.active-item {
+    border-right: 4px solid #428bca;
+    color: #428bca !important;
+}
+
+div.sublinks a {
+    color: #000;
+    text-decoration: none;
+}
+
+div.sublinks a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.panel > a.active,
+.panel > a.active:hover,
+.panel > a.active:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+
+/* =========================== END MENU =================================== */

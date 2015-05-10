@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,6 +13,9 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/whiteboard.css" rel="stylesheet">
     <link href="./css/jsxgraph.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/app.css" rel="stylesheet">
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -51,130 +54,238 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-            <div id="toolbox" class="panel list-group">
+            <div id="toolbox" class="panel list-group board-menu">
 
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">Instruments
-                    <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">
+                    Instruments
+                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
 
                 <div id="instruments" class="sublinks collapse">
-                    <a class="list-group-item small" onclick="app.clearBoard() ">Clean whiteboard
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span>
+                    <a class="list-group-item small" onclick="app.clearBoard()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        Clean whiteboard
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.clearBoard}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
                     </a>
-                    <a><input type="color" id="colorpicker" class="form-control" value="#ff0000">
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Select shape
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small" onclick="app.deselectShape()">Deselect element
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <!--TODO add duplicate-->
-                    <a class="list-group-item small" onclick="app.deselectShape()">Duplicate element
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small" onclick="app.deleteShape()">Delete element
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">
+                        <input type="color" id="colorpicker" class="form-control color-picker" value="#ff0000">
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <input type="number" id="lineStroke" class="form-control line-stroke" value="12" max="12"
+                               min="1">
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        Select shape
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small" onclick="app.deselectShape()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Deselect element
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small" onclick="app.deselectShape()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Duplicate element
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small" onclick="app.deleteShape()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Delete element
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
 
                 </div>
 
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#basics"
+                <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#basics"
                    data-parent="#menu">Basic<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="basics" class="sublinks collapse">
-                    <a class="list-group-item small" onclick="app.drawPoint(app.getDrawingColor(), 3, 3)">Point
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small" onclick="app.drawLineSegment(app.getDrawingColor(), -1,1,3,5)">Line segment
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small active-item" onclick="app.drawPoint(app.getDrawingColor(), 3, 3)">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Point
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small" onclick="app.drawLineSegment(app.getDrawingColor(), -1, 1, 3, 2)">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Line segment
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
                 </div>
 
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#triangles" data-parent="#menu">Triangle
-                    <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#triangles" data-parent="#menu">
+                    Triangle
+                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
 
                 <div id="triangles" class="sublinks collapse">
-                    <a class="list-group-item small">Regular
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Isosceles
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Equilateral
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Right
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Regular
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Equilateral
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Right
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
                 </div>
 
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sn" data-parent="#menu">Quadrilaterals
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sn" data-parent="#menu">
+                    Quadrilaterals
                     <span class="glyphicon glyphicon-chevron-down pull-right"></span>
                 </a>
 
                 <div id="sn" class="sublinks collapse">
-                    <a class="list-group-item small">Quadrilateral
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Parallelogram
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Rectangle
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Square
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                    <a class="list-group-item small">Right
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Quadrilateral
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Parallelogram
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Rectangle
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Square
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Right
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
                 </div>
 
                 <a href="#" class="list-group-item" data-toggle="collapse" data-target="#rounded"
-                   data-parent="#menu">Round shapes<span
-                        class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                   data-parent="#menu">
+                    Round shapes<span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
 
                 <div id="rounded" class="sublinks collapse">
-                    <a class="list-group-item small">Circle
-                        <span class="glyphicon glyphicon-volume-up pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+
+                        Circle
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
                 </div>
 
                 <a href="#" class="list-group-item" data-toggle="collapse" data-target="#custom"
-                   data-parent="#menu">Custom shapes<span
-                        class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                   data-parent="#menu">
+                    Custom shapes<span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
 
                 <div id="custom" class="sublinks collapse">
-                    <a class="list-group-item small">Add custom shape
-                        <span class="glyphicon glyphicon-plus pull-right" data-content="THE VOCAL COMMAND"
-                              rel="popover" data-placement="right" data-original-title="Title"
-                              data-trigger="hover"></span></a>
-                </div>
+                    <a class="list-group-item small">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
 
+                        Circle
+                            <span class="glyphicon glyphicon-volume-up pull-right"
+                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  rel="popover" data-placement="right" data-original-title="Voice Command"
+                                  data-trigger="hover"></span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main container-fluid">
-            <h1 class="page-header">Whiteboard</h1>
+        <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-10 col-md-offset-2 main container-fluid">
+            <div class="whiteboard-header">
+                <h1 class="page-header edit" id="div_1">Whiteboard</h1>
+
+                <div class="share-group btn-group pull-right">
+                    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                        <i class="fa fa-share-alt"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><i class="fa fa-dropbox"></i> Dropbox</a></li>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i> Gmail</a></li>
+                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+            </div>
 
             <div id="workspace">
                 <div id="canvas">
@@ -197,10 +308,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./js/lib/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
+<script type='text/javascript' src='js/lib/knockout-3.1.0.js'></script>
+<script type='text/javascript' src='js/lib/jquery.jeditable.js'></script>
+
 
 <script type="text/javascript" src="./js/whiteboard.js"></script>
 <script type="text/javascript" src="./js/help-vocal-commands.js"></script>
 
+
+<script type='text/javascript' src='./js/setup.js'></script>
 </body>
 </html>
