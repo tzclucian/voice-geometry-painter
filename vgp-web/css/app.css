@@ -23,6 +23,10 @@
 	width: 60px;
 }
 
+.whiteboard-header .page-header{
+	margin-right:50px;
+}
+
 /* =========================== MENU =================================== */
 .list-group-item{
 
