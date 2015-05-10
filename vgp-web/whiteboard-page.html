@@ -35,6 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <img src="img/vgp-logo.png"/>
             <a class="navbar-brand" href="#">Voice Geometry Painter</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -297,7 +298,7 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">Go!</button>
                             </span>
-                            <input type="text" class="form-control" placeholder="This helps us test vocal commands...">
+                            <input id="help-input" type="text" class="form-control" placeholder="This helps us test vocal commands...">
                         </div>
                     </div>
                 </div>
@@ -319,5 +320,31 @@
 
 
 <script type='text/javascript' src='./js/setup.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
+<script>
+    if (annyang) {
+        // Let's define our first command. First the text we expect, and then the function it should call
+        console.log("1");
+        var commands = {
+            'draw line': function() {
+                console.log(this);
+                $('#help-input').val("seems to work");
+                app.drawLineSegment(app.getDrawingColor, 5, 5, -5, 10)
+            },
+
+            'hello *': output
+        };
+
+        var output = function(param) {
+            consoel.log(param)
+        };
+
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+
+        // Start listening. You can call this here, or attach this call to an event, button, etc.
+        annyang.start();
+    }
+</script>
 </body>
 </html>
