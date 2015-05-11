@@ -16,3 +16,6 @@ ClearBoardCommand.prototype.NAME = "Clear board";
 
 // Command's regexp
 ClearBoardCommand.prototype.REGEXP = /clear\sboard/i;
+
+// Command's help
+ClearBoardCommand.prototype.HELP = "clear board";

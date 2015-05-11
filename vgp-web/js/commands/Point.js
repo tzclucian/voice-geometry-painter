@@ -16,4 +16,7 @@ PointCommand.prototype.execute = function(context) {
 };
 
 PointCommand.prototype.NAME = "Point";
+
 PointCommand.prototype.REGEXP = /point\s([a-zA-Z])\s(-?\d)\s(-?\d)/i;
+
+PointCommand.prototype.HELP = "point A 2 3";

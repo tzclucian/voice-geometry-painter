@@ -67,7 +67,7 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         Clean whiteboard
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.clearBoard}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ClearBoard}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -79,7 +79,7 @@
                                   data-trigger="hover"></span>
                     </a>
                     <a class="list-group-item small">
-                        <input type="number" id="lineStroke" class="form-control line-stroke" value="12" max="12"
+                        <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12"
                                min="1">
                             <span class="glyphicon glyphicon-volume-up pull-right"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
@@ -96,17 +96,16 @@
                     </a>
                     <a class="list-group-item small" onclick="app.activeDrawingContext.deselectShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
-
                         Deselect element
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Deselect}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
                     <a class="list-group-item small" onclick="app.activeDrawingContext.deselectShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
-                        Duplicate element
+                        Duplicate selected
                             <span class="glyphicon glyphicon-volume-up pull-right"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -115,9 +114,9 @@
                     <a class="list-group-item small" onclick="app.activeDrawingContext.deleteShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
-                        Delete element
+                        Delete selected
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeleteSelected}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -133,7 +132,7 @@
 
                         Point
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Point}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -143,7 +142,7 @@
 
                         Line segment
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Line}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>

@@ -16,3 +16,6 @@ DeselectCommand.prototype.NAME = "Deselect";
 
 // Command's regexp
 DeselectCommand.prototype.REGEXP = /deselect/i;
+
+// Command's help
+DeselectCommand.prototype.HELP = "deselect";

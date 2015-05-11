@@ -2,13 +2,15 @@ function AppViewModel() {
 
     $('.glyphicon.glyphicon-volume-up.pull-right').popover();
 
+    this.commands = []
+
     this.config = {
         vocalCommandHelpMessages: {
-            clearBoard: "Clean whiteboard from knockout",
-            deleteShape: "Delete Shape By Name",
-            deselectShape: "Deselect Shape",
-            point: "Select The Point Element",
-            line: "Select the Line Element",
+            ClearBoard: ClearBoardCommand.prototype.HELP,
+            DeleteSelected: DeleteSelectedCommand.prototype.HELP,
+            Deselect: DeselectCommand.prototype.HELP,
+            Point: PointCommand.prototype.HELP,
+            Line: LineCommand.prototype.HELP,
             none: "TO BE ADDED"
         }
     };

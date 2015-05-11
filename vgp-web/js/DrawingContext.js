@@ -85,11 +85,12 @@ DrawingContext.prototype.selection = function() {
  * @param name
  */
 DrawingContext.prototype.drawPoint = function(x, y, name) {
+    var drawingColor = this.getDrawingColor();
     var point = this.board.create('point', [x, y], {
         name: name,
         size: 3,
-        fillColor: this.drawingColor,
-        strokeColor: this.drawingColor
+        fillColor: drawingColor,
+        strokeColor: drawingColor
     });
 
     this.shapes[point.id] = point;
@@ -105,11 +106,18 @@ DrawingContext.prototype.drawPoint = function(x, y, name) {
  * @param By
  */
 DrawingContext.prototype.drawLineSegment = function(A, Ax, Ay, B, Bx, By) {
-    var pointA = this.board.create('point', [Ax, Ay], {name: A, size: 4});
-    var pointB = this.board.create('point', [Bx, By], {name: B, size: 4});
+    var drawingColor = this.getDrawingColor();
+    var pointA = this.board.create('point', [Ax, Ay], {
+        name: A, size: 4, fillColor: drawingColor,
+        strokeColor: drawingColor
+    });
+    var pointB = this.board.create('point', [Bx, By], {
+        name: B, size: 4, fillColor: drawingColor,
+        strokeColor: drawingColor
+    });
 
     var line = this.board.create('line', [pointA, pointB],
-        {straightFirst: false, straightLast: false, strokeWidth: 2, strokeColor: this.drawingColor});
+        {straightFirst: false, straightLast: false, strokeWidth: 2, strokeColor: drawingColor});
 
     this.shapes[line.id] = line;
 
