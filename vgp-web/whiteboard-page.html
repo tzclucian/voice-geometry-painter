@@ -63,18 +63,18 @@
                 </a>
 
                 <div id="instruments" class="sublinks collapse">
-                    <a class="list-group-item small" onclick="app.clearBoard()">
+                    <a class="list-group-item small" onclick="app.activeDrawingContext.resetBoard()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         Clean whiteboard
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.clearBoard}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.clearBoard}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
                     <a class="list-group-item small">
                         <input type="color" id="colorpicker" class="form-control color-picker" value="#ff0000">
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -82,7 +82,7 @@
                         <input type="number" id="lineStroke" class="form-control line-stroke" value="12" max="12"
                                min="1">
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -90,34 +90,34 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         Select shape
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
-                    <a class="list-group-item small" onclick="app.deselectShape()">
+                    <a class="list-group-item small" onclick="app.activeDrawingContext.deselectShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
                         Deselect element
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
-                    <a class="list-group-item small" onclick="app.deselectShape()">
+                    <a class="list-group-item small" onclick="app.activeDrawingContext.deselectShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
                         Duplicate element
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
-                    <a class="list-group-item small" onclick="app.deleteShape()">
+                    <a class="list-group-item small" onclick="app.activeDrawingContext.deleteShape()">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
                         Delete element
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -128,21 +128,21 @@
                    data-parent="#menu">Basic<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                 <div id="basics" class="sublinks collapse">
-                    <a class="list-group-item small active-item" onclick="app.drawPoint(app.getDrawingColor(), 3, 3)">
+                    <a class="list-group-item small active-item" onclick="app.activeDrawingContext.drawPoint(3, 3)">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
                         Point
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
-                    <a class="list-group-item small" onclick="app.drawLineSegment(app.getDrawingColor(), -1, 1, 3, 2)">
+                    <a class="list-group-item small" onclick="app.activeDrawingContext.drawLineSegment(-1, 1, 3, 2)">
                         <span class="glyphicon glyphicon-chevron-right"></span>
 
                         Line segment
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -159,7 +159,7 @@
 
                         Regular
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -168,7 +168,7 @@
 
                         Equilateral
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -177,7 +177,7 @@
 
                         Right
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -194,7 +194,7 @@
 
                         Quadrilateral
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -203,7 +203,7 @@
 
                         Parallelogram
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -212,7 +212,7 @@
 
                         Rectangle
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -221,7 +221,7 @@
 
                         Square
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -230,7 +230,7 @@
 
                         Right
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -247,7 +247,7 @@
 
                         Circle
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -264,7 +264,7 @@
 
                         Circle
                             <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommanHelpMessages.none}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
@@ -296,9 +296,12 @@
                     <div class="col-lg-6">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-default" type="button"
+                                        onclick="app.parseAndExecute(document.getElementById('helpInput').value)">Go!
+                                </button>
                             </span>
-                            <input id="help-input" type="text" class="form-control" placeholder="This helps us test vocal commands...">
+                            <input id="helpInput" type="text" class="form-control"
+                                   placeholder="This helps us test vocal commands...">
                         </div>
                     </div>
                 </div>
@@ -307,44 +310,32 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="./js/lib/bootstrap.min.js"></script>
-
+<!-- libs -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/lib/bootstrap.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
 <script type='text/javascript' src='js/lib/knockout-3.1.0.js'></script>
 <script type='text/javascript' src='js/lib/jquery.jeditable.js'></script>
+<!-- End of libs -->
 
+
+<script type="text/javascript" src="./js/DrawingContext.js"></script>
+<script type="text/javascript" src="./js/CommandDefinition.js"></script>
+<script type="text/javascript" src="./js/CommandParser.js"></script>
+
+<!-- Commands -->
+<script type="text/javascript" src="js/commands/ClearBoard.js"></script>
+<script type="text/javascript" src="js/commands/Point.js"></script>
+<script type="text/javascript" src="js/commands/Line.js"></script>
+<script type="text/javascript" src="js/commands/Deselect.js"></script>
+<script type="text/javascript" src="js/commands/DeleteSelected.js"></script>
+<!-- End of commands -->
 
 <script type="text/javascript" src="./js/whiteboard.js"></script>
-<script type="text/javascript" src="./js/help-vocal-commands.js"></script>
 
-
+<!-- Setup -->
 <script type='text/javascript' src='./js/setup.js'></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
-<script>
-    if (annyang) {
-        // Let's define our first command. First the text we expect, and then the function it should call
-        console.log("1");
-        var commands = {
-            'draw line': function() {
-                console.log(this);
-                $('#help-input').val("seems to work");
-                app.drawLineSegment(app.getDrawingColor, 5, 5, -5, 10)
-            },
+<!-- End of setup-->
 
-            'hello *': output
-        };
-
-        var output = function(param) {
-            consoel.log(param)
-        };
-
-        // Add our commands to annyang
-        annyang.addCommands(commands);
-
-        // Start listening. You can call this here, or attach this call to an event, button, etc.
-        annyang.start();
-    }
-</script>
 </body>
 </html>
