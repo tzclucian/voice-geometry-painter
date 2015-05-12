@@ -11,7 +11,7 @@ SetColorCommand.prototype.execute = function(context) {
     var color = reResults[1];
 
     if (this.colors[color.toLowerCase()] != undefined) {
-        document.getElementById('colorpicker').value = this.colors[color.toLowerCase()];
+        context.setDrawingColor(this.colors[color.toLowerCase()]);
     }
     else throw ("Invalid color!");
 };

@@ -19,6 +19,14 @@ DrawingContext.prototype.getDrawingWidth = function() {
     return document.getElementById('lineStroke').value;
 }
 
+DrawingContext.prototype.setDrawingColor = function(color) {
+    return document.getElementById('colorpicker').value = color;
+};
+
+DrawingContext.prototype.setDrawingWidth = function(size) {
+    return document.getElementById('lineStroke').value = size;
+}
+
 DrawingContext.prototype.initBoard = function() {
     this.board = JXG.JSXGraph.initBoard(this.canvasId, {boundingbox: [-15, 10, 15, -10]});
 
