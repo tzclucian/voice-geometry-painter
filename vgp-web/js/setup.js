@@ -47,5 +47,8 @@ app.registerCommand(LineCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
 
-
-
+var speech = new SpeechApplication();
+speech.setMicImgId(mic_img);
+speech.setMicImageSources('img/mic.gif', 'img/mic-animate.gif', 'img/mic-slash.gif');
+speech.setOutputBoxId(helpInput);
+speech.init();

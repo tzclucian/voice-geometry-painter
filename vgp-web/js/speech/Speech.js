@@ -167,6 +167,10 @@ Speech.prototype.init = function(){
 };
 
 Speech.prototype.start = function() {
+    if (this.recognizing) {
+        this.recognition.stop();
+        return;
+    }
     this.finalTranscript = '';
     this.recognition.lang = this.langs[this.selectedLanguageIndex][this.selectedDialectIndex];
     this.recognition.start();

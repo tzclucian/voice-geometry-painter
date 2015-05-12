@@ -303,6 +303,9 @@
                             <input id="helpInput" type="text" class="form-control"
                                    placeholder="This helps us test vocal commands...">
                         </div>
+                        <button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">
+                            <img id="mic_img" src="img/mic.gif">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -332,6 +335,11 @@
 <!-- End of commands -->
 
 <script type="text/javascript" src="./js/whiteboard.js"></script>
+
+<!-- Speech -->
+<script type='text/javascript' src='js/speech/Speech.js'></script>
+<script type='text/javascript' src='./js/speech_logic.js'></script>
+<!-- End of speech -->
 
 <!-- Setup -->
 <script type='text/javascript' src='./js/setup.js'></script>

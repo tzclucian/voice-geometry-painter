@@ -18,6 +18,9 @@ SpeechApplication.prototype.init = function(){
     this.speech.registerOnError(function(event){obj.onError(event)});
     this.speech.registerOnEnd(function(){obj.onEnd()});
     this.speech.registerOnResult(function(event){obj.onResult(event)});
+};
+
+SpeechApplication.prototype.toogleOnOff = function() {
     this.speech.start();
 };
 
