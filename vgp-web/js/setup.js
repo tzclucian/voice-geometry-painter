@@ -6,9 +6,13 @@ function AppViewModel() {
 
     this.config = {
         vocalCommandHelpMessages: {
+            SetColor: SetColorCommand.prototype.HELP,
+            SetWidth: SetWidthCommand.prototype.HELP,
+
             ClearBoard: ClearBoardCommand.prototype.HELP,
             DeleteSelected: DeleteSelectedCommand.prototype.HELP,
             Deselect: DeselectCommand.prototype.HELP,
+
             Point: PointCommand.prototype.HELP,
             Line: LineCommand.prototype.HELP,
             none: "TO BE ADDED"
