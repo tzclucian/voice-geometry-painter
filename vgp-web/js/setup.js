@@ -2,7 +2,7 @@ function AppViewModel() {
 
     $('.glyphicon.glyphicon-volume-up.pull-right').popover();
 
-    this.commands = []
+    this.commands = [];
 
     this.config = {
         vocalCommandHelpMessages: {
@@ -28,7 +28,7 @@ $(document).ready(function() {
         return (value);
     }, {
         type: 'text',
-        cssclass : 'white-board-title-input',
+        cssclass : 'white-board-title-input'
     });
 
     $("div.sublinks a").on("click", function() {
