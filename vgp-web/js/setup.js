@@ -47,6 +47,8 @@ app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
+app.registerCommand(SetWidthCommand);
+app.registerCommand(SetColorCommand);
 
 var speech = new SpeechApplication();
 speech.setMicImgId(mic_img);

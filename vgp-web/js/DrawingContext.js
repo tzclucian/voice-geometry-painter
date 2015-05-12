@@ -15,9 +15,12 @@ DrawingContext.prototype.getDrawingColor = function() {
     return document.getElementById('colorpicker').value;
 };
 
+DrawingContext.prototype.getDrawingWidth = function() {
+    return document.getElementById('lineStroke').value;
+}
+
 DrawingContext.prototype.initBoard = function() {
     this.board = JXG.JSXGraph.initBoard(this.canvasId, {boundingbox: [-15, 10, 15, -10]});
-    this.drawingColor = this.getDrawingColor();
 
     // Axes
     this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
@@ -86,9 +89,11 @@ DrawingContext.prototype.selection = function() {
  */
 DrawingContext.prototype.drawPoint = function(x, y, name) {
     var drawingColor = this.getDrawingColor();
+    var drawingWidth = this.getDrawingWidth();
+
     var point = this.board.create('point', [x, y], {
         name: name,
-        size: 3,
+        size: drawingWidth,
         fillColor: drawingColor,
         strokeColor: drawingColor
     });
@@ -107,17 +112,19 @@ DrawingContext.prototype.drawPoint = function(x, y, name) {
  */
 DrawingContext.prototype.drawLineSegment = function(A, Ax, Ay, B, Bx, By) {
     var drawingColor = this.getDrawingColor();
+    var drawingWidth = this.getDrawingWidth();
+
     var pointA = this.board.create('point', [Ax, Ay], {
-        name: A, size: 4, fillColor: drawingColor,
+        name: A, size: drawingWidth * 1.5, fillColor: drawingColor,
         strokeColor: drawingColor
     });
     var pointB = this.board.create('point', [Bx, By], {
-        name: B, size: 4, fillColor: drawingColor,
+        name: B, size: drawingWidth * 1.5, fillColor: drawingColor,
         strokeColor: drawingColor
     });
 
     var line = this.board.create('line', [pointA, pointB],
-        {straightFirst: false, straightLast: false, strokeWidth: 2, strokeColor: drawingColor});
+        {straightFirst: false, straightLast: false, strokeWidth: drawingWidth, strokeColor: drawingColor});
 
     this.shapes[line.id] = line;
 
