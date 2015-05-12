@@ -8,11 +8,11 @@ var LineCommand = function(commandString) {
 LineCommand.prototype.execute = function(context) {
     var reResults = this.commandString.match(this.REGEXP);
 
-    var pointA = reResults[1];
+    var pointA = reResults[1].toUpperCase();
     var Ax = parseFloat(reResults[2]);
     var Ay = parseFloat(reResults[3]);
 
-    var pointB = reResults[4];
+    var pointB = reResults[4].toUpperCase();
     var Bx = parseFloat(reResults[5]);
     var By = parseFloat(reResults[6]);
 

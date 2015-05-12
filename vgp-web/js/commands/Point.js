@@ -8,7 +8,7 @@ var PointCommand = function(commandString) {
 PointCommand.prototype.execute = function(context) {
     var reResults = this.commandString.match(this.REGEXP);
 
-    var name = reResults[1];
+    var name = reResults[1].toUpperCase();
     var x = parseFloat(reResults[2]);
     var y = parseFloat(reResults[3]);
 
