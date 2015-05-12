@@ -20,4 +20,4 @@ SetWidthCommand.prototype.NAME = "Set size";
 
 SetWidthCommand.prototype.REGEXP = /set\ssize\s(\d?\d)/i;
 
-SetWidthCommand.prototype.HELP = "set size [1-12]";
+SetWidthCommand.prototype.HELP = "set size 2";
