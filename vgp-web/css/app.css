@@ -1,3 +1,4 @@
+
 .sidebar {
     overflow: visible;
 }
@@ -11,20 +12,62 @@
     position: relative;
 }
 
-.share-group {
+.share-group,
+.whiteboard-undo-group {
     position: absolute;
     top: 0;
     right: 0;
 }
 
+.whiteboard-undo-group {
+  right:50px;
+}
+
+.share-group ul li a,
+.share-group ul li span,
+.whiteboard-undo-group ul li a,
+.whiteboard-undo-group ul li span{
+  display:inline-block;
+}
+
+.share-group ul li span.voice-command,
+.whiteboard-undo-group ul li span.voice-command{
+  margin-right:5px;
+  margin-top:5px;
+}
+
 .color-picker,
 .line-stroke {
     display: inline-block;
-    width: 60px;
+    width: 150px;
+}
+
+.color-picker+span,
+.line-stroke+span{
+  padding-top:7px;
+  padding-right: 0px !important;
+  }
+
+.panel.board-menu .glyphicon.glyphicon-volume-up{
+  padding-right: 5px;
+
 }
 
 .whiteboard-header .page-header {
-    margin-right: 50px;
+    margin-right: 75px;
+}
+
+.navbar-brand{
+  float:none;
+  padding-top:5px;
+}
+
+.navbar-header img{
+  padding-top: 4px;
+}
+
+form.white-board-title-input input{
+  font-size: 12px !important;
 }
 
 /* =========================== MENU =================================== */

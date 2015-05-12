@@ -23,7 +23,8 @@ $(document).ready(function() {
     $('.edit').editable(function(value, settings) {
         return (value);
     }, {
-        type: 'text'
+        type: 'text',
+        cssclass : 'white-board-title-input',
     });
 
     $("div.sublinks a").on("click", function() {
@@ -46,6 +47,3 @@ app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
-
-
-
