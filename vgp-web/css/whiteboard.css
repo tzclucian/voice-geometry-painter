@@ -113,6 +113,10 @@ body {
     border: none !important;
 }
 
+#div_1 {
+    width: 75%;
+}
+
 #workspace {
     height: 80vh;
 }
