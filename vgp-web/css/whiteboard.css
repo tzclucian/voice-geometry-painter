@@ -113,8 +113,12 @@ body {
     border: none !important;
 }
 
+#div_1 {
+    width: 75%;
+}
+
 #workspace {
-    height: 100vh;
+    height: 80vh;
 }
 
 #canvas {

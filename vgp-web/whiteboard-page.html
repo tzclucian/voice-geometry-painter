@@ -56,6 +56,23 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <div id="toolbox" class="panel list-group board-menu">
+              <a class="list-group-item small">
+                Line Color
+                  <input type="color" id="colorpicker" class="form-control color-picker" value="#ff0000">
+                      <span class="glyphicon glyphicon-volume-up pull-right"
+                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                            rel="popover" data-placement="right" data-original-title="Voice Command"
+                            data-trigger="hover"></span>
+              </a>
+              <a class="list-group-item small">
+                Line Width
+                  <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12"
+                         min="1">
+                      <span class="glyphicon glyphicon-volume-up pull-right"
+                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
+                            rel="popover" data-placement="right" data-original-title="Voice Command"
+                            data-trigger="hover"></span>
+              </a>
 
                 <a href="#" class="list-group-item" data-toggle="collapse" data-target="#instruments">
                     Instruments
@@ -71,21 +88,7 @@
                                   rel="popover" data-placement="right" data-original-title="Voice Command"
                                   data-trigger="hover"></span>
                     </a>
-                    <a class="list-group-item small">
-                        <input type="color" id="colorpicker" class="form-control color-picker" value="#ff0000">
-                            <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
-                                  rel="popover" data-placement="right" data-original-title="Voice Command"
-                                  data-trigger="hover"></span>
-                    </a>
-                    <a class="list-group-item small">
-                        <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12"
-                               min="1">
-                            <span class="glyphicon glyphicon-volume-up pull-right"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.none}'
-                                  rel="popover" data-placement="right" data-original-title="Voice Command"
-                                  data-trigger="hover"></span>
-                    </a>
+
                     <a class="list-group-item small">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         Select shape
@@ -275,15 +278,45 @@
             <div class="whiteboard-header">
                 <h1 class="page-header edit" id="div_1">Whiteboard</h1>
 
+                <div class="whiteboard-undo-group btn-group pull-right">
+                    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                        <i class="fa fa-undo"></i>
+                    </button>
+                    <ul class="dropdown-menu share-menu" role="menu">
+                        <li> <a href="#">Step 3</a><span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnDropbox}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
+                        <li><a href="#">Step 2</a><span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnGmail}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
+                        <li> <a href="#">Step 1</a> <span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Download}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
+                    </ul>
+                </div>
+
                 <div class="share-group btn-group pull-right">
                     <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-expanded="false">
                         <i class="fa fa-share-alt"></i>
                     </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-dropbox"></i> Dropbox</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> Gmail</a></li>
-                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                    <ul class="dropdown-menu share-menu" role="menu">
+                        <li><a href="#"><i class="fa fa-dropbox"></i> Dropbox</a><span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnDropbox}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i> Gmail</a><span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnGmail}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
+                        <li><a href="#"><i class="fa fa-download"></i> Download</a><span class="glyphicon glyphicon-volume-up pull-right voice-command"
+                              data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Download}'
+                              rel="popover" data-placement="left" data-original-title="Voice Command"
+                              data-trigger="hover"></span></li>
                     </ul>
                 </div>
             </div>

@@ -23,7 +23,8 @@ $(document).ready(function() {
     $('.edit').editable(function(value, settings) {
         return (value);
     }, {
-        type: 'text'
+        type: 'text',
+        cssclass : 'white-board-title-input',
     });
 
     $("div.sublinks a").on("click", function() {
