@@ -1,44 +1,52 @@
 function AppViewModel() {
 
-    $('.glyphicon.glyphicon-volume-up.pull-right').popover();
+	$('span.voice-command').popover();
 
-    this.commands = [];
+	this.commands = [];
 
-    this.config = {
-        vocalCommandHelpMessages: {
-            SetColor: SetColorCommand.prototype.HELP,
-            SetWidth: SetWidthCommand.prototype.HELP,
+	this.config = {
+		vocalCommandHelpMessages: {
+			SetColor: SetColorCommand.prototype.HELP,
+			SetWidth: SetWidthCommand.prototype.HELP,
 
-            ClearBoard: ClearBoardCommand.prototype.HELP,
-            DeleteSelected: DeleteSelectedCommand.prototype.HELP,
-            Deselect: DeselectCommand.prototype.HELP,
+			ClearBoard: ClearBoardCommand.prototype.HELP,
+			DeleteSelected: DeleteSelectedCommand.prototype.HELP,
+			Deselect: DeselectCommand.prototype.HELP,
 
-            Point: PointCommand.prototype.HELP,
-            Line: LineCommand.prototype.HELP,
-            none: "TO BE ADDED"
-        }
-    };
+			Point: PointCommand.prototype.HELP,
+			Line: LineCommand.prototype.HELP,
+
+			Download: "Download",
+			SendToGmail: "Send to Gmail",
+			ShareOnDropbox: "Share On Dropbox",
+			none: "TO BE ADDED"
+		}
+	};
 }
 
 ko.applyBindings(new AppViewModel());
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('.edit').editable(function(value, settings) {
-        return (value);
-    }, {
-        type: 'text',
-        cssclass : 'white-board-title-input'
-    });
+	$('.edit').editable(function (value, settings) {
+		return (value);
+	}, {
+		type: 'text',
+		cssclass: 'white-board-title-input',
+	});
 
-    $("div.sublinks a").on("click", function() {
-        $('#toolbox a.active').removeClass('active');
-        $('#toolbox div.sublinks a.active-item').removeClass('active-item');
+	$('#menuBtn').on('click', function () {
+		var element = $('.horizontal-expand');
+		var isMenuShown = element.css("display") === "block";
 
-        var currentElement = $(this);
-        currentElement.addClass("active-item");
-        $('#toolbox a[data-target=#' + $(currentElement.parent()).attr("id") + ']').addClass('active');
-    });
+		if (isMenuShown) {
+			element.css("display", "none");
+			$('.menu-btn').removeClass('active');
+		} else {
+			element.css("display", "block");
+			$('.menu-btn').addClass('active');
+		}
+	});
 });
 
 var app = new DrawingApplication();
