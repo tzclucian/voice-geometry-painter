@@ -11,7 +11,7 @@ SetWidthCommand.prototype.execute = function(context) {
     var size = parseFloat(reResults[1]);
 
     if (size > 0 && size < 13) {
-        context.setDrawingWidth(document.getElementById('lineStroke').value);
+        context.setLineDrawingWidth(size);
     }
     else throw ("Invalid width size!");
 };

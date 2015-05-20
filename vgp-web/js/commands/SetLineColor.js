@@ -1,28 +1,28 @@
 /**
  * Created by Lucian Tuca on 11/05/15.
  */
-var SetColorCommand = function(commandString) {
+var SetLineColorCommand = function(commandString) {
     this.commandString = commandString;
 };
 
-SetColorCommand.prototype.execute = function(context) {
+SetLineColorCommand.prototype.execute = function(context) {
     var reResults = this.commandString.match(this.REGEXP);
 
     var color = reResults[1];
 
     if (this.colors[color.toLowerCase()] != undefined) {
-        context.setDrawingColor(this.colors[color.toLowerCase()]);
+        context.setLineColor(this.colors[color.toLowerCase()]);
     }
     else throw ("Invalid color!");
 };
 
-SetColorCommand.prototype.NAME = "Set width";
+SetLineColorCommand.prototype.NAME = "Set line color";
 
-SetColorCommand.prototype.REGEXP = /set\scolor\s(\w+)/i;
+SetLineColorCommand.prototype.REGEXP = /set\sline\scolor\s(\w+)/i;
 
-SetColorCommand.prototype.HELP = "set color red";
+SetLineColorCommand.prototype.HELP = "set line color red";
 
-SetColorCommand.prototype.colors = {
+SetLineColorCommand.prototype.colors = {
     "aliceblue": "#F0F8FF",
     "antiquewhite": "#FAEBD7",
     "aqua": "#00FFFF",
