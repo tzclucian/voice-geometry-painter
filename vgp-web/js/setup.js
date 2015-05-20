@@ -66,7 +66,5 @@ app.registerCommand(SetLineColorCommand);
 app.registerCommand(SetFillColorCommand);
 
 var speech = new SpeechApplication();
-speech.setMicImgId(mic_img);
-speech.setMicImageSources('img/mic.gif', 'img/mic-animate.gif', 'img/mic-slash.gif');
 speech.setOutputBoxId(helpInput);
 speech.init();
