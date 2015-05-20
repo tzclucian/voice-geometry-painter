@@ -77,27 +77,27 @@ DrawingContext.prototype.deselectShape = function() {
 
 
 DrawingContext.prototype.getLineColor = function() {
-    return document.getElementById('line-color').value;
+    return document.getElementById('colorpickerLine').value;
 };
 
 DrawingContext.prototype.setLineColor = function(color) {
-    document.getElementById('line-color').value = color;
+    document.getElementById('colorpickerLine').value = color;
 };
 
 DrawingContext.prototype.getFillColor = function() {
-    return document.getElementById('fill-color').value;
+    return document.getElementById('colorpickerFill').value;
 };
 
 DrawingContext.prototype.setFillColor = function(color) {
-    document.getElementById('fill-color').value = color;
+    document.getElementById('colorpickerFill').value = color;
 };
 
 DrawingContext.prototype.getLineDrawingWidth = function() {
-    return document.getElementById('drawing-width').value;
+    return document.getElementById('lineStroke').value;
 };
 
 DrawingContext.prototype.setLineDrawingWidth = function(size) {
-    document.getElementById('drawing-width').value = size;
+    document.getElementById('lineStroke').value = size;
 };
 
 DrawingContext.prototype.getPointDrawingWidth = function() {
