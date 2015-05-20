@@ -25,31 +25,28 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-inverse app-header-navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="#">
-                    <img alt="Voice Geometry Painter" src="img/vgp-logo.png" />
-                    Voice Geometry Painter
-                </a>
-            </div>
-        </div>
-    </nav>
     <nav class="navbar navbar-default whiteboard-header-navbar">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li class="menu-btn"><a href="#" id="menuBtn"><i class="fa fa-bars first"></i><i class="fa fa-caret-down second"></i></a></li>
             </ul>
+            <div class="col-lg-6">
+                <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"
+                                        onclick="app.parseAndExecute(document.getElementById('helpInput').value)">
+                                    Go!
+                                </button>
+                            </span>
+                    <input id="helpInput" type="text" class="form-control"
+                           placeholder="This helps us test vocal commands...">
+                </div>
+                <button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">
+                    <img id="mic_img" src="img/mic.gif" alt="Microfone">
+                </button>
+            </div>
             <ul class="nav navbar-nav navbar-right">
+
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li><a href="#"><i class="fa fa-cog"></i></a></li>
                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
@@ -86,7 +83,7 @@
         </div>
     </nav>
 
-    <div class="row container-fluid">
+    <div class="row container-fluid" id="jxgbox" class="jxgbox">
         <div class="col-sm-3 col-md-2 sidebar horizontal-expand">
             <ul class="nav navbar-nav upper">
                 <li class="dropdown">
@@ -439,33 +436,26 @@
                 </li>
             </ul>
         </div>
-        <div class="col-sm-11 col-md-11 col-sm-offset-1 col-md-offset-1 main container-fluid">
-            <div class="whiteboard-header">
-                <h1 class="page-header edit" id="div_1">Whiteboard</h1>
-            </div>
-
+        <div class="col-sm-11 col-md-11 col-sm-offset-1 col-md-offset-1 main container-fluid" >
             <div id="workspace">
-                <div id="canvas">
-                    <div id="jxgbox" class="jxgbox"></div>
-                </div>
-                <div id="details-bar">
-                    DETAILS BAR
-                    <div class="col-lg-6">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"
-                                        onclick="app.parseAndExecute(document.getElementById('helpInput').value)">
-                                    Go!
-                                </button>
-                            </span>
-                            <input id="helpInput" type="text" class="form-control"
-                                   placeholder="This helps us test vocal commands...">
-                        </div>
-                        <button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">
-                            <img id="mic_img" src="img/mic.gif" alt="Microfone">
-                        </button>
-                    </div>
-                </div>
+                <!--<div id="details-bar">-->
+                    <!--DETAILS BAR-->
+                    <!--<div class="col-lg-6">-->
+                        <!--<div class="input-group">-->
+                            <!--<span class="input-group-btn">-->
+                                <!--<button class="btn btn-default" type="button"-->
+                                        <!--onclick="app.parseAndExecute(document.getElementById('helpInput').value)">-->
+                                    <!--Go!-->
+                                <!--</button>-->
+                            <!--</span>-->
+                            <!--<input id="helpInput" type="text" class="form-control"-->
+                                   <!--placeholder="This helps us test vocal commands...">-->
+                        <!--</div>-->
+                        <!--<button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">-->
+                            <!--<img id="mic_img" src="img/mic.gif" alt="Microfone">-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -490,7 +480,8 @@
     <script type="text/javascript" src="js/commands/Deselect.js"></script>
     <script type="text/javascript" src="js/commands/DeleteSelected.js"></script>
     <script type="text/javascript" src="js/commands/SetWidth.js"></script>
-    <script type="text/javascript" src="js/commands/SetColor.js"></script>
+    <script type="text/javascript" src="js/commands/SetLineColor.js"></script>
+    <script type="text/javascript" src="js/commands/SetFillColor.js"></script>
     <!-- End of commands -->
 
     <script type="text/javascript" src="./js/whiteboard.js"></script>

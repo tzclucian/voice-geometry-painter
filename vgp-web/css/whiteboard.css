@@ -125,6 +125,7 @@ body {
 #jxgbox {
 	height: 100%;
 	width: 100%;
+	overflow: inherit !important;
 }
 
 #details-bar {
