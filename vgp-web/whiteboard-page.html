@@ -25,30 +25,22 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-inverse app-header-navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="#">
-                    <img alt="Voice Geometry Painter" src="img/vgp-logo.png" />
-                    Voice Geometry Painter
-                </a>
-            </div>
-        </div>
-    </nav>
     <nav class="navbar navbar-default whiteboard-header-navbar">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li class="menu-btn"><a href="#" id="menuBtn"><i class="fa fa-bars first"></i><i class="fa fa-caret-down second"></i></a></li>
+                <li class="menu-btn">
+                    <a href="#" id="menuBtn"><i class="fa fa-bars first"></i><i class="fa fa-caret-down second"></i></a>
+
+                </li>
+                <li>
+                    <a class="navbar-logo" href="#">
+                        <img alt="Voice Geometry Painter" src="./img/vgp-logo.png" />
+                    </a>
+                </li>
             </ul>
+                <div class="whiteboard-header">
+                    <h1 class="page-header edit" id="div_1">Whiteboard</h1>
+                </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li><a href="#"><i class="fa fa-cog"></i></a></li>
@@ -86,98 +78,95 @@
         </div>
     </nav>
 
-    <div class="row container-fluid">
+    <div class="row container-fluid main-div">
         <div class="col-sm-3 col-md-2 sidebar horizontal-expand">
             <ul class="nav navbar-nav upper">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clipboard"></i></a>
-                    <ul class="share-options dropdown-menu horizontal whiteboard-command-horizontal-menu-options" role="menu">
-                        <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Clean Board
+                    <div class="horizontal-menu-container">
+                        <ul class="share-options dropdown-menu horizontal whiteboard-command-horizontal-menu-options" role="menu">
+                            <li>
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-dropbox"></i>
+                                        Clean Board
+                                    </span>
+                                </a>
+                                <span class="tool-options">
+                                    <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                    <span class="voice-command"
+                                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                                 </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
+                            </li>
 
 
-                        <li>
-                            <a href="#" onclick="">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Select Shape
+                            <li>
+                                <a href="#" onclick="">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-dropbox"></i>
+                                        Select Shape
+                                    </span>
+                                </a>
+                                <span class="tool-options">
+                                    <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                    <span class="voice-command"
+                                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                                 </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
+                            </li>
 
-                        <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Deselect Shape
+                            <li>
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-dropbox"></i>
+                                        Deselect Shape
+                                    </span>
+                                </a>
+                                <span class="tool-options">
+                                    <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                    <span class="voice-command"
+                                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                                 </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
+                            </li>
 
-                        <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Duplicate selected
+                            <li>
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-dropbox"></i>
+                                        Duplicate selected
+                                    </span>
+                                </a>
+                                <span class="tool-options">
+                                    <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                    <span class="voice-command"
+                                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                                 </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
+                            </li>
 
-                        <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Delete selected
+                            <li>
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-dropbox"></i>
+                                        Delete selected
+                                    </span>
+                                </a>
+                                <span class="tool-options">
+                                    <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                    <span class="voice-command"
+                                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                                 </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
-
-
-
-
-
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clipboard"></i>Basic</a>
@@ -440,10 +429,6 @@
             </ul>
         </div>
         <div class="col-sm-11 col-md-11 col-sm-offset-1 col-md-offset-1 main container-fluid">
-            <div class="whiteboard-header">
-                <h1 class="page-header edit" id="div_1">Whiteboard</h1>
-            </div>
-
             <div id="workspace">
                 <div id="canvas">
                     <div id="jxgbox" class="jxgbox"></div>

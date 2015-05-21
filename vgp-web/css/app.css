@@ -11,6 +11,15 @@
 		font-size: 25px;
 	}
 
+.whiteboard-header {
+	float: left;
+}
+
+	.whiteboard-header h1 {
+		margin: 0;
+		padding: 6px 0 0 0;
+	}
+
 
 li.menu-btn a {
 	padding: 15px 2px 15px 5px;
@@ -106,7 +115,7 @@ form.white-board-title-input input {
 
 /*=============================== CUSTOM LENGTH FOR MENU START ======================================*/
 .whiteboard-command-horizontal-menu-options {
-	width: 687px !important;
+	/*width: 687px !important;*/
 }
 
 .basic-command-horizontal-menu-options {
@@ -128,109 +137,25 @@ form.white-board-title-input input {
 .custom-shape-command-horizontal-menu-options {
 	width: 266px;
 }
-/*=============================== CUSTOM LENGTH FOR MENU END ======================================*/
+
+.horizontal-menu-container {
+	position: absolute;
+	background: yellow;
+	left: 0;
+	width: 100000px;
+	top: 0;
+}
 
 
-/*
+.open > .horizontal-menu-container > .dropdown-menu {
+	display: block;
+}
+
 .sidebar {
-overflow: visible;
-}
-
-.sublinks a {
-padding-left: 25px;
-padding-right: 5px;
-}
-
-.whiteboard-header {
-position: relative;
-}
-
-.share-group,
-.whiteboard-undo-group {
-position: absolute;
-top: 0;
-right: 0;
-}
-
-.whiteboard-undo-group {
-right:50px;
-}
-
-.share-group ul li a,
-.share-group ul li span,
-.whiteboard-undo-group ul li a,
-.whiteboard-undo-group ul li span{
-display:inline-block;
-}
-
-.share-group ul li span.voice-command,
-.whiteboard-undo-group ul li span.voice-command{
-margin-right:5px;
-margin-top:5px;
-}
-
-.color-picker,
-.line-stroke {
-display: inline-block;
-width: 150px;
-}
-
-.color-picker+span,
-.line-stroke+span{
-padding-top:7px;
-padding-right: 0px !important;
-}
-
-.panel.board-menu .glyphicon.glyphicon-volume-up{
-padding-right: 5px;
-
-}
-
-.whiteboard-header .page-header {
-margin-right: 75px;
-}
-
-.navbar-brand{
-float:none;
-padding-top:5px;
-}
-
-.navbar-header img{
-padding-top: 4px;
+	overflow: visible;
 }
 
 
-
-/* =========================== MENU =================================== */
-/*.list-group-item {
-
-background-color: #C8E3FA;
+.nav.navbar-nav > li > a.navbar-logo {
+	padding-top: 6px !important;
 }
-
-div.sublinks .list-group-item {
-background-color: #fff;
-}
-
-.active-item {
-border-right: 4px solid #428bca;
-color: #428bca !important;
-}
-
-div.sublinks a {
-color: #000;
-text-decoration: none;
-}
-
-div.sublinks a:hover {
-color: #000;
-text-decoration: none;
-}
-
-.panel > a.active,
-.panel > a.active:hover,
-.panel > a.active:focus {
-color: #fff;
-background-color: #428bca;
-}*/
-
-/* =========================== END MENU =================================== */ */

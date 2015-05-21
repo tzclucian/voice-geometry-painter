@@ -1,17 +1,24 @@
-body{
-  margin:0;
-  padding: 0;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-.navbar-brand{
-  padding:5px 0 0 5px;
-}
-.navbar-brand > img{
-  display:inline;
+.navbar-brand {
+	padding: 5px 0 0 5px;
 }
 
-.sidebar{
-  top:110px;
-  width:100px;  
-  padding:0;
+	.navbar-brand > img {
+		display: inline;
+	}
+
+.sidebar {
+	top: 65px;
+	width: 100px;
+	padding: 0;
+}
+
+
+.row.main-div {
+	margin-right: 0;
+	margin-left: 0;
 }
