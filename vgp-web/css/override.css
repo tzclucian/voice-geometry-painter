@@ -24,8 +24,22 @@ body {
 	margin-left: 0;
 }
 
+.navbar{
+	margin-bottom:10px;
+}
+
 
 .container-fluid {
 	margin: 0;
 	padding: 0;
 }
+
+.workspace-command-bar .input-group-addon {
+	padding: 0;
+}
+
+.workspace-command-bar .btn {
+	padding: 5px 12px;
+}
+
+

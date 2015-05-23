@@ -157,8 +157,7 @@ form.white-board-title-input input {
 	padding-top: 6px !important;
 }
 
-.workspace,
-.workspace-command-bar {
+.workspace {
 	margin: 0 5px;
 }
 
@@ -174,6 +173,19 @@ form.white-board-title-input input {
 	width: 210px;
 	display: inline-block;
 	position: absolute;
-	right: 13px;
+	right: 14px;
 	top: -4px;
+}
+
+
+.workspace-command-bar{
+
+}
+
+.workspace-command-bar .btn.go-btn {
+	border-radius: 4px 0 0 4px;
+}
+
+.workspace-command-bar .btn.listen-btn {
+	border-radius: 0 4px 4px 0;
 }
