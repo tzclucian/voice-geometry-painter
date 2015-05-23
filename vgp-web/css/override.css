@@ -12,13 +12,20 @@ body {
 	}
 
 .sidebar {
-	top: 65px;
+	top: 50px;
 	width: 100px;
 	padding: 0;
+	overflow: visible;
 }
 
 
 .row.main-div {
 	margin-right: 0;
 	margin-left: 0;
+}
+
+
+.container-fluid {
+	margin: 0;
+	padding: 0;
 }

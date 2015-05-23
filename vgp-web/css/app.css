@@ -153,11 +153,6 @@ form.white-board-title-input input {
 	display: block;
 }
 
-.sidebar {
-	overflow: visible;
-}
-
-
 .nav.navbar-nav > li > a.navbar-logo {
 	padding-top: 6px !important;
 }
