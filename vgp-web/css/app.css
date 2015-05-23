@@ -12,12 +12,13 @@
 	}
 
 .whiteboard-header {
-	float: left;
+	margin-left: 185px;
+	margin-right: 210px;
 }
 
 	.whiteboard-header h1 {
 		margin: 0;
-		padding: 6px 0 0 0;
+		padding: 0;
 	}
 
 
@@ -107,6 +108,7 @@ ul.horizontal .tool-options {
 
 form.white-board-title-input input {
 	font-size: 12px !important;
+	height: 25px !important;
 }
 
 .horizontal-expand {
@@ -158,4 +160,25 @@ form.white-board-title-input input {
 
 .nav.navbar-nav > li > a.navbar-logo {
 	padding-top: 6px !important;
+}
+
+.workspace,
+.workspace-command-bar {
+	margin: 0 5px;
+}
+
+
+.navbar-left {
+	width: 185px;
+	display: inline-block;
+	position: absolute;
+}
+
+
+.navbar-right {
+	width: 210px;
+	display: inline-block;
+	position: absolute;
+	right: 13px;
+	top: -4px;
 }

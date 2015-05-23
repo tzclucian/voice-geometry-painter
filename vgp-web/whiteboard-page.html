@@ -27,10 +27,9 @@
 <body>
     <nav class="navbar navbar-default whiteboard-header-navbar">
         <div class="container-fluid">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-left">
                 <li class="menu-btn">
                     <a href="#" id="menuBtn"><i class="fa fa-bars first"></i><i class="fa fa-caret-down second"></i></a>
-
                 </li>
                 <li>
                     <a class="navbar-logo" href="#">
@@ -38,9 +37,9 @@
                     </a>
                 </li>
             </ul>
-                <div class="whiteboard-header">
-                    <h1 class="page-header edit" id="div_1">Whiteboard</h1>
-                </div>
+            <div class="whiteboard-header">
+                <h1 class="edit" id="div_1">Whiteboard</h1>
+            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li><a href="#"><i class="fa fa-cog"></i></a></li>
@@ -428,30 +427,32 @@
                 </li>
             </ul>
         </div>
-        <div class="col-sm-11 col-md-11 col-sm-offset-1 col-md-offset-1 main container-fluid">
-            <div id="workspace">
-                <div id="canvas">
-                    <div id="jxgbox" class="jxgbox"></div>
-                </div>
-                <div id="details-bar">
-                    DETAILS BAR
-                    <div class="col-lg-6">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"
-                                        onclick="app.parseAndExecute(document.getElementById('helpInput').value)">
-                                    Go!
-                                </button>
-                            </span>
-                            <input id="helpInput" type="text" class="form-control"
-                                   placeholder="This helps us test vocal commands...">
-                        </div>
-                        <button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">
-                            <img id="mic_img" src="img/mic.gif" alt="Microfone">
-                        </button>
-                    </div>
-                </div>
+    </div>
+
+    <div class="workspace">
+        <div id="workspace">
+            <div id="canvas">
+                <div id="jxgbox" class="jxgbox"></div>
             </div>
+        </div>
+    </div>
+
+    <div id="details-bar" class="workspace-command-bar">
+        DETAILS BAR
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"
+                            onclick="app.parseAndExecute(document.getElementById('helpInput').value)">
+                        Go!
+                    </button>
+                </span>
+                <input id="helpInput" type="text" class="form-control"
+                       placeholder="This helps us test vocal commands...">
+            </div>
+            <button id="start_button" onclick="speech.toogleOnOff()" style="margin-top: 15px;">
+                <img id="mic_img" src="img/mic.gif" alt="Microfone">
+            </button>
         </div>
     </div>
 
