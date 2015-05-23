@@ -435,7 +435,24 @@
         </div>
     </div>
 
-    <div id="details-bar" class="workspace-command-bar">
+    <div id="command-bar" class="workspace-command-bar">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"
+                        onclick="app.parseAndExecute(document.getElementById('helpInput').value)">
+                    Go!
+                </button>
+            </span>
+            <input id="helpInput" type="text" class="form-control"
+                   placeholder="This helps us test vocal commands...">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="button" id="start_button" onclick="speech.toogleOnOff()">Listen</button>
+            </span>
+        </div>
+
+    </div>
+
+    <!--<div id="details-bar" class="workspace-command-bar">
         DETAILS BAR
         <div class="col-lg-6">
             <div class="input-group">
@@ -452,7 +469,7 @@
                 <img id="mic_img" src="img/mic.gif" alt="Microfone">
             </button>
         </div>
-    </div>
+    </div>-->
 
     <!-- libs -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
