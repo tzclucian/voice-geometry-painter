@@ -179,6 +179,9 @@ form.white-board-title-input input {
 
 
 .workspace-command-bar{
+	position:fixed;
+	margin:0 5px;
+	bottom: 5px;
 
 }
 
