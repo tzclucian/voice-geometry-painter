@@ -178,17 +178,28 @@ form.white-board-title-input input {
 }
 
 
-.workspace-command-bar{
-	position:fixed;
-	margin:0 5px;
+.workspace-command-bar {
+	position: fixed;
+	margin: 0 5px;
 	bottom: 5px;
-
 }
 
-.workspace-command-bar .btn.go-btn {
-	border-radius: 4px 0 0 4px;
+	.workspace-command-bar .btn.go-btn {
+		border-radius: 4px 0 0 4px;
+	}
+
+	.workspace-command-bar .btn.listen-btn {
+		border-radius: 0 4px 4px 0;
+	}
+
+
+body {
+	height: 100%;
 }
 
-.workspace-command-bar .btn.listen-btn {
-	border-radius: 0 4px 4px 0;
+.canvas-container {
+	position: absolute;
+	top: 50px;
+	bottom: 43px;
+	width: 100%;
 }
