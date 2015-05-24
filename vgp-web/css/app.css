@@ -74,8 +74,8 @@ div.sidebar > ul {
 	}
 
 .sidebar.horizontal-expand ul li ul {
-	left: 100px;
-	top: 0px;
+	left: 99px;
+	top: 0;
 	padding: 0;
 	margin: 0;
 }
@@ -87,24 +87,34 @@ ul.horizontal li {
 
 	ul.horizontal li a {
 		font-size: 12px !important;
-		padding: 12px 12px 0 0;
+		padding: 0 !important;
 		float: left;
-		height: 40px;
+		height: 51px;
 	}
 
 ul.horizontal .tool-icon {
 	display: inline-block;
+	margin: 15px 14px 13px 14px;
 }
+
+	ul.horizontal .tool-icon i {
+		font-size: 23px;
+	}
 
 ul.horizontal .tool-options {
 	display: inline-block;
-	padding: 1px 5px;
-	border-right: 1px solid #ccc;
 }
 
 	ul.horizontal .tool-options span {
 		display: block;
+		padding: 2px 5px;
+		border-left: 1px solid #cccccc;
+		border-right: 1px solid #cccccc;
 	}
+
+		ul.horizontal .tool-options span:hover {
+			background: #eee;
+		}
 
 form.white-board-title-input input {
 	font-size: 12px !important;
@@ -116,9 +126,6 @@ form.white-board-title-input input {
 }
 
 /*=============================== CUSTOM LENGTH FOR MENU START ======================================*/
-.whiteboard-command-horizontal-menu-options {
-	/*width: 687px !important;*/
-}
 
 .basic-command-horizontal-menu-options {
 	width: 214px;
@@ -139,10 +146,9 @@ form.white-board-title-input input {
 .custom-shape-command-horizontal-menu-options {
 	width: 266px;
 }
-
+/*=============================== CUSTOM LENGTH FOR MENU START ======================================*/
 .horizontal-menu-container {
 	position: absolute;
-	background: yellow;
 	left: 0;
 	width: 100000px;
 	top: 0;
@@ -177,6 +183,11 @@ form.white-board-title-input input {
 	top: -4px;
 }
 
+	.navbar-right li a i {
+		color: #337ab7;
+	}
+
+
 
 .workspace-command-bar {
 	position: fixed;
@@ -202,4 +213,26 @@ body {
 	top: 50px;
 	bottom: 43px;
 	width: 100%;
+}
+
+div.horizontal-menu-container ul.whiteboard-command-horizontal-menu-options {
+	height: 53px !important;
+	box-shadow: none;
+	border-radius: 0 4px 4px 0;
+	background-color: #f5f5f5;
+	border-right: 0px;
+}
+
+.whiteboard-command-horizontal-menu-options li span:hover a,
+.whiteboard-command-horizontal-menu-options li a:hover {
+	background: #eee;
+}
+
+.whiteboard-command-horizontal-menu-options li a span i,
+.whiteboard-command-horizontal-menu-options li span span i {
+	color: #337ab7;
+}
+
+.menu-btn.active a{
+	color: #337ab7 !important;
 }

@@ -11,7 +11,9 @@ function AppViewModel() {
 
 			ClearBoard: ClearBoardCommand.prototype.HELP,
 			DeleteSelected: DeleteSelectedCommand.prototype.HELP,
-			Deselect: DeselectCommand.prototype.HELP,
+			DeselectElement: DeselectCommand.prototype.HELP,
+			DuplicateElement: "Duplicate Element",
+			SelectElement: "Select",
 
 			Point: PointCommand.prototype.HELP,
 			Line: LineCommand.prototype.HELP,
@@ -49,27 +51,24 @@ $(document).ready(function () {
 	});
 
 
-	console.log($('body').css('height'));
 
-	setTimeout(function () {
-		var app = new DrawingApplication();
-		app.setupDrawingContext('jxgbox');
-		app.activeDrawingContext = app.getContext('jxgbox');
-
-		app.setCommandParser(new CommandParser());
-		app.registerCommand(ClearBoardCommand);
-		app.registerCommand(PointCommand);
-		app.registerCommand(LineCommand);
-		app.registerCommand(DeselectCommand);
-		app.registerCommand(DeleteSelectedCommand);
-		app.registerCommand(SetWidthCommand);
-		app.registerCommand(SetColorCommand);
-
-		var speech = new SpeechApplication();
-		speech.setOutputBoxId(helpInput);
-		speech.init();
-	}, 100);
 
 });
 
 
+var app = new DrawingApplication();
+app.setupDrawingContext('jxgbox');
+app.activeDrawingContext = app.getContext('jxgbox');
+
+app.setCommandParser(new CommandParser());
+app.registerCommand(ClearBoardCommand);
+app.registerCommand(PointCommand);
+app.registerCommand(LineCommand);
+app.registerCommand(DeselectCommand);
+app.registerCommand(DeleteSelectedCommand);
+app.registerCommand(SetWidthCommand);
+app.registerCommand(SetColorCommand);
+
+var speech = new SpeechApplication();
+speech.setOutputBoxId(helpInput);
+speech.init();

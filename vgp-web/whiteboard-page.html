@@ -80,31 +80,62 @@
     <div class="sidebar horizontal-expand">
         <ul class="nav navbar-nav upper">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clipboard"></i></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-table"></i></a>
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal whiteboard-command-horizontal-menu-options" role="menu">
                         <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Clean Board
-                                </span>
-                            </a>
+                            <span class="voice-command"
+                                  data-content="Clear Board"
+                                  rel="popover" data-placement="top"
+                                  data-trigger="hover">
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()" tooltip="Clear Board">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-eraser"></i>
+                                    </span>
+                                </a>
+                            </span>
                             <span class="tool-options">
                                 <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ClearBoard}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
                                       data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <a href="#" onclick="">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Select Shape
-                                </span>
-                            </a>
+                            <span class="voice-command"
+                                  data-content="Select Shape"
+                                  rel="popover" data-placement="top"
+                                  data-trigger="hover">
+                                <a href="#" onclick="">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-crosshairs"></i>
+                                    </span>
+                                </a>
+                            </span>
+
+                            <span class="tool-options">
+                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+                                <span class="voice-command"
+                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SelectElement}'
+                                      rel="popover" data-placement="right" data-original-title="Voice Command"
+                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="voice-command"
+                                  data-content="Deselect Selected"
+                                  rel="popover" data-placement="top"
+                                  data-trigger="hover">
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                </a>
+                            </span>
+
+
                             <span class="tool-options">
                                 <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
@@ -115,44 +146,38 @@
                         </li>
 
                         <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Deselect Shape
-                                </span>
-                            </a>
+                            <span class="voice-command"
+                                  data-content="Duplicate Selected"
+                                  rel="popover" data-placement="top"
+                                  data-trigger="hover">
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-files-o"></i>
+                                    </span>
+                                </a>
+                            </span>
+
                             <span class="tool-options">
                                 <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DuplicateElement}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
                                       data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
 
                         <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Duplicate selected
-                                </span>
-                            </a>
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
 
-                        <li>
-                            <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                <span class="tool-icon">
-                                    <i class="fa fa-dropbox"></i>
-                                    Delete selected
-                                </span>
-                            </a>
+                            <span class="voice-command"
+                                  data-content="Delete Selected"
+                                  rel="popover" data-placement="top"
+                                  data-trigger="hover">
+                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
+                                    <span class="tool-icon">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </a>
+                            </span>
                             <span class="tool-options">
                                 <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
@@ -165,7 +190,7 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clipboard"></i>Basic</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clipboard"></i></a>
                 <ul class="share-options dropdown-menu horizontal basic-command-horizontal-menu-options" role="menu">
                     <li>
                         <a href="#" onclick="app.activeDrawingContext.drawPoint(3, 3)">
