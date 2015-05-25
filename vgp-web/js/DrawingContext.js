@@ -11,15 +11,11 @@ var DrawingContext = function(canvasId) {
 };
 
 DrawingContext.prototype.initBoard = function() {
-    this.board = JXG.JSXGraph.initBoard(this.canvasId, {
-        boundingbox: [-20, 10, 20, -10],
-        keepaspectratio: true,
-        axis:true
-    });
+    this.board = JXG.JSXGraph.initBoard(this.canvasId, {boundingbox: [-20, 10, 20, -10]});
 
     // Axes
-    //this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
-    //this.axisY = this.board.createElement('axis', [[0, 0], [0, 1]], {});
+    this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
+    this.axisY = this.board.createElement('axis', [[0, 0], [0, 1]], {});
 
     this.shapes = {};
 };

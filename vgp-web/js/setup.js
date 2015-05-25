@@ -6,7 +6,8 @@ function AppViewModel() {
 
 	this.config = {
 		vocalCommandHelpMessages: {
-			SetColor: SetColorCommand.prototype.HELP,
+			SetFillColor: SetFillColorCommand.prototype.HELP,
+			SetLineColor: SetLineColorCommand.prototype.HELP,
 			SetWidth: SetWidthCommand.prototype.HELP,
 
 			ClearBoard: ClearBoardCommand.prototype.HELP,
@@ -67,7 +68,8 @@ app.registerCommand(LineCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
 app.registerCommand(SetWidthCommand);
-app.registerCommand(SetColorCommand);
+app.registerCommand(SetLineColorCommand);
+app.registerCommand(SetFillColorCommand);
 
 var speech = new SpeechApplication();
 speech.setOutputBoxId(helpInput);
