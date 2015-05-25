@@ -22,7 +22,11 @@ function AppViewModel() {
 			Download: "Download",
 			SendToGmail: "Send to Gmail",
 			ShareOnDropbox: "Share On Dropbox",
-			none: "TO BE ADDED"
+			none: "TO BE ADDED",
+
+			RegularTriangle: "Regular Triangle",
+			EquilateralTriangle: "Equilateral Triangle",
+			RightTriangle: "Right Triangle",
 		}
 	};
 }

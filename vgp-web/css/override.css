@@ -24,8 +24,8 @@ body {
 	margin-left: 0;
 }
 
-.navbar{
-	margin-bottom:10px;
+.navbar {
+	margin-bottom: 10px;
 }
 
 
@@ -42,4 +42,5 @@ body {
 	padding: 5px 12px;
 }
 
-
+.popover {
+}

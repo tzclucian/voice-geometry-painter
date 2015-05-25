@@ -127,13 +127,9 @@ form.white-board-title-input input {
 
 /*=============================== CUSTOM LENGTH FOR MENU START ======================================*/
 
-.basic-command-horizontal-menu-options {
+/*.basic-command-horizontal-menu-options {
 	width: 214px;
-}
-
-.triangle-command-horizontal-menu-options {
-	width: 296px;
-}
+}*/
 
 .square-command-horizontal-menu-options {
 	width: 420px;
@@ -215,7 +211,8 @@ body {
 	width: 100%;
 }
 
-div.horizontal-menu-container ul.whiteboard-command-horizontal-menu-options {
+div.horizontal-menu-container ul {
+	min-width: 10px !important;
 	height: 53px !important;
 	box-shadow: none;
 	border-radius: 0 4px 4px 0;
@@ -223,16 +220,16 @@ div.horizontal-menu-container ul.whiteboard-command-horizontal-menu-options {
 	border-right: 0px;
 }
 
-.whiteboard-command-horizontal-menu-options li span:hover a,
-.whiteboard-command-horizontal-menu-options li a:hover {
+div.horizontal-menu-container li span:hover a,
+div.horizontal-menu-container li a:hover {
 	background: #eee;
 }
 
-.whiteboard-command-horizontal-menu-options li a span i,
-.whiteboard-command-horizontal-menu-options li span span i {
+div.horizontal-menu-container li a span i,
+div.horizontal-menu-container li span span i {
 	color: #337ab7;
 }
 
-.menu-btn.active a{
+.menu-btn.active a {
 	color: #337ab7 !important;
 }
