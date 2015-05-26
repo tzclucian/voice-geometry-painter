@@ -20,6 +20,10 @@ DrawingApplication.prototype.setCommandParser = function(commandParser) {
     this.commandParser = commandParser;
 };
 
+DrawingApplication.prototype.getCommandParser = function(commandParser) {
+    return this.commandParser;
+};
+
 DrawingApplication.prototype.registerCommand = function(commandPtr) {
     this.commandParser.registerCommand(commandPtr.prototype.REGEXP, commandPtr);
 };
