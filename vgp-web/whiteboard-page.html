@@ -41,7 +41,35 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
-                <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i></a>
+                    <ul class="share-options dropdown-menu" role="menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dropbox"></i> Dropbox <span class="pull-right voice-command"
+                                                                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnDropbox}'
+                                                                            rel="popover" data-placement="left" data-original-title="Voice Command"
+                                                                            data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-envelope-o"></i> Gmail<span class="pull-right voice-command"
+                                                                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SendToGmail}'
+                                                                            rel="popover" data-placement="left" data-original-title="Voice Command"
+                                                                            data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-download"></i> Download<span class="pull-right voice-command"
+                                                                             data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Download}'
+                                                                             rel="popover" data-placement="left" data-original-title="Voice Command"
+                                                                             data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-share-alt"></i></a>
@@ -83,7 +111,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Board Instruments"
-                          rel="popover" data-placement="right"
+                          rel="popover" data-placement="top"
                           data-trigger="hover">
                         <i class="fa fa-table"></i>
                     </span>
@@ -102,7 +130,6 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ClearBoard}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -122,7 +149,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SelectElement}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -144,7 +171,7 @@
 
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -165,7 +192,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DuplicateElement}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -186,7 +213,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -200,7 +227,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Basic Shapes"
-                          rel="popover" data-placement="right"
+                          rel="popover" data-placement="top"
                           data-trigger="hover">
                         <i class="fa fa-clipboard"></i>
                     </span>
@@ -219,7 +246,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Point}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -238,7 +265,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Line}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -252,7 +279,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Triangles"
-                          rel="popover" data-placement="right"
+                          rel="popover" data-placement="top"
                           data-trigger="hover">
                         <i class="fa fa-exclamation-triangle"></i>
                     </span>
@@ -271,7 +298,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RegularTriangle}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -291,7 +318,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.EquilateralTriangle}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -311,7 +338,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightTriangle}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -325,7 +352,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Quadrilaterals"
-                          rel="popover" data-placement="right"
+                          rel="popover" data-placement="top"
                           data-trigger="hover">
                         <i class="fa fa-square"></i>
                     </span>
@@ -346,7 +373,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Parallelogram}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -366,7 +393,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -387,7 +414,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Square}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -408,7 +435,6 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightQuadrilateral}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -422,7 +448,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Round Shapes"
-                          rel="popover" data-placement="right"
+                          rel="popover" data-placement="top"
                           data-trigger="hover">
                         <i class="fa fa-circle"></i>
                     </span>
@@ -443,7 +469,7 @@
                             </span>
 
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Circle}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
@@ -462,7 +488,7 @@
                                 </a>
                             </span>
                             <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
+
                                 <span class="voice-command"
                                       data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Elipse}'
                                       rel="popover" data-placement="right" data-original-title="Voice Command"
