@@ -16,6 +16,7 @@ body {
 	width: 100px;
 	padding: 0;
 	overflow: visible;
+	bottom: 44px;
 }
 
 
@@ -41,4 +42,3 @@ body {
 .workspace-command-bar .btn {
 	padding: 5px 12px;
 }
-
