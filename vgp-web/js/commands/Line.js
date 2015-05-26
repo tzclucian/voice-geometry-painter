@@ -21,7 +21,7 @@ LineCommand.prototype.execute = function(context) {
 
 LineCommand.prototype.NAME = "Line";
 
-LineCommand.prototype.REGEXP = /line\s([a-zA-Z])\s(-?\d)\s(-?\d)\s([a-zA-Z])\s(-?\d)\s(-?\d)/i;
+LineCommand.prototype.REGEXP = /line\s([a-zA-Z])\s(-?\d+)\s(-?\d+)\s([a-zA-Z])\s(-?\d+)\s(-?\d+)/i;
 
 // Command's help
 LineCommand.prototype.HELP = "line A -1 2 B 3 -4";
