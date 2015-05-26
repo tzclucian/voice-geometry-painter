@@ -78,11 +78,13 @@ div.sidebar > ul {
 	top: 0;
 	padding: 0;
 	margin: 0;
+	border-right: 0;
 }
 
 ul.horizontal li {
 	float: left;
 	width: auto;
+	border-right: 1px solid #ccc;
 }
 
 	ul.horizontal li a {
@@ -103,13 +105,12 @@ ul.horizontal .tool-icon {
 
 ul.horizontal .tool-options {
 	display: inline-block;
+	margin-top: 14px;
 }
 
 	ul.horizontal .tool-options span {
 		display: block;
 		padding: 2px 5px;
-		border-left: 1px solid #cccccc;
-		border-right: 1px solid #cccccc;
 	}
 
 		ul.horizontal .tool-options span:hover {
@@ -217,7 +218,6 @@ div.horizontal-menu-container ul {
 	box-shadow: none;
 	border-radius: 0 4px 4px 0;
 	background-color: #f5f5f5;
-	border-right: 0px;
 }
 
 div.horizontal-menu-container li span:hover a,
@@ -232,4 +232,22 @@ div.horizontal-menu-container li span span i {
 
 .menu-btn.active a {
 	color: #337ab7 !important;
+}
+
+.sidebar .lower li a {
+	padding: 14px 13px;
+}
+
+	.sidebar .lower li a .fa-undo,
+	.sidebar .lower li a .fa-repeat {
+		font-size: 24px;
+	}
+
+.navbar-nav .menu-btn.active a i.fa.fa-caret-up {
+	display: inline-block;
+}
+
+.navbar-nav .menu-btn.active a i.fa.fa-caret-down,
+.navbar-nav .menu-btn a i.fa.fa-caret-up {
+	display: none;
 }
