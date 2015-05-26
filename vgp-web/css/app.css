@@ -233,3 +233,12 @@ div.horizontal-menu-container li span span i {
 .menu-btn.active a {
 	color: #337ab7 !important;
 }
+
+.sidebar .lower li a {
+	padding: 14px 13px;
+}
+
+	.sidebar .lower li a .fa-undo,
+	.sidebar .lower li a .fa-repeat {
+		font-size: 24px;
+	}

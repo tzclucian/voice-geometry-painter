@@ -23,7 +23,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
     <nav class="navbar navbar-default whiteboard-header-navbar">
         <div class="container-fluid">
@@ -435,83 +434,40 @@
                     </ul>
                 </div>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <i class="fa fa-cubes"></i>
-                </a>
-                <div class="horizontal-menu-container">
-                    <ul class="share-options dropdown-menu horizontal" role="menu">
-                        <li>
-                            <span class="voice-command"
-                                  data-content="Custom Circle"
-                                  rel="popover" data-placement="top"
-                                  data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-cubes"></i>
-                                    </span>
-                                </a>
-                            </span>
-
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.CustomCircle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="voice-command"
-                                  data-content="Custom Elipse"
-                                  rel="popover" data-placement="top"
-                                  data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-cubes"></i>
-                                    </span>
-                                </a>
-                            </span>
-
-                            <span class="tool-options">
-                                <span onclick="alert('Clicked on the Eye Icon')"><i class="fa fa-eye"></i></span>
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.CustomElipse}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </li>
         </ul>
         <ul class="nav navbar-nav lower">
             <li>
                 <a href="#" onclick="">
-                    Undo
-                    <!--<span class="voice-command"
-                    data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                    rel="popover" data-placement="right" data-original-title="Voice Command"
-                    data-trigger="hover"><i class="fa fa-volume-up"></i></span>-->
-
+                    <span class="voice-command"
+                          data-content="Undo"
+                          rel="popover" data-placement="top"
+                          data-trigger="hover">
+                        <span class="tool-icon">
+                            <i class="fa fa-undo"></i>
+                        </span>
+                    </span>
                 </a>
             </li>
             <li>
                 <a href="#" onclick="">
-                    Redo
-                    <!--<span class="voice-command"
-                    data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                    rel="popover" data-placement="right" data-original-title="Voice Command"
-                    data-trigger="hover"><i class="fa fa-volume-up"></i></span>-->
+                    <span class="voice-command"
+                          data-content="Undo"
+                          rel="popover" data-placement="top"
+                          data-trigger="hover">
+                        <span class="tool-icon">
+                            <i class="fa fa-repeat"></i>
+                        </span>
+
+                    </span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     Fill Color
-                    <!--<span class="voice-command"
-                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                    <span class="voice-command"
+                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.FillColor}'
                           rel="popover" data-placement="right" data-original-title="Voice Command"
-                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>-->
+                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                     <input type="color" id="colorpickerFill" class="form-control color-picker" value="#ff0000">
 
                 </a>
@@ -519,10 +475,10 @@
             <li>
                 <a href="#">
                     Line Color
-                    <!--<span class="voice-command"
-                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
+                    <span class="voice-command"
+                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineColor}'
                           rel="popover" data-placement="right" data-original-title="Voice Command"
-                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>-->
+                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
 
                     <input type="color" id="colorpickerLine" class="form-control color-picker" value="#ff0000">
                 </a>
@@ -530,10 +486,10 @@
             <li>
                 <a href="#">
                     Line Width
-                    <!--<span class="voice-command"
-                    data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                    rel="popover" data-placement="right" data-original-title="Voice Command"
-                    data-trigger="hover"><i class="fa fa-volume-up"></i></span>-->
+                    <span class="voice-command"
+                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineWidth}'
+                          rel="popover" data-placement="right" data-original-title="Voice Command"
+                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
 
                     <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12" min="1">
 

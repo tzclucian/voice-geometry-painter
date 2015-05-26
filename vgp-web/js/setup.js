@@ -37,6 +37,10 @@ function AppViewModel() {
 			Elipse: "Elipse",
 			CustomCircle: "CustomCircle",
 			CustomElipse: "Custom Elipse",
+
+			LineWidth: "Line Width",
+			LineColor: "Line Color",
+			FillColor: "Fill Color",
 		}
 	};
 }
