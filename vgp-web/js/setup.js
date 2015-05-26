@@ -95,4 +95,5 @@ app.registerCommand(SetFillColorCommand);
 
 var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
+speech.setMicButtonId(start_button);
 speech.init();

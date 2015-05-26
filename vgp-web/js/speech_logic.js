@@ -7,7 +7,7 @@ var SpeechApplication = function(commandParser) {
     this.micNormalSrc = '';
     this.micAnimatedSrc = '';
     this.micStoppedSrc = '';
-    this.micImg = null;
+    this.micButton = null;
     this.outputBox = null;
     this.currentCommand = '';
     this.cmdParser = commandParser;
@@ -27,12 +27,12 @@ SpeechApplication.prototype.toogleOnOff = function() {
     this.speech.start();
 };
 
-SpeechApplication.prototype.setMicImgId = function(id) {
-    this.micImg = id;
+SpeechApplication.prototype.setMicButtonId = function(id) {
+    this.micButton = id;
 };
 
-SpeechApplication.prototype.ClearMicImgId = function() {
-    this.micImg = null;
+SpeechApplication.prototype.ClearMicButtonId = function() {
+    this.micButton = null;
 };
 
 SpeechApplication.prototype.setOutputBoxId = function(id) {
@@ -50,15 +50,15 @@ SpeechApplication.prototype.setMicImageSources = function(normal, animated, stop
 };
 
 SpeechApplication.prototype.onStart = function() {
-    if (this.micImg != null) {
-        this.micImg.src = this.micAnimatedSrc;
+    if (this.micButton != null) {
+        this.micButton.innerHTML = "Listening";
     }
     this.cmdParserStream.reset();
 };
 
 SpeechApplication.prototype.onEnd = function() {
-    if (this.micImg != null) {
-        this.micImg.src = this.micNormalSrc;
+    if (this.micButton != null) {
+        this.micButton.innerHTML = "Listen";
     }
     if (this.outputBox != null) {
         this.outputBox.value = ' ';
@@ -80,14 +80,14 @@ SpeechApplication.prototype.onResult = function(phrase) {
 
 SpeechApplication.prototype.onError = function(event) {
     if (event.error == 'no-speech') {
-        if (this.micImg != null) {
-            this.micImg.src = this.micStoppedSrc;
+        if (this.micButton != null) {
+            this.micButton.innerHTML = "Listen";
         }
         alert('No speech was detected. You may need to adjust your microphone settings.');
     }
     if (event.error == 'audio-capture') {
-        if (this.micImg != null) {
-            this.micImg.src = this.micStoppedSrc;
+        if (this.micButton != null) {
+            this.micButton.innerHTML = "Listen";
         }
         alert('No microphone was found. Ensure that a microphone is installed and that' +
               'microphone settings are configured correctly.');
