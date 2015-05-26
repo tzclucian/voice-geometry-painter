@@ -93,6 +93,6 @@ app.registerCommand(SetWidthCommand);
 app.registerCommand(SetLineColorCommand);
 app.registerCommand(SetFillColorCommand);
 
-var speech = new SpeechApplication();
+var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
 speech.init();

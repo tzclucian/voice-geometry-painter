@@ -2,13 +2,16 @@
  * Created by Marian on 5/12/2015.
  */
 
-var SpeechApplication = function() {
+var SpeechApplication = function(commandParser) {
     this.speech = new Speech();
     this.micNormalSrc = '';
     this.micAnimatedSrc = '';
     this.micStoppedSrc = '';
     this.micImg = null;
     this.outputBox = null;
+    this.currentCommand = '';
+    this.cmdParser = commandParser;
+    this.cmdParserStream = new CommandParserStream(this.cmdParser);
 };
 
 SpeechApplication.prototype.init = function(){
@@ -50,17 +53,28 @@ SpeechApplication.prototype.onStart = function() {
     if (this.micImg != null) {
         this.micImg.src = this.micAnimatedSrc;
     }
+    this.cmdParserStream.reset();
 };
 
 SpeechApplication.prototype.onEnd = function() {
     if (this.micImg != null) {
         this.micImg.src = this.micNormalSrc;
     }
+    if (this.outputBox != null) {
+        this.outputBox.value = ' ';
+    }
+    this.currentCommand = '';
+    this.cmdParserStream.reset();
 };
 
 SpeechApplication.prototype.onResult = function(phrase) {
+    var cmdFinished = this.cmdParserStream.process(phrase);
     if (this.outputBox != null) {
-        this.outputBox.value = phrase;
+        this.outputBox.value = this.cmdParserStream.getCommand();
+    }
+    if (cmdFinished) {
+        app.parseAndExecute(this.cmdParserStream.getCommand());
+        this.cmdParserStream.reset();
     }
 };
 
