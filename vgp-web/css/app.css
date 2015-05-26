@@ -242,3 +242,12 @@ div.horizontal-menu-container li span span i {
 	.sidebar .lower li a .fa-repeat {
 		font-size: 24px;
 	}
+
+.navbar-nav .menu-btn.active a i.fa.fa-caret-up {
+	display: inline-block;
+}
+
+.navbar-nav .menu-btn.active a i.fa.fa-caret-down,
+.navbar-nav .menu-btn a i.fa.fa-caret-up {
+	display: none;
+}
