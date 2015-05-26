@@ -27,6 +27,16 @@ function AppViewModel() {
 			RegularTriangle: "Regular Triangle",
 			EquilateralTriangle: "Equilateral Triangle",
 			RightTriangle: "Right Triangle",
+
+			Parallelogram: "Parallelogram",
+			Rectangle: "Rectangle",
+			Square: "Square",
+			RightQuadrilateral: "Right Quadrilateral",
+
+			Circle: "Circle",
+			Elipse: "Elipse",
+			CustomCircle: "CustomCircle",
+			CustomElipse: "Custom Elipse",
 		}
 	};
 }
