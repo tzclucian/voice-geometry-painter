@@ -8,6 +8,9 @@ var DrawingContext = function(canvasId) {
 
     this.selectedShape = null;
     this.selectedColor = 'cyan';
+
+    this.executedCommands = [];
+    this.commandIndex = 0;
 };
 
 DrawingContext.prototype.initBoard = function() {
@@ -18,11 +21,37 @@ DrawingContext.prototype.initBoard = function() {
     this.axisY = this.board.createElement('axis', [[0, 0], [0, 1]], {});
 
     this.shapes = {};
+    this.selectedShape = null;
 };
 
 DrawingContext.prototype.resetBoard = function() {
     JXG.JSXGraph.freeBoard(this.board);
     this.initBoard();
+};
+
+DrawingContext.prototype.repaint = function() {
+    for (var i = 0; i < this.commandIndex; i++) {
+        this.executedCommands[i].execute(this);
+    }
+};
+
+DrawingContext.prototype.undo = function() {
+    if (this.commandIndex <= 0) return;
+    this.resetBoard();
+    this.commandIndex--;
+    this.repaint();
+};
+
+DrawingContext.prototype.redo = function() {
+    if (this.commandIndex >= this.executedCommands.length) return;
+    this.resetBoard();
+    this.commandIndex++;
+    this.repaint();
+};
+
+DrawingContext.prototype.addCommand = function(command) {
+    this.executedCommands.splice(this.commandIndex + 1, 0, command);
+    this.commandIndex++;
 };
 
 DrawingContext.prototype.deleteShape = function() {
@@ -192,7 +221,7 @@ DrawingContext.prototype.drawTriangle = function(A, Ax, Ay, B, Bx, By, C, Cx, Cy
     });
 
     var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
-        borders : {
+        borders: {
             strokeColor: lineColor,
             strokeWidth: lineWidth
         },
@@ -220,7 +249,7 @@ DrawingContext.prototype.drawIsoscelesTriangle = function() {
  * @param C
  * @param side
  */
-DrawingContext.prototype.drawEquilateralTriangle = function (A, Ax, Ay, B, C, side) {
+DrawingContext.prototype.drawEquilateralTriangle = function(A, Ax, Ay, B, C, side) {
     var Cx = Ax + side * Math.cos(Math.PI / 3);
     var Cy = Ay + side * Math.sin(Math.PI / 3);
 
@@ -271,7 +300,7 @@ DrawingContext.prototype.drawQuadrilateral = function(A, Ax, Ay, B, Bx, By, C, C
     });
 
     var quadri = this.board.createElement('polygon', [pointA, pointB, pointC, pointD], {
-        borders : {
+        borders: {
             strokeColor: lineColor,
             strokeWidth: lineWidth
         },
@@ -339,7 +368,7 @@ DrawingContext.prototype.drawRectangle = function(A, Ax, Ay, B, C, D, smallSide,
  * @param D
  * @param side
  */
-DrawingContext.prototype.drawSquare = function (A, Ax, Ay, B, C, D, side) {
+DrawingContext.prototype.drawSquare = function(A, Ax, Ay, B, C, D, side) {
     this.drawRectangle(A, Ax, Ay, B, C, D, side, side);
 };
 

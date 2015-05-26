@@ -76,6 +76,10 @@ app.setupDrawingContext('jxgbox');
 app.activeDrawingContext = app.getContext('jxgbox');
 
 app.setCommandParser(new CommandParser());
+
+app.registerCommand(UndoCommand);
+app.registerCommand(RedoCommand);
+
 app.registerCommand(ClearBoardCommand);
 app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);

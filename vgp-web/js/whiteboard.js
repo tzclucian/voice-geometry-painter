@@ -29,6 +29,10 @@ DrawingApplication.prototype.parseAndExecute = function(commandString) {
 
     if (command != null) {
         command.execute(this.activeDrawingContext);
+        if (command instanceof UndoCommand == false &&
+            command instanceof RedoCommand == false) {
+            this.activeDrawingContext.addCommand(command);
+        }
     }
     else {
         console.log("Unknown command: " + commandString);
