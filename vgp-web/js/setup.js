@@ -90,6 +90,7 @@ app.registerCommand(LineCommand);
 app.registerCommand(TriangleCommand);
 app.registerCommand(EquilateralTriangleCommand);
 app.registerCommand(RectangleCommand);
+app.registerCommand(SquareCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
 app.registerCommand(SetWidthCommand);
