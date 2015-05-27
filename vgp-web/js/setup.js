@@ -87,6 +87,7 @@ app.registerCommand(RedoCommand);
 app.registerCommand(ClearBoardCommand);
 app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);
+app.registerCommand(TriangleCommand);
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteSelectedCommand);
 app.registerCommand(SetWidthCommand);
