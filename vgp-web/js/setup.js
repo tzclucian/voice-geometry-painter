@@ -3,6 +3,7 @@ function AppViewModel() {
 	$('span.voice-command').popover();
 
 	this.commands = [];
+	var volumeUpIcon = '<i class="fa fa-volume-up"></i> ';
 
 	this.config = {
 		vocalCommandHelpMessages: {
@@ -10,7 +11,44 @@ function AppViewModel() {
 			SetLineColor: SetLineColorCommand.prototype.HELP,
 			SetWidth: SetWidthCommand.prototype.HELP,
 
-			ClearBoard: ClearBoardCommand.prototype.HELP,
+			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
+			DeleteSelected: DeleteSelectedCommand.prototype.HELP,
+			DeselectElement: DeselectCommand.prototype.HELP,
+			DuplicateElement: "Duplicate Element",
+			SelectElement: "Select",
+
+			Point: PointCommand.prototype.HELP,
+			Line: LineCommand.prototype.HELP,
+
+			Download: "Download",
+			SendToGmail: "Send to Gmail",
+			ShareOnDropbox: "Share On Dropbox",
+			none: "TO BE ADDED",
+
+			RegularTriangle: "Regular Triangle",
+			EquilateralTriangle: "Equilateral Triangle",
+			RightTriangle: "Right Triangle",
+
+			Parallelogram: "Parallelogram",
+			Rectangle: "Rectangle",
+			Square: "Square",
+			RightQuadrilateral: "Right Quadrilateral",
+
+			Circle: "Circle",
+			Elipse: "Elipse",
+			CustomCircle: "CustomCircle",
+			CustomElipse: "Custom Elipse",
+
+			LineWidth: "Line Width",
+			LineColor: "Line Color",
+			FillColor: "Fill Color",
+		},
+		vocalCommandTitleMessage: {
+			SetFillColor: SetFillColorCommand.prototype.HELP,
+			SetLineColor: SetLineColorCommand.prototype.HELP,
+			SetWidth: SetWidthCommand.prototype.HELP,
+
+			ClearBoard: 'Clear Board Command',
 			DeleteSelected: DeleteSelectedCommand.prototype.HELP,
 			DeselectElement: DeselectCommand.prototype.HELP,
 			DuplicateElement: "Duplicate Element",
@@ -42,6 +80,7 @@ function AppViewModel() {
 			LineColor: "Line Color",
 			FillColor: "Fill Color",
 		}
+
 	};
 }
 

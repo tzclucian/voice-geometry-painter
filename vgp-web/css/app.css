@@ -85,13 +85,17 @@ ul.horizontal li {
 	float: left;
 	width: auto;
 	border-right: 1px solid #ccc;
+	height: 52px;
 }
+
+	ul.horizontal li:hover {
+		background: #eee;
+	}
 
 	ul.horizontal li a {
 		font-size: 12px !important;
 		padding: 0 !important;
 		float: left;
-		height: 51px;
 	}
 
 ul.horizontal .tool-icon {

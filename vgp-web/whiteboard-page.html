@@ -107,7 +107,6 @@
     <div class="sidebar horizontal-expand">
         <ul class="nav navbar-nav upper">
             <li class="dropdown">
-
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="voice-command"
                           data-content="Board Instruments"
@@ -119,105 +118,58 @@
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal " role="menu">
                         <li>
-                            <span class="voice-command"
-                                  data-content="Clear Board"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ClearBoard, "data-original-title" :  config.vocalCommandTitleMessage.ClearBoard}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.resetBoard()" tooltip="Clear Board">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-eraser"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.resetBoard()">
+                                    <i class="fa fa-eraser"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ClearBoard}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Select Shape"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SelectElement, "data-original-title" :  config.vocalCommandTitleMessage.SelectElement}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-crosshairs"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-crosshairs"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SelectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
-
                         <li>
-                            <span class="voice-command"
-                                  data-content="Deselect Selected"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement, "data-original-title" :  config.vocalCommandTitleMessage.DeselectElement}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-minus"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.resetBoard()">
+                                    <i class="fa fa-minus"></i>
                                 </a>
-                            </span>
-
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
-
                         <li>
-                            <span class="voice-command"
-                                  data-content="Duplicate Selected"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DuplicateElement, "data-original-title" :  config.vocalCommandTitleMessage.DuplicateElement}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-files-o"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-files-o"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DuplicateElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
-
                         <li>
-
-                            <span class="voice-command"
-                                  data-content="Delete Selected"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement, "data-original-title" :  config.vocalCommandTitleMessage.DeselectElement}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.resetBoard()">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-times"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-times"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                     </ul>
@@ -235,42 +187,27 @@
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal" role="menu">
                         <li>
-                            <span class="voice-command"
-                                  data-content="Draw Point"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Point, "data-original-title" :  config.vocalCommandTitleMessage.Point}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.drawPoint(3, 3)">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-dot-circle-o"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawPoint(3, 3)">
+                                    <i class="fa fa-dot-circle-o"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Point}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Draw Line Segment"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Line, "data-original-title" :  config.vocalCommandTitleMessage.Line}'
                                   data-trigger="hover">
-                                <a href="#" onclick="app.activeDrawingContext.drawLineSegment('A', -1, 1,'B', 3, 2)">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-minus"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawLineSegment('A', -1, 1,'B', 3, 2)">
+                                    <i class="fa fa-minus"></i>
                                 </a>
                             </span>
-                            <span class="tool-options">
 
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Line}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </span>
                         </li>
                     </ul>
                 </div>
@@ -287,62 +224,36 @@
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal" role="menu">
                         <li>
-                            <span class="voice-command"
-                                  data-content="Regular Triangle"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RegularTriangle, "data-original-title" :  config.vocalCommandTitleMessage.RegularTriangle}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-exclamation-triangle"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RegularTriangle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Equilateral Triangle"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.EquilateralTriangle, "data-original-title" :  config.vocalCommandTitleMessage.EquilateralTriangle}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-exclamation-triangle"></i>
-
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-exclamation-triangle"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.EquilateralTriangle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Right Triangle"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightTriangle, "data-original-title" :  config.vocalCommandTitleMessage.RightTriangle}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-exclamation-triangle"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightTriangle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                     </ul>
@@ -361,84 +272,47 @@
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal" role="menu">
                         <li>
-                            <span class="voice-command"
-                                  data-content="Parallelogram"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Parallelogram, "data-original-title" :  config.vocalCommandTitleMessage.Parallelogram}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-square"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-square"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Parallelogram}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Rectangle"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle, "data-original-title" :  config.vocalCommandTitleMessage.Rectangle}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-square"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-square"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Square"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Square, "data-original-title" :  config.vocalCommandTitleMessage.Square}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-square"></i>
-
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-square"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Square}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Right quadrilateral"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightQuadrilateral, "data-original-title" :  config.vocalCommandTitleMessage.RightQuadrilateral}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-square"></i>
-
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-square"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightQuadrilateral}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                     </ul>
@@ -457,42 +331,25 @@
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal " role="menu">
                         <li>
-                            <span class="voice-command"
-                                  data-content="Circle"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Circle, "data-original-title" :  config.vocalCommandTitleMessage.Circle}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-circle"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-circle"></i>
                                 </a>
-                            </span>
-
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Circle}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                         <li>
-                            <span class="voice-command"
-                                  data-content="Elipse"
-                                  rel="popover" data-placement="top"
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Elipse, "data-original-title" :  config.vocalCommandTitleMessage.Elipse}'
                                   data-trigger="hover">
-                                <a href="#" onclick="">
-                                    <span class="tool-icon">
-                                        <i class="fa fa-circle"></i>
-                                    </span>
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa fa-circle"></i>
                                 </a>
-                            </span>
-                            <span class="tool-options">
-
-                                <span class="voice-command"
-                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Elipse}'
-                                      rel="popover" data-placement="right" data-original-title="Voice Command"
-                                      data-trigger="hover"><i class="fa fa-volume-up"></i></span>
                             </span>
                         </li>
                     </ul>
@@ -621,7 +478,6 @@
     <script type="text/javascript" src="js/commands/Undo.js"></script>
     <script type="text/javascript" src="js/commands/Redo.js"></script>
     <!-- End of commands -->
-
     <!-- Speech -->
     <script type='text/javascript' src='js/speech/Speech.js'></script>
     <script type='text/javascript' src='js/speech/CommandParserStream.js'></script>
