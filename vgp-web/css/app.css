@@ -13,7 +13,7 @@
 
 .whiteboard-header {
 	margin-left: 185px;
-	margin-right: 210px;
+	margin-right: 315px;
 }
 
 	.whiteboard-header h1 {
@@ -177,7 +177,7 @@ form.white-board-title-input input {
 
 
 .navbar-right {
-	width: 210px;
+	width: 315px;
 	display: inline-block;
 	position: absolute;
 	right: 14px;
@@ -254,4 +254,22 @@ div.horizontal-menu-container li span span i {
 .navbar-nav .menu-btn.active a i.fa.fa-caret-down,
 .navbar-nav .menu-btn a i.fa.fa-caret-up {
 	display: none;
+}
+
+
+.navbar-right li span.undo-command,
+.navbar-right li span.redo-command {
+	display: inline-block;
+	padding: 15px;
+}
+
+.navbar-nav.lower li span.fill-color-command,
+.navbar-nav.lower li span.line-color-command,
+.navbar-nav.lower li span.line-width-command {
+	display: inline-block;
+	padding: 8px;
+}
+
+span.line-width-command input {
+	text-align: center;
 }

@@ -42,6 +42,8 @@ function AppViewModel() {
 			LineWidth: "Line Width",
 			LineColor: "Line Color",
 			FillColor: "Fill Color",
+			Undo: "Undo",
+			Redo: "Redo",
 		},
 		vocalCommandTitleMessage: {
 			SetFillColor: SetFillColorCommand.prototype.HELP,
@@ -79,6 +81,8 @@ function AppViewModel() {
 			LineWidth: "Line Width",
 			LineColor: "Line Color",
 			FillColor: "Fill Color",
+			Undo: "Undo",
+			Redo: "Redo",
 		}
 
 	};

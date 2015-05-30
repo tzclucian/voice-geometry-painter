@@ -37,9 +37,34 @@
                 </li>
             </ul>
             <div class="whiteboard-header">
+                <!--<i class="fa fa-pencil"></i>-->
                 <h1 class="edit" id="div_1">Whiteboard</h1>
             </div>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <span class="voice-command clearfix undo-command"
+                          rel="popover" data-placement="bottom"
+                          data-html="true"
+                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Undo, "data-original-title" :  config.vocalCommandTitleMessage.Undo}'
+                          data-trigger="hover">
+                        <a href="#" class="tool-icon" onclick="app.activeDrawingContext.undo()">
+                            <i class="fa fa-undo"></i>
+                        </a>
+                    </span>
+                </li>
+                <li>
+                    <span class="voice-command clearfix redo-command"
+                          rel="popover" data-placement="bottom"
+                          data-html="true"
+                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Redo, "data-original-title" :  config.vocalCommandTitleMessage.Redo}'
+                          data-trigger="hover">
+                        <a href="#" class="tool-icon" onclick="app.activeDrawingContext.redo()">
+                            <i class="fa fa-repeat"></i>
+                        </a>
+                    </span>
+                </li>
+
+
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i></a>
@@ -358,63 +383,41 @@
         </ul>
         <ul class="nav navbar-nav lower">
             <li>
-                <a href="#" onclick="app.activeDrawingContext.undo()">
-                    <span class="voice-command"
-                          data-content="Undo"
-                          rel="popover" data-placement="top"
-                          data-trigger="hover">
-                        <span class="tool-icon">
-                            <i class="fa fa-undo"></i>
-                        </span>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="app.activeDrawingContext.redo()">
-                    <span class="voice-command"
-                          data-content="Undo"
-                          rel="popover" data-placement="top"
-                          data-trigger="hover">
-                        <span class="tool-icon">
-                            <i class="fa fa-repeat"></i>
-                        </span>
-
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Fill Color
-                    <span class="voice-command"
-                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.FillColor}'
-                          rel="popover" data-placement="right" data-original-title="Voice Command"
-                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                <span class="voice-command clearfix fill-color-command"
+                      rel="popover" data-placement="right"
+                      data-html="true"
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.FillColor, "data-original-title" :  config.vocalCommandTitleMessage.FillColor}'
+                      data-trigger="hover">
+                    <a href="#" class="tool-icon" onclick="">
+                        Fill Color
+                    </a>
                     <input type="color" id="colorpickerFill" class="form-control color-picker" value="#ff0000">
-
-                </a>
+                </span>
             </li>
             <li>
-                <a href="#">
-                    Line Color
-                    <span class="voice-command"
-                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineColor}'
-                          rel="popover" data-placement="right" data-original-title="Voice Command"
-                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-
+                <span class="voice-command clearfix line-color-command"
+                      rel="popover" data-placement="right"
+                      data-html="true"
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineColor, "data-original-title" :  config.vocalCommandTitleMessage.LineColor}'
+                      data-trigger="hover">
+                    <a href="#" class="tool-icon" onclick="">
+                        Line Color
+                    </a>
                     <input type="color" id="colorpickerLine" class="form-control color-picker" value="#ff0000">
-                </a>
+                </span>
+
             </li>
             <li>
-                <a href="#">
-                    Line Width
-                    <span class="voice-command"
-                          data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineWidth}'
-                          rel="popover" data-placement="right" data-original-title="Voice Command"
-                          data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-
+                <span class="voice-command clearfix line-width-command"
+                      rel="popover" data-placement="right"
+                      data-html="true"
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineWidth, "data-original-title" :  config.vocalCommandTitleMessage.LineWidth}'
+                      data-trigger="hover">
+                    <a href="#" class="tool-icon" onclick="">
+                        Line Width
+                    </a>
                     <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12" min="1">
-
-                </a>
+                </span>
             </li>
         </ul>
     </div>
@@ -422,15 +425,6 @@
     <div class="canvas-container">
         <div class="row container-fluid" id="jxgbox"></div>
     </div>
-    <!--<div id="jxgbox" class="jxgbox"></div>-->
-    <!--<div class="workspace">
-        <div id="workspace">
-            <div id="canvas">
-
-            </div>
-        </div>
-    </div>-->
-
     <div id="command-bar" class="workspace-command-bar">
         <div class="input-group">
             <span class="input-group-addon">
