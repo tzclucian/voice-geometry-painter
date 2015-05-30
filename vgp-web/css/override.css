@@ -42,3 +42,7 @@ body {
 .workspace-command-bar .btn {
 	padding: 5px 12px;
 }
+
+.popover {
+	width: 100%;
+}
