@@ -25,14 +25,13 @@ function AppViewModel() {
 			ShareOnDropbox: "Share On Dropbox",
 			none: "TO BE ADDED",
 
-			RegularTriangle: "Regular Triangle",
+			IsoscelesTriangle: "Isosceles Triangle",
 			EquilateralTriangle: "Equilateral Triangle",
 			RightTriangle: "Right Triangle",
 
 			Parallelogram: "Parallelogram",
 			Rectangle: "Rectangle",
 			Square: "Square",
-			RightQuadrilateral: "Right Quadrilateral",
 
 			Circle: "Circle",
 			Elipse: "Elipse",
@@ -129,10 +128,9 @@ function AppViewModel() {
 		fileName: ko.observable('Image'),
 		shareOnDropbox: function (type) {
 			var fileExtension = type === 'png' ? '.png' : '.svg';
-			var imageStringData = app.getCanvasData(canvasId);
-			console.log(imageStringData);
-			var imageData = _base64ToArrayBuffer(imageStringData);
 
+			var imageStringData = app.getCanvasData(canvasId);
+			var imageData = _base64ToArrayBuffer(imageStringData);
 			var fileName = ko.utils.unwrapObservable(this.fileName) + fileExtension;
 
 			client.writeFile(fileName, imageData, function (error, stat) {
@@ -207,34 +205,11 @@ speech.init();
 
 var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
 
-function doHelloWorld() {
-	client.writeFile('hello.txt', 'Hello, World!', function (error) {
-		if (error) {
-			alert('Error: ' + error);
-		} else {
-			alert('File written successfully!');
-		}
-	});
-}
-
-// Try to complete OAuth flow.
 client.authenticate({ interactive: false }, function (error, client) {
 	if (error) {
 		alert('Error: ' + error);
 	}
 });
-
-function shareOnDropbox() {
-	client.authenticate(function (error, client) {
-		if (error) {
-			alert('Error: ' + error);
-		} else {
-			doHelloWorld();
-		}
-	});
-};
-
-
 
 
 function _base64ToArrayBuffer(base64) {
