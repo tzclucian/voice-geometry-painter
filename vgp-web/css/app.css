@@ -278,3 +278,12 @@ span.line-width-command input {
 ul.settings-list li {
 	list-style: none;
 }
+
+
+.download-filename {
+	font-weight: normal;
+}
+
+.download-settings-content {
+	width: 100%;
+}

@@ -109,6 +109,16 @@ function AppViewModel() {
 			value: true
 		},
 	]);
+
+	this.downloadSettings = ko.observable({
+		fileName: ko.observable('Image'),
+		downloadAsPNG: function () {
+			app.downloadAsPNG(canvasId, ko.utils.unwrapObservable(this.fileName));
+		},
+		downloadAsSVG: function () {
+
+		},
+	});
 }
 
 ko.applyBindings(new AppViewModel());
@@ -140,10 +150,10 @@ $(document).ready(function () {
 
 });
 
-
+var canvasId = 'jxgbox';
 var app = new DrawingApplication();
-app.setupDrawingContext('jxgbox');
-app.activeDrawingContext = app.getContext('jxgbox');
+app.setupDrawingContext(canvasId);
+app.activeDrawingContext = app.getContext(canvasId);
 
 app.setCommandParser(new CommandParser());
 

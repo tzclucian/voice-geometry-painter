@@ -2,131 +2,133 @@
  * Created by Lucian Tuca on 11/05/15.
  */
 
-var DrawingContext = function(canvasId) {
-    this.canvasId = canvasId;
-    this.initBoard();
+var DrawingContext = function (canvasId) {
+	this.canvasId = canvasId;
+	this.initBoard();
 
-    this.selectedShape = null;
-    this.selectedColor = 'cyan';
+	this.selectedShape = null;
+	this.selectedColor = 'cyan';
 
-    this.executedCommands = [];
-    this.commandIndex = 0;
+	this.executedCommands = [];
+	this.commandIndex = 0;
 };
 
-DrawingContext.prototype.initBoard = function() {
-    this.board = JXG.JSXGraph.initBoard(this.canvasId, {boundingbox: [-20, 10, 20, -10]});
+DrawingContext.prototype.initBoard = function () {
+	JXG.Options.renderer = 'canvas';
 
-    // Axes
-    this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
-    this.axisY = this.board.createElement('axis', [[0, 0], [0, 1]], {});
+	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [-20, 10, 20, -10] });
 
-    this.shapes = {};
-    this.selectedShape = null;
+	// Axes
+	this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
+	this.axisY = this.board.createElement('axis', [[0, 0], [0, 1]], {});
+
+	this.shapes = {};
+	this.selectedShape = null;
 };
 
-DrawingContext.prototype.resetBoard = function() {
-    JXG.JSXGraph.freeBoard(this.board);
-    this.initBoard();
+DrawingContext.prototype.resetBoard = function () {
+	JXG.JSXGraph.freeBoard(this.board);
+	this.initBoard();
 };
 
-DrawingContext.prototype.repaint = function() {
-    for (var i = 0; i < this.commandIndex; i++) {
-        this.executedCommands[i].execute(this);
-    }
+DrawingContext.prototype.repaint = function () {
+	for (var i = 0; i < this.commandIndex; i++) {
+		this.executedCommands[i].execute(this);
+	}
 };
 
-DrawingContext.prototype.undo = function() {
-    if (this.commandIndex <= 0) return;
-    this.resetBoard();
-    this.commandIndex--;
-    this.repaint();
+DrawingContext.prototype.undo = function () {
+	if (this.commandIndex <= 0) return;
+	this.resetBoard();
+	this.commandIndex--;
+	this.repaint();
 };
 
-DrawingContext.prototype.redo = function() {
-    if (this.commandIndex >= this.executedCommands.length) return;
-    this.resetBoard();
-    this.commandIndex++;
-    this.repaint();
+DrawingContext.prototype.redo = function () {
+	if (this.commandIndex >= this.executedCommands.length) return;
+	this.resetBoard();
+	this.commandIndex++;
+	this.repaint();
 };
 
-DrawingContext.prototype.addCommand = function(command) {
-    this.executedCommands.splice(this.commandIndex + 1, 0, command);
-    this.commandIndex++;
+DrawingContext.prototype.addCommand = function (command) {
+	this.executedCommands.splice(this.commandIndex + 1, 0, command);
+	this.commandIndex++;
 };
 
-DrawingContext.prototype.deleteShape = function() {
-    if (this.selectedShape != null) {
-        var shapeId = this.selectedShape['id'];
+DrawingContext.prototype.deleteShape = function () {
+	if (this.selectedShape != null) {
+		var shapeId = this.selectedShape['id'];
 
-        if (this.selectedShape.type == JXG.OBJECT_TYPE_POINT) {
+		if (this.selectedShape.type == JXG.OBJECT_TYPE_POINT) {
 
-        } else if (this.selectedShape.type == JXG.OBJECT_TYPE_LINE) {
-            this.selectedShape.point1.remove();
-            this.selectedShape.point2.remove();
+		} else if (this.selectedShape.type == JXG.OBJECT_TYPE_LINE) {
+			this.selectedShape.point1.remove();
+			this.selectedShape.point2.remove();
 
-        } else if (this.selectedShape.type == JXG.OBJECT_TYPE_POLYGON) {
-            for (var i = 0; i < this.selectedShape.borders.length; i++) {
-                board.removeObject(this.selectedShape.borders[i]);
-            }
-        }
+		} else if (this.selectedShape.type == JXG.OBJECT_TYPE_POLYGON) {
+			for (var i = 0; i < this.selectedShape.borders.length; i++) {
+				board.removeObject(this.selectedShape.borders[i]);
+			}
+		}
 
-        this.shapes[shapeId].remove();
-        this.shapes[shapeId] = null;
-        this.selectedShape = null;
-    }
+		this.shapes[shapeId].remove();
+		this.shapes[shapeId] = null;
+		this.selectedShape = null;
+	}
 };
 
-DrawingContext.prototype.selection = function() {
-    var context = this;
-    return function() {
+DrawingContext.prototype.selection = function () {
+	var context = this;
+	return function () {
 
-        if (context.selectedShape != null) {
-            context.selectedShape.setProperty({strokeColor: context.selectedShape['oldStrokeColor']});
-        }
+		if (context.selectedShape != null) {
+			context.selectedShape.setProperty({ strokeColor: context.selectedShape['oldStrokeColor'] });
+		}
 
-        var object_id = this.id;
+		var object_id = this.id;
 
-        context.selectedShape = context.shapes[object_id];
-        context.selectedShape['oldStrokeColor'] = context.selectedShape.getProperty('strokeColor');
-        context.selectedShape.setProperty({strokeColor: context.selectedColor});
-    };
+		context.selectedShape = context.shapes[object_id];
+		context.selectedShape['oldStrokeColor'] = context.selectedShape.getProperty('strokeColor');
+		context.selectedShape.setProperty({ strokeColor: context.selectedColor });
+	};
 };
 
-DrawingContext.prototype.deselectShape = function() {
-    if (this.selectedShape != null) {
-        this.selectedShape.setProperty({strokeColor: this.selectedShape['oldStrokeColor']});
-    }
+DrawingContext.prototype.deselectShape = function () {
+	if (this.selectedShape != null) {
+		this.selectedShape.setProperty({ strokeColor: this.selectedShape['oldStrokeColor'] });
+	}
 
-    this.selectedShape = null;
+	this.selectedShape = null;
 };
 
 
-DrawingContext.prototype.getLineColor = function() {
-    return document.getElementById('colorpickerLine').value;
+DrawingContext.prototype.getLineColor = function () {
+	return document.getElementById('colorpickerLine').value;
 };
 
-DrawingContext.prototype.setLineColor = function(color) {
-    document.getElementById('colorpickerLine').value = color;
+DrawingContext.prototype.setLineColor = function (color) {
+	document.getElementById('colorpickerLine').value = color;
 };
 
-DrawingContext.prototype.getFillColor = function() {
-    return document.getElementById('colorpickerFill').value;
+DrawingContext.prototype.getFillColor = function () {
+	return document.getElementById('colorpickerFill').value;
 };
 
-DrawingContext.prototype.setFillColor = function(color) {
-    document.getElementById('colorpickerFill').value = color;
+DrawingContext.prototype.setFillColor = function (color) {
+	document.getElementById('colorpickerFill').value = color;
 };
 
-DrawingContext.prototype.getLineDrawingWidth = function() {
-    return document.getElementById('lineStroke').value;
+DrawingContext.prototype.getLineDrawingWidth = function () {
+	return document.getElementById('lineStroke').value;
 };
 
-DrawingContext.prototype.setLineDrawingWidth = function(size) {
-    document.getElementById('lineStroke').value = size;
+DrawingContext.prototype.setLineDrawingWidth = function (size) {
+	document.getElementById('lineStroke').value = size;
 };
 
-DrawingContext.prototype.getPointDrawingWidth = function() {
-    return this.getLineDrawingWidth() * 1.5;
+DrawingContext.prototype.getPointDrawingWidth = function () {
+	return this.getLineDrawingWidth() * 1.5;
 };
 
 
@@ -136,23 +138,23 @@ DrawingContext.prototype.getPointDrawingWidth = function() {
  * @param y
  * @param name
  */
-DrawingContext.prototype.drawPoint = function(x, y, name) {
-    var lineColor = this.getLineColor();
-    var fillColor = this.getFillColor();
+DrawingContext.prototype.drawPoint = function (x, y, name) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
-    var lineWidth = this.getLineDrawingWidth();
-    var pointWidth = this.getPointDrawingWidth();
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
 
-    var point = this.board.create('point', [x, y], {
-        name: name,
-        size: pointWidth,
-        fillColor: lineColor,
-        strokeColor: lineColor
-    });
+	var point = this.board.create('point', [x, y], {
+		name: name,
+		size: pointWidth,
+		fillColor: lineColor,
+		strokeColor: lineColor
+	});
 
-    this.shapes[point.id] = point;
+	this.shapes[point.id] = point;
 
-    JXG.addEvent(point.rendNode, 'mousedown', this.selection(), point);
+	JXG.addEvent(point.rendNode, 'mousedown', this.selection(), point);
 };
 
 /**
@@ -164,28 +166,28 @@ DrawingContext.prototype.drawPoint = function(x, y, name) {
  * @param Bx
  * @param By
  */
-DrawingContext.prototype.drawLineSegment = function(A, Ax, Ay, B, Bx, By) {
-    var lineColor = this.getLineColor();
-    var fillColor = this.getFillColor();
+DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
-    var lineWidth = this.getLineDrawingWidth();
-    var pointWidth = this.getPointDrawingWidth();
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
 
-    var pointA = this.board.create('point', [Ax, Ay], {
-        name: A, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointB = this.board.create('point', [Bx, By], {
-        name: B, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
+	var pointA = this.board.create('point', [Ax, Ay], {
+		name: A, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointB = this.board.create('point', [Bx, By], {
+		name: B, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
 
-    var line = this.board.create('line', [pointA, pointB],
-        {straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor});
+	var line = this.board.create('line', [pointA, pointB],
+        { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor });
 
-    this.shapes[line.id] = line;
+	this.shapes[line.id] = line;
 
-    JXG.addEvent(line.rendNode, 'mousedown', this.selection(), line);
+	JXG.addEvent(line.rendNode, 'mousedown', this.selection(), line);
 };
 
 /**
@@ -200,43 +202,43 @@ DrawingContext.prototype.drawLineSegment = function(A, Ax, Ay, B, Bx, By) {
  * @param Cx
  * @param Cy
  */
-DrawingContext.prototype.drawTriangle = function(A, Ax, Ay, B, Bx, By, C, Cx, Cy) {
-    var lineColor = this.getLineColor();
-    var fillColor = this.getFillColor();
+DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, Cy) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
-    var lineWidth = this.getLineDrawingWidth();
-    var pointWidth = this.getPointDrawingWidth();
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
 
-    var pointA = this.board.create('point', [Ax, Ay], {
-        name: A, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointB = this.board.create('point', [Bx, By], {
-        name: B, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointC = this.board.create('point', [Cx, Cy], {
-        name: C, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
+	var pointA = this.board.create('point', [Ax, Ay], {
+		name: A, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointB = this.board.create('point', [Bx, By], {
+		name: B, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointC = this.board.create('point', [Cx, Cy], {
+		name: C, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
 
-    var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
-        borders: {
-            strokeColor: lineColor,
-            strokeWidth: lineWidth
-        },
+	var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
+		borders: {
+			strokeColor: lineColor,
+			strokeWidth: lineWidth
+		},
 
-        fillColor: fillColor,
-        fillOpacity: 0
-    });
+		fillColor: fillColor,
+		fillOpacity: 0
+	});
 
-    this.shapes[triangle.id] = triangle;
+	this.shapes[triangle.id] = triangle;
 
-    JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
+	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
 
 };
 
-DrawingContext.prototype.drawIsoscelesTriangle = function() {
+DrawingContext.prototype.drawIsoscelesTriangle = function () {
 
 };
 
@@ -249,14 +251,14 @@ DrawingContext.prototype.drawIsoscelesTriangle = function() {
  * @param C
  * @param side
  */
-DrawingContext.prototype.drawEquilateralTriangle = function(A, Ax, Ay, B, C, side) {
-    var Cx = Ax + side * Math.cos(Math.PI / 3);
-    var Cy = Ay + side * Math.sin(Math.PI / 3);
+DrawingContext.prototype.drawEquilateralTriangle = function (A, Ax, Ay, B, C, side) {
+	var Cx = Ax + side * Math.cos(Math.PI / 3);
+	var Cy = Ay + side * Math.sin(Math.PI / 3);
 
-    var Bx = Ax + side;
-    var By = Ay;
+	var Bx = Ax + side;
+	var By = Ay;
 
-    this.drawTriangle(A, Ax, Ay, B, Bx, By, C, Cx, Cy);
+	this.drawTriangle(A, Ax, Ay, B, Bx, By, C, Cx, Cy);
 
 };
 
@@ -275,43 +277,43 @@ DrawingContext.prototype.drawEquilateralTriangle = function(A, Ax, Ay, B, C, sid
  * @param Dx
  * @param Dy
  */
-DrawingContext.prototype.drawQuadrilateral = function(A, Ax, Ay, B, Bx, By, C, Cx, Cy, D, Dx, Dy) {
-    var lineColor = this.getLineColor();
-    var fillColor = this.getFillColor();
+DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, Cx, Cy, D, Dx, Dy) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
-    var lineWidth = this.getLineDrawingWidth();
-    var pointWidth = this.getPointDrawingWidth();
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
 
-    var pointA = this.board.create('point', [Ax, Ay], {
-        name: A, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointB = this.board.create('point', [Bx, By], {
-        name: B, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointC = this.board.create('point', [Cx, Cy], {
-        name: C, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
-    var pointD = this.board.create('point', [Dx, Dy], {
-        name: D, size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
+	var pointA = this.board.create('point', [Ax, Ay], {
+		name: A, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointB = this.board.create('point', [Bx, By], {
+		name: B, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointC = this.board.create('point', [Cx, Cy], {
+		name: C, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+	var pointD = this.board.create('point', [Dx, Dy], {
+		name: D, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
 
-    var quadri = this.board.createElement('polygon', [pointA, pointB, pointC, pointD], {
-        borders: {
-            strokeColor: lineColor,
-            strokeWidth: lineWidth
-        },
+	var quadri = this.board.createElement('polygon', [pointA, pointB, pointC, pointD], {
+		borders: {
+			strokeColor: lineColor,
+			strokeWidth: lineWidth
+		},
 
-        fillColor: fillColor,
-        fillOpacity: 20
-    });
+		fillColor: fillColor,
+		fillOpacity: 20
+	});
 
-    this.shapes[quadri.id] = quadri;
+	this.shapes[quadri.id] = quadri;
 
-    JXG.addEvent(quadri.rendNode, 'mousedown', this.selection(), quadri);
+	JXG.addEvent(quadri.rendNode, 'mousedown', this.selection(), quadri);
 
 };
 
@@ -327,20 +329,20 @@ DrawingContext.prototype.drawQuadrilateral = function(A, Ax, Ay, B, Bx, By, C, C
  * @param longSide
  * @param angle
  */
-DrawingContext.prototype.drawParallelogram = function(A, Ax, Ay, B, C, D, smallSide, longSide, angle) {
+DrawingContext.prototype.drawParallelogram = function (A, Ax, Ay, B, C, D, smallSide, longSide, angle) {
 
-    angle = angle * (Math.PI / 180.0);
+	angle = angle * (Math.PI / 180.0);
 
-    var Bx = Ax + longSide;
-    var By = Ay;
+	var Bx = Ax + longSide;
+	var By = Ay;
 
-    var Cx = Bx + smallSide * Math.cos(angle);
-    var Cy = By + smallSide * Math.sin(angle);
+	var Cx = Bx + smallSide * Math.cos(angle);
+	var Cy = By + smallSide * Math.sin(angle);
 
-    var Dx = Cx - longSide;
-    var Dy = Cy;
+	var Dx = Cx - longSide;
+	var Dy = Cy;
 
-    this.drawQuadrilateral(A, Ax, Ay, B, Bx, By, C, Cx, Cy, D, Dx, Dy);
+	this.drawQuadrilateral(A, Ax, Ay, B, Bx, By, C, Cx, Cy, D, Dx, Dy);
 };
 
 /**
@@ -354,8 +356,8 @@ DrawingContext.prototype.drawParallelogram = function(A, Ax, Ay, B, C, D, smallS
  * @param smallSide
  * @param longSide
  */
-DrawingContext.prototype.drawRectangle = function(A, Ax, Ay, B, C, D, smallSide, longSide) {
-    this.drawParallelogram(A, Ax, Ay, B, C, D, smallSide, longSide, 90);
+DrawingContext.prototype.drawRectangle = function (A, Ax, Ay, B, C, D, smallSide, longSide) {
+	this.drawParallelogram(A, Ax, Ay, B, C, D, smallSide, longSide, 90);
 };
 
 /**
@@ -368,8 +370,8 @@ DrawingContext.prototype.drawRectangle = function(A, Ax, Ay, B, C, D, smallSide,
  * @param D
  * @param side
  */
-DrawingContext.prototype.drawSquare = function(A, Ax, Ay, B, C, D, side) {
-    this.drawRectangle(A, Ax, Ay, B, C, D, side, side);
+DrawingContext.prototype.drawSquare = function (A, Ax, Ay, B, C, D, side) {
+	this.drawRectangle(A, Ax, Ay, B, C, D, side, side);
 };
 
 /**
@@ -379,36 +381,42 @@ DrawingContext.prototype.drawSquare = function(A, Ax, Ay, B, C, D, side) {
  * @param centerY
  * @param radius
  */
-DrawingContext.prototype.drawCircle = function(center, centerX, centerY, radius) {
-    console.log('start');
-    var lineColor = this.getLineColor();
-    var fillColor = this.getFillColor();
+DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius) {
+	console.log('start');
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
-    var lineWidth = this.getLineDrawingWidth();
-    var pointWidth = this.getPointDrawingWidth();
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
 
-    var center = this.board.create('point', [centerX, centerY], {
-        name: center,
-        size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor
-    });
+	var center = this.board.create('point', [centerX, centerY], {
+		name: center,
+		size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
 
-    var point = this.board.create('point', [centerX + radius, centerY], {
-        name: 'R',
-        size: pointWidth, fillColor: lineColor,
-        strokeColor: lineColor,
-        visible: false
-    });
+	var point = this.board.create('point', [centerX + radius, centerY], {
+		name: 'R',
+		size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor,
+		visible: false
+	});
 
-    var circle = this.board.create('circle', [center, point], {
-        strokeColor: lineColor,
-        strokeWidth: lineWidth,
+	var circle = this.board.create('circle', [center, point], {
+		strokeColor: lineColor,
+		strokeWidth: lineWidth,
 
-        fillColor: fillColor,
-        fillOpacity: 0
-    });
+		fillColor: fillColor,
+		fillOpacity: 0
+	});
 
-    this.shapes[circle.id] = circle;
-    JXG.addEvent(circle.rendNode, 'mousedown', this.selection(), circle);
+	this.shapes[circle.id] = circle;
+	JXG.addEvent(circle.rendNode, 'mousedown', this.selection(), circle);
 
 };
+
+DrawingContext.prototype.getDataUrl = function () {
+	return this.board.renderer.canvasRoot.toDataURL();
+};
+
+
