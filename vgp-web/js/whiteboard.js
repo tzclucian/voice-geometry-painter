@@ -44,9 +44,34 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 };
 
 DrawingApplication.prototype.downloadAsPNG = function (canvasId, fileName) {
+
 	fileName = fileName || "File";
 	var canvas = this.drawingContexts[canvasId].board.renderer.canvasRoot;
 	canvas.toBlob(function (blob) {
 		saveAs(blob, fileName + ".png");
 	});
 };
+
+
+
+DrawingApplication.prototype.downloadAsSVG = function (canvasId, fileName) {
+	fileName = fileName || "Image";
+	var svg = new XMLSerializer().serializeToString(this.drawingContexts[canvasId].board.renderer.svgRoot)
+
+
+	//console.log(svg);
+	//canvas.toBlob(function (blob) {
+	//	saveAs(blob, fileName + ".png");
+	//});
+
+
+	//var bb = new window.WebKitBlobBuilder;
+	////var svg = $('#designpanel').svg('get');
+	//bb.append(svg.toSVG());
+	//var blob = bb.getBlob("application/svg+xml;charset=" + svg.characterSet);
+	//saveAs(blob, "name.svg");
+
+	//this is the other option to try
+	//saveAs(new Blob([svg], { type: "application/svg+xml" }), "name.svg");
+};
+

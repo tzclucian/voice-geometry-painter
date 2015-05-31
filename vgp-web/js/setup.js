@@ -116,7 +116,7 @@ function AppViewModel() {
 			app.downloadAsPNG(canvasId, ko.utils.unwrapObservable(this.fileName));
 		},
 		downloadAsSVG: function () {
-
+			app.downloadAsSVG(canvasId, ko.utils.unwrapObservable(this.fileName));
 		},
 	});
 }

@@ -15,7 +15,7 @@ var DrawingContext = function (canvasId) {
 
 DrawingContext.prototype.initBoard = function () {
 	JXG.Options.renderer = 'canvas';
-
+	JXG.Options.text.display = 'internal';
 	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [-20, 10, 20, -10] });
 
 	// Axes
