@@ -15,7 +15,10 @@ var DrawingContext = function (canvasId) {
 
 DrawingContext.prototype.initBoard = function () {
 	JXG.Options.renderer = 'canvas';
-	JXG.Options.text.display = 'internal';
+	//needed for the image to be saved with labels
+	// makes doublel nubmers if used
+	// may we should reinit the board when downloading or jusdt use a hidden board
+	//JXG.Options.text.display = 'internal';
 	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [-20, 10, 20, -10] });
 
 	// Axes
@@ -412,11 +415,5 @@ DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius
 
 	this.shapes[circle.id] = circle;
 	JXG.addEvent(circle.rendNode, 'mousedown', this.selection(), circle);
-
 };
-
-DrawingContext.prototype.getDataUrl = function () {
-	return this.board.renderer.canvasRoot.toDataURL();
-};
-
 

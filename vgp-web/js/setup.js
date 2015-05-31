@@ -112,12 +112,37 @@ function AppViewModel() {
 
 	this.downloadSettings = ko.observable({
 		fileName: ko.observable('Image'),
-		downloadAsPNG: function () {
-			app.downloadAsPNG(canvasId, ko.utils.unwrapObservable(this.fileName));
+		download: function (type) {
+			switch (type) {
+				case 'svg':
+					app.downloadAsSVG(canvasId, ko.utils.unwrapObservable(this.fileName));
+					break;
+				case 'png':
+				default:
+					app.downloadAsPNG(canvasId, ko.utils.unwrapObservable(this.fileName));
+					break;
+			}
 		},
-		downloadAsSVG: function () {
-			app.downloadAsSVG(canvasId, ko.utils.unwrapObservable(this.fileName));
-		},
+	});
+
+	this.shareSettings = ko.observable({
+		fileName: ko.observable('Image'),
+		shareOnDropbox: function (type) {
+			var fileExtension = type === 'png' ? '.png' : '.svg';
+			var imageStringData = app.getCanvasData(canvasId);
+			console.log(imageStringData);
+			var imageData = _base64ToArrayBuffer(imageStringData);
+
+			var fileName = ko.utils.unwrapObservable(this.fileName) + fileExtension;
+
+			client.writeFile(fileName, imageData, function (error, stat) {
+				if (error) {
+					console.log('Error: ' + error);
+				} else {
+					console.log('File written successfully!');
+				}
+			})
+		}
 	});
 }
 
@@ -178,3 +203,50 @@ var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
 speech.setMicButtonId(start_button);
 speech.init();
+
+
+var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
+
+function doHelloWorld() {
+	client.writeFile('hello.txt', 'Hello, World!', function (error) {
+		if (error) {
+			alert('Error: ' + error);
+		} else {
+			alert('File written successfully!');
+		}
+	});
+}
+
+// Try to complete OAuth flow.
+client.authenticate({ interactive: false }, function (error, client) {
+	if (error) {
+		alert('Error: ' + error);
+	}
+});
+
+function shareOnDropbox() {
+	client.authenticate(function (error, client) {
+		if (error) {
+			alert('Error: ' + error);
+		} else {
+			doHelloWorld();
+		}
+	});
+};
+
+
+
+
+function _base64ToArrayBuffer(base64) {
+	base64 = base64.split('data:image/png;base64,').join('');
+	var binary_string = window.atob(base64),
+        len = binary_string.length,
+        bytes = new Uint8Array(len),
+        i;
+
+	for (i = 0; i < len; i++) {
+		bytes[i] = binary_string.charCodeAt(i);
+	}
+	return bytes.buffer;
+}
+
