@@ -273,3 +273,8 @@ div.horizontal-menu-container li span span i {
 span.line-width-command input {
 	text-align: center;
 }
+
+
+ul.settings-list li {
+	list-style: none;
+}

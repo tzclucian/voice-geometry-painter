@@ -86,6 +86,29 @@ function AppViewModel() {
 		}
 
 	};
+
+	this.settings = ko.observableArray([
+		{
+			name: 'First Setting',
+			value: true
+		},
+		{
+			name: 'Second Setting',
+			value: true
+		},
+		{
+			name: 'Third Setting',
+			value: false
+		},
+		{
+			name: 'Forth Setting',
+			value: false
+		},
+		{
+			name: 'Fifth Setting',
+			value: true
+		},
+	]);
 }
 
 ko.applyBindings(new AppViewModel());
