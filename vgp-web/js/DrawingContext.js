@@ -408,12 +408,12 @@ DrawingContext.prototype.drawSquare = function (A, Ax, Ay, B, C, D, side) {
 
 /**
  *
- * @param center
- * @param centerX
- * @param centerY
+ * @param C
+ * @param Cx
+ * @param Cy
  * @param radius
  */
-DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius) {
+DrawingContext.prototype.drawCircle = function (C, Cx, Cy, radius) {
 	var lineColor = this.getLineColor();
 	var fillColor = this.getFillColor();
 	var shapeFillOpacity = this.getFillOpacity();
@@ -421,26 +421,26 @@ DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
 
-	var center = this.board.create('point', [centerX, centerY], {
-		name: center,
+	var centerPoint = this.board.create('point', [Cx, Cy], {
+		name: C,
 		size: pointWidth, fillColor: lineColor,
 		strokeColor: lineColor
 	});
 
-	var point = this.board.create('point', [centerX + radius, centerY], {
+	var point = this.board.create('point', [Cx + radius, Cy], {
 		name: 'R',
 		size: pointWidth, fillColor: lineColor,
 		strokeColor: lineColor,
 		visible: false
 	});
 
-	var circle = this.board.create('circle', [center, point], {
+	var circle = this.board.create('circle', [centerPoint, point], {
 		strokeColor: lineColor,
 		strokeWidth: lineWidth,
 
 		fillColor: fillColor,
 		fillOpacity: shapeFillOpacity,
-		name: center
+		name: C
 	});
 
 	this.shapes[circle.id] = circle;
@@ -456,12 +456,12 @@ DrawingContext.prototype.deleteShape = function (shapeName) {
 	var shapesArray = Object.getOwnPropertyNames(this.shapes);
 	for (var i = 0; i < shapesArray.length ; i++) {
 		var shape = this.shapes[shapesArray[i]];
-		if (shape.getProperty("name") === shapeName) {
+		if (shape["name"] == shapeName) {
 			// Delete the shape
 			var shapeId = shape['id'];
 
 			if (shape.type == JXG.OBJECT_TYPE_POINT) {
-
+				this.board.removeObject(shape);
 			} else if (shape.type == JXG.OBJECT_TYPE_LINE) {
 				shape.point1.remove();
 				shape.point2.remove();
@@ -473,6 +473,10 @@ DrawingContext.prototype.deleteShape = function (shapeName) {
 				for (var k = 0; k < shape.vertices.length; k++) {
 					this.board.removeObject(shape.vertices[k]);
 				}
+			} else if (shape.type == JXG.OBJECT_TYPE_CIRCLE) {
+				var centerPoint = shape.center;
+				this.board.removeObject(centerPoint);
+				this.board.removeObject(shape);
 			}
 
 			this.shapes[shapeId].remove();
