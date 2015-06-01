@@ -7,38 +7,34 @@ function AppViewModel() {
 
 	this.config = {
 		vocalCommandHelpMessages: {
-			SetFillColor: SetFillColorCommand.prototype.HELP,
-			SetLineColor: SetLineColorCommand.prototype.HELP,
-			SetWidth: SetWidthCommand.prototype.HELP,
-			SetOpacity: 'Set Opacity',
+			SetFillColor: volumeUpIcon + SetFillColorCommand.prototype.HELP,
+			SetLineColor: volumeUpIcon + SetLineColorCommand.prototype.HELP,
+			SetWidth: volumeUpIcon + SetWidthCommand.prototype.HELP,
+			SetOpacity: volumeUpIcon + 'Set Opacity',
 
 			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
-			DeleteCommand: DeleteCommand.prototype.HELP,
+			DeleteCommand: volumeUpIcon + DeleteCommand.prototype.HELP,
 
-			Point: PointCommand.prototype.HELP,
-			Line: LineCommand.prototype.HELP,
+			Point: volumeUpIcon + PointCommand.prototype.HELP,
+			Line: volumeUpIcon + LineCommand.prototype.HELP,
 
-			Download: "Download",
-			SendToGmail: "Send to Gmail",
-			ShareOnDropbox: "Share On Dropbox",
-			none: "TO BE ADDED",
+			Download: volumeUpIcon + "Download",
+			SendToGmail: volumeUpIcon + "Send to Gmail",
+			ShareOnDropbox: volumeUpIcon + "Share On Dropbox",
 
-			Triangle: TriangleCommand.prototype.HELP,
-			IsoscelesTriangle: "Isosceles Triangle",
-			EquilateralTriangle: RectangularTriangleCommand.prototype.HELP,
-			RightTriangle: "Right Triangle",
+			Triangle: volumeUpIcon + TriangleCommand.prototype.HELP,
+			IsoscelesTriangle: volumeUpIcon + "Isosceles Triangle",
+			EquilateralTriangle: volumeUpIcon + RectangularTriangleCommand.prototype.HELP,
+			RightTriangle: volumeUpIcon + "Right Triangle",
 
-			Parallelogram: "Parallelogram",
-			Rectangle: RectangleCommand.prototype.HELP,
-			Square: SquareCommand.prototype.HELP,
+			Parallelogram: volumeUpIcon + "Parallelogram",
+			Rectangle: volumeUpIcon + RectangleCommand.prototype.HELP,
+			Square: volumeUpIcon + SquareCommand.prototype.HELP,
 
-			Circle: CircleCommand.prototype.HELP,
-			Elipse: "Elipse",
-			CustomCircle: "CustomCircle",
-			CustomElipse: "Custom Elipse",
+			Circle: volumeUpIcon + CircleCommand.prototype.HELP,
 
-			Undo: UndoCommand.prototype.HELP,
-			Redo: RedoCommand.prototype.HELP
+			Undo: volumeUpIcon + UndoCommand.prototype.HELP,
+			Redo: volumeUpIcon + RedoCommand.prototype.HELP
 		},
 		vocalCommandTitleMessage: {
 			SetFillColor: SetFillColorCommand.prototype.NAME,
@@ -58,6 +54,7 @@ function AppViewModel() {
 			none: "TO BE ADDED",
 
 			Triangle: TriangleCommand.prototype.NAME,
+			IsoscelesTriangle: "Isosceles Triangle",
 			RegularTriangle: "Regular Triangle",
 			EquilateralTriangle: RectangularTriangleCommand.prototype.NAME,
 			RightTriangle: "Right Triangle",
@@ -121,9 +118,38 @@ function AppViewModel() {
 			app.shareOnDropbox(canvasId, type, fileName);
 		}
 	});
-}
 
-ko.applyBindings(new AppViewModel());
+
+	this.figureProperties = ko.observableArray([
+		{
+			name: 'First Setting',
+			value: "Value 1"
+		},
+		{
+			name: 'Second Setting',
+			value: "Value 1"
+
+		},
+		{
+			name: 'Third Setting',
+			value: "Value 1"
+		},
+		{
+			name: 'Forth Setting',
+			value: "Value 1"
+		},
+		{
+			name: 'Fifth Setting',
+			value: "Value 1"
+		},
+	]);
+
+	this.updateFigureProperties = function (properties) {
+		this.figureProperties(properties);
+	}
+}
+var appModel = new AppViewModel();
+ko.applyBindings(appModel);
 
 $(document).ready(function () {
 
@@ -239,4 +265,17 @@ function handleCommandKeyPress(e) {
 	if (key == 13) {
 		app.parseAndExecute(document.getElementById('helpInput').value);
 	}
+}
+
+function openFigureProperties(objectWithProperties) {
+	var properties = [];
+	objectWithProperties && Object.getOwnPropertyNames(objectWithProperties).forEach(function (propertyName) {
+		properties.push({
+			name: propertyName,
+			value: objectWithProperties[propertyName]
+		});
+	});
+
+	appModel.updateFigureProperties(properties);
+	$('#figurePropertiesModal').modal('show');
 }

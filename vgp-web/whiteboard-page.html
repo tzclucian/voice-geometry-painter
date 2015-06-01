@@ -463,6 +463,31 @@
         </div>
     </div>
 
+    <!-- Figure Prooerties Modal -->
+    <div class="modal fade" id="figurePropertiesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Properties</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="settings-list" data-bind="foreach: figureProperties">
+                        <li>
+                            <label>
+                                <span data-bind="text: name"></span>:
+                                <span data-bind="text: value"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div id="successMessage" class="hide success-message">
         <div class="alert alert-success" role="alert">
@@ -489,8 +514,6 @@
     <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js" type="text/javascript"></script>
     <script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
     <!-- End of libs -->
-
-
     <script type="text/javascript" src="./js/DrawingContext.js"></script>
     <script type="text/javascript" src="./js/CommandDefinition.js"></script>
     <script type="text/javascript" src="./js/CommandParser.js"></script>
@@ -530,13 +553,11 @@
     <script type='text/javascript' src='js/speech/CommandParserStream.js'></script>
     <script type='text/javascript' src='./js/speech_logic.js'></script>
     <!-- End of speech -->
-
     <script type="text/javascript" src="./js/whiteboard.js"></script>
 
 
     <!-- Setup -->
     <script type='text/javascript' src='./js/setup.js'></script>
     <!-- End of setup-->
-
 </body>
 </html>
