@@ -182,6 +182,8 @@ var canvasId = 'jxgbox';
 var app = new DrawingApplication();
 app.setupDrawingContext(canvasId);
 app.activeDrawingContext = app.getContext(canvasId);
+app.activeDrawingContext.setLineColor("#00008B");
+app.activeDrawingContext.setFillColor("#F8F8FF");
 
 app.setCommandParser(new CommandParser());
 
