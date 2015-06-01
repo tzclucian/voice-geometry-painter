@@ -23,7 +23,7 @@ ParallelogramCommand.prototype.execute = function(context) {
 
 ParallelogramCommand.prototype.NAME = "Parallelogram";
 
-ParallelogramCommand.prototype.REGEXP = new RegExp('parallelogram\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+ParallelogramCommand.prototype.REGEXP = new RegExp('draw\\sparallelogram\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 

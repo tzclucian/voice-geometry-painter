@@ -19,9 +19,9 @@ RectangularTriangleCommand.prototype.execute = function(context) {
     context.drawRectangularTriangle(pointA, Ax, Ay, pointB, pointC, cat1, cat2);
 };
 
-RectangularTriangleCommand.prototype.NAME = "RectangularTriangle";
+RectangularTriangleCommand.prototype.NAME = "Rectangular triangle";
 
-RectangularTriangleCommand.prototype.REGEXP = new RegExp('rectangular\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])' +
+RectangularTriangleCommand.prototype.REGEXP = new RegExp('draw\\srectangular\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])' +
     '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 

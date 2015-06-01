@@ -21,9 +21,9 @@ IsoscelesTriangleCommand.prototype.execute = function(context) {
     context.drawIsoscelesTriangle(pointA, Ax, Ay, pointB, pointC, side, angle);
 };
 
-IsoscelesTriangleCommand.prototype.NAME = "Isosceles Triangle";
+IsoscelesTriangleCommand.prototype.NAME = "Isosceles triangle";
 
-IsoscelesTriangleCommand.prototype.REGEXP = new RegExp('isosceles\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+IsoscelesTriangleCommand.prototype.REGEXP = new RegExp('draw\\sisosceles\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help

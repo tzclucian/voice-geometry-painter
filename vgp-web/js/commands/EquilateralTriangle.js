@@ -18,9 +18,9 @@ EquilateralTriangleCommand.prototype.execute = function(context) {
     context.drawEquilateralTriangle(pointA, Ax, Ay, pointB, pointC, side);
 };
 
-EquilateralTriangleCommand.prototype.NAME = "EquilateralTriangle";
+EquilateralTriangleCommand.prototype.NAME = "Equilateral triangle";
 
-EquilateralTriangleCommand.prototype.REGEXP = new RegExp('(equal|equilateral)\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])' +
+EquilateralTriangleCommand.prototype.REGEXP = new RegExp('draw\\s(equal|equilateral)\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])' +
                                                         '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
                                                         COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 

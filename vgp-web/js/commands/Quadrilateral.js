@@ -30,7 +30,7 @@ QuadrilateralCommand.prototype.execute = function(context) {
 
 QuadrilateralCommand.prototype.NAME = "Quadrilateral";
 
-QuadrilateralCommand.prototype.REGEXP = new RegExp('quadrilateral\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+QuadrilateralCommand.prototype.REGEXP = new RegExp('draw\\squadrilateral\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');

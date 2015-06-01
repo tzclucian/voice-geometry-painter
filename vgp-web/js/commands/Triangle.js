@@ -26,7 +26,7 @@ TriangleCommand.prototype.execute = function(context) {
 
 TriangleCommand.prototype.NAME = "Triangle";
 
-TriangleCommand.prototype.REGEXP = new RegExp('triangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+TriangleCommand.prototype.REGEXP = new RegExp('draw\\striangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
                                             COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER +
                                             '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
                                             COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');

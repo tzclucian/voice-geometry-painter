@@ -22,7 +22,7 @@ RectangleCommand.prototype.execute = function(context) {
 
 RectangleCommand.prototype.NAME = "Rectangle";
 
-RectangleCommand.prototype.REGEXP = new RegExp('rectangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+RectangleCommand.prototype.REGEXP = new RegExp('draw\\srectangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s'  + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help

@@ -20,7 +20,7 @@ LineCommand.prototype.execute = function(context) {
 
 LineCommand.prototype.NAME = "Line";
 
-LineCommand.prototype.REGEXP = new RegExp('line\\s([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' + COORDINATE_DELIMITER  +
+LineCommand.prototype.REGEXP = new RegExp('draw\\sline\\s([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' + COORDINATE_DELIMITER  +
                                         '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER +
                                         '\\s(\\d+)','i');
 

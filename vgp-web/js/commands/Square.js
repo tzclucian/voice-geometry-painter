@@ -22,7 +22,7 @@ SquareCommand.prototype.execute = function(context) {
 
 SquareCommand.prototype.NAME = "Square";
 
-SquareCommand.prototype.REGEXP = new RegExp('square\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+SquareCommand.prototype.REGEXP = new RegExp('draw\\ssquare\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
                                         COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
