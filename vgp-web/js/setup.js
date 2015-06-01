@@ -177,9 +177,11 @@ app.registerCommand(ParallelogramCommand);
 app.registerCommand(RectangleCommand);
 app.registerCommand(SquareCommand);
 app.registerCommand(CircleCommand);
+
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteCommand);
 app.registerCommand(SetWidthCommand);
+app.registerCommand(SetFillOpacityCommand);
 app.registerCommand(SetLineColorCommand);
 app.registerCommand(SetFillColorCommand);
 app.registerCommand(SetTitle);
