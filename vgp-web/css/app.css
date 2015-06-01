@@ -260,7 +260,7 @@ div.horizontal-menu-container li span span i {
 .navbar-right li span.undo-command,
 .navbar-right li span.redo-command {
 	display: inline-block;
-	padding: 15px;
+	padding: 15px 15px 13px 15px;
 }
 
 .navbar-nav.lower li span.fill-color-command,
@@ -286,4 +286,10 @@ ul.settings-list li {
 
 .download-settings-content {
 	width: 100%;
+}
+
+.navbar-right li .undo-command a i,
+.navbar-right li .redo-command a i {
+	color: #000;
+	font-size:20px;
 }
