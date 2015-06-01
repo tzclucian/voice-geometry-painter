@@ -17,8 +17,6 @@ var DrawingContext = function (canvasId) {
 };
 
 DrawingContext.prototype.initBoard = function () {
-	JXG.Options.renderer = 'canvas';
-	JXG.Options.text.useMathJax = false;
 	this.board = JXG.JSXGraph.initBoard(this.canvasId,
 		{
 			boundingbox: [-0.5, 50, 50, -2],
@@ -87,18 +85,13 @@ DrawingContext.prototype.deleteShape = function () {
 };
 
 DrawingContext.prototype.selection = function () {
-	console.log("selecting");
 	var context = this;
-	console.log(context);
-	console.log(this);
 	return function () {
 
 		if (context.selectedShape != null) {
 			console.log("something is selected");
 			context.selectedShape.setProperty({ strokeColor: context.selectedShape['oldStrokeColor'] });
 		}
-
-		console.log("nothing is selected");
 
 		var object_id = this.id;
 
