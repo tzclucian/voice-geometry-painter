@@ -226,11 +226,19 @@ function showErrorMessage(message, autoClose) {
 	if (autoClose) {
 		setTimeout(function () {
 			closeErrorMessage();
-		}, 1000);
+		}, 1500);
 	}
 }
 
 function closeErrorMessage() {
 	$('#errorMessage #messageContent').text("");
 	$('#errorMessage').addClass('hide');
+}
+
+
+function handleCommandKeyPress(e) {
+	var key = e.keyCode || e.which;
+	if (key == 13) {
+		app.parseAndExecute(document.getElementById('helpInput').value);
+	}
 }
