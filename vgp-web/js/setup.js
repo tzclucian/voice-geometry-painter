@@ -223,7 +223,7 @@ function showErrorMessage(message, autoClose) {
 	$('#errorMessage #messageContent').text(message);
 	$('#errorMessage').removeClass('hide');
 
-	if (autoClose) {
+	if (!!autoClose) {
 		setTimeout(function () {
 			closeErrorMessage();
 		}, 1500);
