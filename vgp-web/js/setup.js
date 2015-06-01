@@ -10,6 +10,7 @@ function AppViewModel() {
 			SetFillColor: SetFillColorCommand.prototype.HELP,
 			SetLineColor: SetLineColorCommand.prototype.HELP,
 			SetWidth: SetWidthCommand.prototype.HELP,
+			SetOpacity: 'Set Opacity',
 
 			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
 			DeselectElement: DeselectCommand.prototype.HELP,
@@ -45,6 +46,7 @@ function AppViewModel() {
 			SetFillColor: SetFillColorCommand.prototype.NAME,
 			SetLineColor: SetLineColorCommand.prototype.NAME,
 			SetWidth: SetWidthCommand.prototype.NAME,
+			SetOpacity: 'Set Opacity',
 
 			ClearBoard: ClearBoardCommand.prototype.NAME,
 			DeselectElement: DeselectCommand.prototype.NAME,
@@ -191,9 +193,7 @@ speech.setOutputBoxId(helpInput);
 speech.setMicButtonId(start_button);
 speech.init();
 
-//gbmcr8wq54fown4
-//v95celr899an9bs
-var client = new Dropbox.Client({ key: 'v95celr899an9bs' });
+var client = new Dropbox.Client({ key: '803oowr6qcc8vpd' });
 
 client.authenticate(function (error, client) {
 	if (error) {

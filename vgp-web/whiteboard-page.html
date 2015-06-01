@@ -360,6 +360,18 @@
                     <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12" min="2">
                 </span>
             </li>
+            <li>
+                <span class="voice-command clearfix line-width-command"
+                      rel="popover" data-placement="right"
+                      data-html="true"
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SetOpacity, "data-original-title" :  config.vocalCommandTitleMessage.SetOpacity}'
+                      data-trigger="hover">
+                    <a href="#" class="tool-icon" onclick="">
+                        Opacity
+                    </a>
+                    <input type="number" id="shapeOpacity" class="form-control line-stroke" value="0" max="100" min="0">
+                </span>
+            </li>
         </ul>
     </div>
 
