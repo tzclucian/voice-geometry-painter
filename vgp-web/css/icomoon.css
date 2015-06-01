@@ -22,39 +22,55 @@
 .icon-Font_BasicCommands:before {
 	content: "\e600";
 }
+
 .icon-Font_Board:before {
 	content: "\e601";
 }
+
 .icon-Font_Circle:before {
 	content: "\e602";
 }
+
 .icon-Font_Elipse:before {
 	content: "\e603";
 }
+
 .icon-Font_IsoscelesTriangle:before {
 	content: "\e604";
 }
+
 .icon-Font_Line:before {
 	content: "\e605";
 }
+
 .icon-Font_Parallelogram:before {
 	content: "\e606";
 }
+
 .icon-Font_Point:before {
 	content: "\e607";
 }
-.icon-Font_Rectangle:before {
+
+.icon-Font_Quadrilateral:before {
 	content: "\e608";
 }
-.icon-Font_RegularTriangle:before {
+
+.icon-Font_Rectangle:before {
 	content: "\e609";
 }
-.icon-Font_RightTriangle:before {
+
+.icon-Font_RegularTriangle:before {
 	content: "\e60a";
 }
-.icon-Font_Square:before {
+
+.icon-Font_RightTriangle:before {
 	content: "\e60b";
 }
-.icon-Font_Triangle:before {
+
+.icon-Font_Square:before {
 	content: "\e60c";
+}
+
+.icon-Font_Triangle:before {
+	content: "\e60d";
 }
