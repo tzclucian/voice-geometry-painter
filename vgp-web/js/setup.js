@@ -190,7 +190,7 @@ speech.init();
 
 var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
 
-client.authenticate({ interactive: false }, function (error, client) {
+client.authenticate(function (error, client) {
 	if (error) {
 		alert('Error: ' + error);
 	}
