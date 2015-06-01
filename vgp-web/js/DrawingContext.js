@@ -21,7 +21,7 @@ DrawingContext.prototype.initBoard = function () {
 		{
 			boundingbox: [-0.5, 50, 50, -2],
 			keepaspectratio: true,
-			showCopyright:false
+			showCopyright: false
 		});
 
 	// Axes
@@ -553,6 +553,7 @@ DrawingContext.prototype.shareOnDropbox = function (type, fileName) {
 			console.log('Error: ' + error);
 		} else {
 			console.log('File written successfully!');
+			showSuccessMessage('File Shared Successfuly on Dropbox', true);
 		}
 	})
 };

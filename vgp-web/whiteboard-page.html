@@ -478,9 +478,19 @@
     </div>
 
 
-    <!--<div class="alert alert-success" role="alert">
-        File successfully shared on dropbox!
-    </div>-->
+    <div id="successMessage" class="hide success-message">
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" aria-label="Close" onclick="closeSuccessMessage()"><span aria-hidden="true">&times;</span></button>
+            <div id="messageContent"></div>
+        </div>
+    </div>
+
+    <div id="errorMessage" class="hide error-message">
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" aria-label="Close" onclick="closeErrorMessage()"><span aria-hidden="true">&times;</span></button>
+            <div id="messageContent"></div>
+        </div>
+    </div>
 
     <!-- libs -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

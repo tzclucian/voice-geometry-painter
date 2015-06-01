@@ -299,3 +299,11 @@ ul.settings-list li {
 	padding-top: 16px;
 	font-size: 18px !important;
 }
+
+
+.success-message,
+.error-message {
+	width: 80%;
+	left: 10%;
+	position: fixed;
+}

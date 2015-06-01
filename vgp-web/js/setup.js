@@ -196,3 +196,37 @@ client.authenticate(function (error, client) {
 		alert('Error: ' + error);
 	}
 });
+
+
+function showSuccessMessage(message, autoClose) {
+	$('#successMessage #messageContent').text(message);
+	$('#successMessage').removeClass('hide');
+
+	if (autoClose) {
+		setTimeout(function () {
+			closeSuccessMessage();
+		}, 1000);
+	}
+}
+
+function closeSuccessMessage() {
+	$('#successMessage #messageContent').text("");
+	$('#successMessage').addClass('hide');
+
+}
+
+function showErrorMessage(message, autoClose) {
+	$('#errorMessage #messageContent').text(message);
+	$('#errorMessage').removeClass('hide');
+
+	if (autoClose) {
+		setTimeout(function () {
+			closeErrorMessage();
+		}, 1000);
+	}
+}
+
+function closeErrorMessage() {
+	$('#errorMessage #messageContent').text("");
+	$('#errorMessage').addClass('hide');
+}
