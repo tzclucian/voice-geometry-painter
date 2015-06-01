@@ -66,8 +66,6 @@
                         </a>
                     </span>
                 </li>
-
-
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li>
                     <a href="#" data-toggle="modal" data-target="#settingsModal" role="button" aria-expanded="false"><i class="fa fa-cog"></i></a>
@@ -78,26 +76,25 @@
                     <ul class="share-options dropdown-menu" role="menu">
                         <li>
                             <a href="#" data-toggle="modal" data-target="#shareSettingsModal">
-                                <i class="fa fa-dropbox"></i> Dropbox <span class="pull-right voice-command"
-                                                                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnDropbox}'
-                                                                            rel="popover" data-placement="left" data-original-title="Voice Command"
-                                                                            data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+                                <span class="voice-command clearfix"
+                                      rel="popover" data-placement="left"
+                                      data-html="true"
+                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.ShareOnDropbox, "data-original-title" :  config.vocalCommandTitleMessage.ShareOnDropbox}'
+                                      data-trigger="hover">
+                                    <i class="fa fa-dropbox"></i> Dropbox
+                                </span>
                             </a>
                         </li>
-                        <!--<li>
-                            <a href="#">
-                                <i class="fa fa-envelope-o"></i> Gmail<span class="pull-right voice-command"
-                                                                            data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SendToGmail}'
-                                                                            rel="popover" data-placement="left" data-original-title="Voice Command"
-                                                                            data-trigger="hover"><i class="fa fa-volume-up"></i></span>
-                            </a>
-                        </li>-->
                         <li>
                             <a href="#" data-toggle="modal" data-target="#downloadSettingsModal">
-                                <i class="fa fa-download"></i> Download<span class="pull-right voice-command"
-                                                                             data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Download}'
-                                                                             rel="popover" data-placement="left" data-original-title="Voice Command"
-                                                                             data-trigger="hover"><i class="fa fa-volume-up"></i></span>
+
+                                <span class="voice-command clearfix"
+                                      rel="popover" data-placement="left"
+                                      data-html="true"
+                                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Download, "data-original-title" :  config.vocalCommandTitleMessage.Download}'
+                                      data-trigger="hover">
+                                    <i class="fa fa-download"></i> Download
+                                </span>
                             </a>
                         </li>
                     </ul>
