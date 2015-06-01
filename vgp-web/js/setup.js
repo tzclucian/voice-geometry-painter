@@ -10,7 +10,7 @@ function AppViewModel() {
 			SetFillColor: volumeUpIcon + SetFillColorCommand.prototype.HELP,
 			SetLineColor: volumeUpIcon + SetLineColorCommand.prototype.HELP,
 			SetWidth: volumeUpIcon + SetWidthCommand.prototype.HELP,
-			SetOpacity: volumeUpIcon + 'Set Opacity',
+			SetOpacity: volumeUpIcon + SetFillOpacityCommand.prototype.HELP,
 
 			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
 			DeleteCommand: volumeUpIcon + DeleteCommand.prototype.HELP,
@@ -18,18 +18,20 @@ function AppViewModel() {
 			Point: volumeUpIcon + PointCommand.prototype.HELP,
 			Line: volumeUpIcon + LineCommand.prototype.HELP,
 
-			Download: volumeUpIcon + "Download",
+			Download: volumeUpIcon + DownloadCommand.prototype.HELP,
 			SendToGmail: volumeUpIcon + "Send to Gmail",
-			ShareOnDropbox: volumeUpIcon + "Share On Dropbox",
+			ShareOnDropbox: volumeUpIcon + DropboxCommand.prototype.HELP,
 
 			Triangle: volumeUpIcon + TriangleCommand.prototype.HELP,
-			IsoscelesTriangle: volumeUpIcon + "Isosceles Triangle",
-			EquilateralTriangle: volumeUpIcon + RectangularTriangleCommand.prototype.HELP,
-			RightTriangle: volumeUpIcon + "Right Triangle",
+			IsoscelesTriangle: volumeUpIcon + IsoscelesTriangleCommand.prototype.HELP,
+			EquilateralTriangle: volumeUpIcon + EquilateralTriangleCommand.prototype.HELP,
+			RightTriangle: volumeUpIcon + RectangularTriangleCommand.prototype.HELP,
 
-			Parallelogram: volumeUpIcon + "Parallelogram",
+			Parallelogram: volumeUpIcon + ParallelogramCommand.prototype.HELP,
 			Rectangle: volumeUpIcon + RectangleCommand.prototype.HELP,
 			Square: volumeUpIcon + SquareCommand.prototype.HELP,
+			Quadrilateral: QuadrilateralCommand.prototype.HELP,
+
 
 			Circle: volumeUpIcon + CircleCommand.prototype.HELP,
 
@@ -40,7 +42,7 @@ function AppViewModel() {
 			SetFillColor: SetFillColorCommand.prototype.NAME,
 			SetLineColor: SetLineColorCommand.prototype.NAME,
 			SetWidth: SetWidthCommand.prototype.NAME,
-			SetOpacity: 'Set Opacity',
+			SetOpacity: SetFillOpacityCommand.prototype.NAME,
 
 			ClearBoard: ClearBoardCommand.prototype.NAME,
 			DeleteCommand: DeleteCommand.prototype.NAME,
@@ -48,28 +50,25 @@ function AppViewModel() {
 			Point: PointCommand.prototype.NAME,
 			Line: LineCommand.prototype.NAME,
 
-			Download: "Download",
+			Download: DownloadCommand.prototype.NAME,
 			SendToGmail: "Send to Gmail",
-			ShareOnDropbox: "Share On Dropbox",
-			none: "TO BE ADDED",
+			ShareOnDropbox: DropboxCommand.prototype.NAME,
 
 			Triangle: TriangleCommand.prototype.NAME,
-			IsoscelesTriangle: "Isosceles Triangle",
-			RegularTriangle: "Regular Triangle",
-			EquilateralTriangle: RectangularTriangleCommand.prototype.NAME,
-			RightTriangle: "Right Triangle",
+			IsoscelesTriangle: IsoscelesTriangleCommand.prototype.NAME,
+			EquilateralTriangle: EquilateralTriangleCommand.prototype.NAME,
+			RightTriangle: RectangularTriangleCommand.prototype.NAME,
 
-			Parallelogram: "Parallelogram",
+			Parallelogram: ParallelogramCommand.prototype.NAME,
 			Rectangle: RectangleCommand.prototype.NAME,
 			Square: SquareCommand.prototype.NAME,
-			RightQuadrilateral: "Right Quadrilateral",
+			Quadrilateral: QuadrilateralCommand.prototype.NAME,
 
 			Circle: CircleCommand.prototype.NAME,
 
 			Undo: UndoCommand.prototype.NAME,
 			Redo: RedoCommand.prototype.NAME
 		}
-
 	};
 
 	this.settings = ko.observableArray([
