@@ -181,6 +181,7 @@ app.registerCommand(DeleteSelectedCommand);
 app.registerCommand(SetWidthCommand);
 app.registerCommand(SetLineColorCommand);
 app.registerCommand(SetFillColorCommand);
+app.registerCommand(SetTitle);
 
 var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
