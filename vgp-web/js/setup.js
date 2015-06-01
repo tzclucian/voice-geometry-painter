@@ -189,8 +189,9 @@ speech.setOutputBoxId(helpInput);
 speech.setMicButtonId(start_button);
 speech.init();
 
-
-var client = new Dropbox.Client({ key: 'v95celr899an9bs' });
+//gbmcr8wq54fown4
+//v95celr899an9bs
+var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
 
 client.authenticate(function (error, client) {
 	if (error) {

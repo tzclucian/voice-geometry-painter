@@ -134,39 +134,6 @@
                             <span class="voice-command clearfix"
                                   rel="popover" data-placement="right"
                                   data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SelectElement, "data-original-title" :  config.vocalCommandTitleMessage.SelectElement}'
-                                  data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
-                                    <i class="fa fa-crosshairs"></i>
-                                </a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="voice-command clearfix"
-                                  rel="popover" data-placement="right"
-                                  data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement, "data-original-title" :  config.vocalCommandTitleMessage.DeselectElement}'
-                                  data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.resetBoard()">
-                                    <i class="fa fa-minus"></i>
-                                </a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="voice-command clearfix"
-                                  rel="popover" data-placement="right"
-                                  data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DuplicateElement, "data-original-title" :  config.vocalCommandTitleMessage.DuplicateElement}'
-                                  data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
-                                    <i class="fa fa-files-o"></i>
-                                </a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="voice-command clearfix"
-                                  rel="popover" data-placement="right"
-                                  data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeleteSelected, "data-original-title" :  config.vocalCommandTitleMessage.DeleteSelected}'
                                   data-trigger="hover">
                                 <a href="#" class="tool-icon" onclick="">
@@ -229,6 +196,17 @@
                             <span class="voice-command clearfix"
                                   rel="popover" data-placement="right"
                                   data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Triangle, "data-original-title" :  config.vocalCommandTitleMessage.Triangle}'
+                                  data-trigger="hover">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 5, 5, 'B', 'C', 6, 90)">
+                                    <i class="fa icon-Font_Triangle"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.IsoscelesTriangle, "data-original-title" :  config.vocalCommandTitleMessage.IsoscelesTriangle}'
                                   data-trigger="hover">
                                 <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 5, 5, 'B', 'C', 6, 90)">
@@ -273,6 +251,17 @@
                 </a>
                 <div class="horizontal-menu-container">
                     <ul class="share-options dropdown-menu horizontal" role="menu">
+                        <li>
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle, "data-original-title" :  config.vocalCommandTitleMessage.Rectangle}'
+                                  data-trigger="hover">
+                                <a href="#" class="tool-icon" onclick="">
+                                    <i class="fa icon-Font_Rectangle"></i>
+                                </a>
+                            </span>
+                        </li>
                         <li>
                             <span class="voice-command clearfix"
                                   rel="popover" data-placement="right"
@@ -329,17 +318,6 @@
                                   data-trigger="hover">
                                 <a href="#" class="tool-icon" onclick="">
                                     <i class="fa icon-Font_Circle"></i>
-                                </a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="voice-command clearfix"
-                                  rel="popover" data-placement="right"
-                                  data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Elipse, "data-original-title" :  config.vocalCommandTitleMessage.Elipse}'
-                                  data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
-                                    <i class="fa icon-Font_Elipse"></i>
                                 </a>
                             </span>
                         </li>
