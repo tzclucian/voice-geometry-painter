@@ -307,3 +307,8 @@ ul.settings-list li {
 	left: 10%;
 	position: fixed;
 }
+
+
+.nav.navbar-nav.lower input {
+	width: 82px;
+}
