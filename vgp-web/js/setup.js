@@ -120,19 +120,9 @@ function AppViewModel() {
 	this.shareSettings = ko.observable({
 		fileName: ko.observable('Image'),
 		shareOnDropbox: function (type) {
-			var fileExtension = type === 'png' ? '.png' : '.svg';
+			var fileName = ko.utils.unwrapObservable(this.fileName);
 
-			var imageStringData = app.getCanvasData(canvasId);
-			var imageData = _base64ToArrayBuffer(imageStringData);
-			var fileName = ko.utils.unwrapObservable(this.fileName) + fileExtension;
-
-			client.writeFile(fileName, imageData, function (error, stat) {
-				if (error) {
-					console.log('Error: ' + error);
-				} else {
-					console.log('File written successfully!');
-				}
-			})
+			app.shareOnDropbox(canvasId, type, fileName);
 		}
 	});
 }
@@ -205,18 +195,3 @@ client.authenticate({ interactive: false }, function (error, client) {
 		alert('Error: ' + error);
 	}
 });
-
-
-function _base64ToArrayBuffer(base64) {
-	base64 = base64.split('data:image/png;base64,').join('');
-	var binary_string = window.atob(base64),
-        len = binary_string.length,
-        bytes = new Uint8Array(len),
-        i;
-
-	for (i = 0; i < len; i++) {
-		bytes[i] = binary_string.charCodeAt(i);
-	}
-	return bytes.buffer;
-}
-

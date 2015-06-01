@@ -534,5 +534,33 @@ DrawingContext.prototype.downloadAsPNG = function (fileName) {
 
 DrawingContext.prototype.getCanvasData = function () {
 	return this.board.renderer.canvasRoot.toDataURL();
+}
 
+DrawingContext.prototype.shareOnDropbox = function (type, fileName) {
+	var fileExtension = type === 'png' ? '.png' : '.svg';
+
+	var imageStringData = this.getCanvasData();
+	var imageData = _base64ToArrayBuffer(imageStringData);
+	var fileName = fileName + fileExtension;
+
+	client.writeFile(fileName, imageData, function (error, stat) {
+		if (error) {
+			console.log('Error: ' + error);
+		} else {
+			console.log('File written successfully!');
+		}
+	})
+}
+
+function _base64ToArrayBuffer(base64) {
+	base64 = base64.split('data:image/png;base64,').join('');
+	var binary_string = window.atob(base64),
+        len = binary_string.length,
+        bytes = new Uint8Array(len),
+        i;
+
+	for (i = 0; i < len; i++) {
+		bytes[i] = binary_string.charCodeAt(i);
+	}
+	return bytes.buffer;
 }

@@ -73,8 +73,13 @@ DrawingApplication.prototype.downloadAsSVG = function (canvasId, fileName) {
 
 DrawingApplication.prototype.getCanvasData = function (canvasId) {
 	return this.drawingContexts[canvasId].getCanvasData();
-
 };
+
+DrawingApplication.prototype.shareOnDropbox = function (canvasId, type, fileName) {
+	return this.drawingContexts[canvasId].shareOnDropbox(type, fileName);
+};
+
+
 
 
 
