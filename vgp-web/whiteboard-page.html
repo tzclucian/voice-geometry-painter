@@ -229,7 +229,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.IsoscelesTriangle, "data-original-title" :  config.vocalCommandTitleMessage.IsoscelesTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 5, 5, 'B', 'C', 6, 90)">
                                     <i class="fa icon-Font_IsoscelesTriangle"></i>
                                 </a>
                             </span>
@@ -240,7 +240,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.EquilateralTriangle, "data-original-title" :  config.vocalCommandTitleMessage.EquilateralTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawEquilateralTriangle('A', 1 , 2, 'B', 'C', 10)">
                                     <i class="fa icon-Font_RegularTriangle"></i>
                                 </a>
                             </span>
@@ -251,7 +251,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightTriangle, "data-original-title" :  config.vocalCommandTitleMessage.RightTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawRectangularTriangle('A', 1, 2, 'B', 'C', 5, 7)">
                                     <i class="fa icon-Font_RightTriangle"></i>
                                 </a>
                             </span>
@@ -277,7 +277,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Parallelogram, "data-original-title" :  config.vocalCommandTitleMessage.Parallelogram}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawParallelogram('A', 1, 1, 'B', 'C', 'D', 5, 10, 60)">
                                     <i class="fa icon-Font_Parallelogram"></i>
                                 </a>
                             </span>
