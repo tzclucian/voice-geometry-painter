@@ -40,7 +40,7 @@ function AppViewModel() {
 			CustomElipse: "Custom Elipse",
 
 			Undo: UndoCommand.prototype.HELP,
-			Redo: RedoCommand.prototype.HELP,
+			Redo: RedoCommand.prototype.HELP
 		},
 		vocalCommandTitleMessage: {
 			SetFillColor: SetFillColorCommand.prototype.NAME,
@@ -74,7 +74,7 @@ function AppViewModel() {
 			Circle: CircleCommand.prototype.NAME,
 
 			Undo: UndoCommand.prototype.NAME,
-			Redo: RedoCommand.prototype.NAME,
+			Redo: RedoCommand.prototype.NAME
 		}
 
 	};
@@ -114,7 +114,7 @@ function AppViewModel() {
 					app.downloadAsPNG(canvasId, ko.utils.unwrapObservable(this.fileName));
 					break;
 			}
-		},
+		}
 	});
 
 	this.shareSettings = ko.observable({
@@ -145,7 +145,7 @@ $(document).ready(function () {
 		return (value);
 	}, {
 		type: 'text',
-		cssclass: 'white-board-title-input',
+		cssclass: 'white-board-title-input'
 	});
 
 	$('#menuBtn').on('click', function () {
@@ -172,6 +172,8 @@ app.setupDrawingContext(canvasId);
 app.activeDrawingContext = app.getContext(canvasId);
 
 app.setCommandParser(new CommandParser());
+
+app.registerCommand(DownloadCommand);
 
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
