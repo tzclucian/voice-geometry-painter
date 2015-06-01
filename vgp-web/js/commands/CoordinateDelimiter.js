@@ -2,4 +2,4 @@
  * Created by Marian on 6/1/2015.
  */
 
-var COORDINATE_DELIMITER = 'and';
+var COORDINATE_DELIMITER = 'next';
