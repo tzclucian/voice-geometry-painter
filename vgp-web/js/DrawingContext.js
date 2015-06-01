@@ -19,7 +19,7 @@ DrawingContext.prototype.initBoard = function () {
 	// makes doublel nubmers if used
 	// may we should reinit the board when downloading or jusdt use a hidden board
 	//JXG.Options.text.display = 'internal';
-	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [-20, 10, 20, -10] });
+	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [0, 10, 10, 0] });
 
 	// Axes
 	this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
