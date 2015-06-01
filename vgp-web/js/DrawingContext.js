@@ -116,6 +116,14 @@ DrawingContext.prototype.getPointDrawingWidth = function () {
 	return this.getLineDrawingWidth() * 1.5;
 };
 
+DrawingContext.prototype.setFillOpacity = function (opacity) {
+	document.getElementById('shapeOpacity').value = opacity;
+};
+
+DrawingContext.prototype.getFillOpacity = function () {
+	return document.getElementById('shapeOpacity').value;
+};
+
 
 /**
  *
@@ -190,6 +198,7 @@ DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
 DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, Cy) {
 	var lineColor = this.getLineColor();
 	var fillColor = this.getFillColor();
+	var shapeFillOpacity = this.getFillOpacity();
 
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
@@ -214,14 +223,13 @@ DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, C
 		},
 
 		fillColor: fillColor,
-		fillOpacity: 0,
+		fillOpacity: shapeFillOpacity,
 		name: A + B + C
 	});
 
 	this.shapes[triangle.id] = triangle;
 
 	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
-
 };
 
 /**
@@ -235,12 +243,6 @@ DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, C
  * @param angle
  */
 DrawingContext.prototype.drawIsoscelesTriangle = function (A, Ax, Ay, B, C, side, angle) {
-	var lineColor = this.getLineColor();
-	var fillColor = this.getFillColor();
-
-	var lineWidth = this.getLineDrawingWidth();
-	var pointWidth = this.getPointDrawingWidth();
-
 	var angleInRadians = angle * (Math.PI / 180) / 2;
 
 	var Bx = Ax - side * Math.cos(angleInRadians);
@@ -263,22 +265,11 @@ DrawingContext.prototype.drawIsoscelesTriangle = function (A, Ax, Ay, B, C, side
  * @param cat2
  */
 DrawingContext.prototype.drawRectangularTriangle = function (A, Ax, Ay, B, C, cat1, cat2) {
-	var lineColor = this.getLineColor();
-	var fillColor = this.getFillColor();
-
-	var lineWidth = this.getLineDrawingWidth();
-	var pointWidth = this.getPointDrawingWidth();
-
 	var Bx = Ax + cat2;
 	var By = Ay;
 
 	var Cx = Ax;
 	var Cy = Ay + cat1;
-
-	var pointC = this.board.create('point', [Cx, Cy], {
-		name: C, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
 
 	this.drawTriangle(A, Ax, Ay, B, Bx, By, C, Cx, Cy);
 };
@@ -321,6 +312,7 @@ DrawingContext.prototype.drawEquilateralTriangle = function (A, Ax, Ay, B, C, si
 DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, Cx, Cy, D, Dx, Dy) {
 	var lineColor = this.getLineColor();
 	var fillColor = this.getFillColor();
+	var shapeFillOpacity = this.getFillOpacity();
 
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
@@ -349,14 +341,13 @@ DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, 
 		},
 
 		fillColor: fillColor,
-		fillOpacity: 0,
+		fillOpacity: shapeFillOpacity,
 		name: A + B + C + D
 	});
 
 	this.shapes[quadri.id] = quadri;
 
 	JXG.addEvent(quadri.rendNode, 'mousedown', this.selection(), quadri);
-
 };
 
 /**
@@ -372,7 +363,6 @@ DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, 
  * @param angle
  */
 DrawingContext.prototype.drawParallelogram = function (A, Ax, Ay, B, C, D, smallSide, longSide, angle) {
-
 	angle = angle * (Math.PI / 180.0);
 
 	var Bx = Ax + longSide;
@@ -426,6 +416,7 @@ DrawingContext.prototype.drawSquare = function (A, Ax, Ay, B, C, D, side) {
 DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius) {
 	var lineColor = this.getLineColor();
 	var fillColor = this.getFillColor();
+	var shapeFillOpacity = this.getFillOpacity();
 
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
@@ -448,7 +439,7 @@ DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius
 		strokeWidth: lineWidth,
 
 		fillColor: fillColor,
-		fillOpacity: 0,
+		fillOpacity: shapeFillOpacity,
 		name: center
 	});
 
