@@ -481,7 +481,14 @@ DrawingContext.prototype.deleteShape = function (shapeName) {
 	}
 };
 
-
+/**
+ *
+ * @param shapeName
+ */
+DrawingContext.prototype.showPropertiesOf = function (shapeName) {
+	//calculate properties
+	openFigureProperties({cat:"meow"});
+};
 
 DrawingContext.prototype.downloadAsPNG = function (fileName) {
 	fileName = fileName || "File";
@@ -490,8 +497,6 @@ DrawingContext.prototype.downloadAsPNG = function (fileName) {
 		saveAs(blob, fileName + ".png");
 	});
 };
-
-
 
 DrawingContext.prototype.getCanvasData = function () {
 	return this.board.renderer.canvasRoot.toDataURL();

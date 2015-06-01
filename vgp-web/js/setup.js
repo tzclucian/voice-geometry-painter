@@ -206,6 +206,7 @@ app.registerCommand(CircleCommand);
 
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteCommand);
+app.registerCommand(ShowPropertiesCommand);
 app.registerCommand(SetWidthCommand);
 app.registerCommand(SetFillOpacityCommand);
 app.registerCommand(SetLineColorCommand);
