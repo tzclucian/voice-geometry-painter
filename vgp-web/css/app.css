@@ -12,7 +12,7 @@
 	}
 
 .whiteboard-header {
-	margin-left: 185px;
+	margin-left: 220px;
 	margin-right: 315px;
 }
 
@@ -170,7 +170,7 @@ form.white-board-title-input input {
 
 
 .navbar-left {
-	width: 185px;
+	width: 232px;
 	display: inline-block;
 	position: absolute;
 }
@@ -291,5 +291,11 @@ ul.settings-list li {
 .navbar-right li .undo-command a i,
 .navbar-right li .redo-command a i {
 	color: #000;
-	font-size:20px;
+	font-size: 20px;
+}
+
+.edit-in-place-icon {
+	padding-left: 21px;
+	padding-top: 16px;
+	font-size: 18px !important;
 }

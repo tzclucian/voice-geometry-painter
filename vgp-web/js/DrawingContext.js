@@ -532,3 +532,10 @@ DrawingContext.prototype.downloadAsPNG = function (fileName) {
 		saveAs(blob, fileName + ".png");
 	});
 };
+
+
+
+DrawingContext.prototype.getCanvasData = function () {
+	return this.board.renderer.canvasRoot.toDataURL();
+
+}

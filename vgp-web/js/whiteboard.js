@@ -46,9 +46,6 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 DrawingApplication.prototype.downloadAsPNG = function (canvasId, fileName) {
 	fileName = fileName || "File";
 	this.drawingContexts[canvasId].downloadAsPNG(fileName);
-	//canvas.toBlob(function (blob) {
-	//	saveAs(blob, fileName + ".png");
-	//});
 };
 
 
@@ -75,8 +72,9 @@ DrawingApplication.prototype.downloadAsSVG = function (canvasId, fileName) {
 };
 
 DrawingApplication.prototype.getCanvasData = function (canvasId) {
-	return this.drawingContexts[canvasId].board.renderer.canvasRoot.toDataURL();
-}
+	return this.drawingContexts[canvasId].getCanvasData();
+
+};
 
 
 
