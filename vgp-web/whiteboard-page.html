@@ -165,10 +165,10 @@
                             <span class="voice-command clearfix"
                                   rel="popover" data-placement="right"
                                   data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeselectElement, "data-original-title" :  config.vocalCommandTitleMessage.DeselectElement}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeleteSelected, "data-original-title" :  config.vocalCommandTitleMessage.DeleteSelected}'
                                   data-trigger="hover">
                                 <a href="#" class="tool-icon" onclick="">
-                                    <i class="fa fa-times"></i>
+                                    <i class="fa  fa-trash-o"></i>
                                 </a>
                             </span>
                         </li>
@@ -350,7 +350,7 @@
                 <span class="voice-command clearfix fill-color-command"
                       rel="popover" data-placement="right"
                       data-html="true"
-                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.FillColor, "data-original-title" :  config.vocalCommandTitleMessage.FillColor}'
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SetFillColor, "data-original-title" :  config.vocalCommandTitleMessage.SetFillColor}'
                       data-trigger="hover">
                     <a href="#" class="tool-icon" onclick="">
                         Fill Color
@@ -362,7 +362,7 @@
                 <span class="voice-command clearfix line-color-command"
                       rel="popover" data-placement="right"
                       data-html="true"
-                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineColor, "data-original-title" :  config.vocalCommandTitleMessage.LineColor}'
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SetLineColor, "data-original-title" :  config.vocalCommandTitleMessage.SetLineColor}'
                       data-trigger="hover">
                     <a href="#" class="tool-icon" onclick="">
                         Line Color
@@ -375,12 +375,12 @@
                 <span class="voice-command clearfix line-width-command"
                       rel="popover" data-placement="right"
                       data-html="true"
-                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.LineWidth, "data-original-title" :  config.vocalCommandTitleMessage.LineWidth}'
+                      data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.SetWidth, "data-original-title" :  config.vocalCommandTitleMessage.SetWidth}'
                       data-trigger="hover">
                     <a href="#" class="tool-icon" onclick="">
                         Line Width
                     </a>
-                    <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12" min="1">
+                    <input type="number" id="lineStroke" class="form-control line-stroke" value="2" max="12" min="2">
                 </span>
             </li>
         </ul>
