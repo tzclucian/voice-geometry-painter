@@ -193,6 +193,7 @@ app.setCommandParser(new CommandParser());
 app.registerCommand(ClearBoardCommand);
 app.registerCommand(DeleteCommand);
 app.registerCommand(ShowPropertiesCommand);
+app.registerCommand(ClosePopupCommand);
 app.registerCommand(SetTitle);
 
 app.registerCommand(SetWidthCommand);

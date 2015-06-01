@@ -521,6 +521,21 @@ DrawingContext.prototype.showPropertiesOf = function (shapeName) {
 	}
 };
 
+/**
+ * Closes any visible popup.
+ */
+DrawingContext.prototype.closeAnyPopup = function() {
+    alert('when this executes any popup closes.');
+};
+
+/**
+ * Compares 2 shape names by ignoring the letter order.
+ * This way triangle ABC is the same with triangle BAC
+ *
+ * @param shape1
+ * @param shape2
+ * @returns {boolean}
+ */
 DrawingContext.prototype.compareShapeNames = function (shape1, shape2) {
 	shape1 = shape1.split('').sort().join('');
 	shape2 = shape2.split('').sort().join('');
@@ -529,6 +544,20 @@ DrawingContext.prototype.compareShapeNames = function (shape1, shape2) {
 	return false;
 };
 
+/**
+ * Used to retrieve tha data from the canvas.
+ *
+ * @returns {string}
+ */
+DrawingContext.prototype.getCanvasData = function () {
+	return this.board.renderer.canvasRoot.toDataURL();
+};
+
+/**
+ * Downloads the canvas as png.
+ *
+ * @param fileName
+ */
 DrawingContext.prototype.downloadAsPNG = function (fileName) {
 	fileName = fileName || "File";
 	var canvas = this.board.renderer.canvasRoot;
@@ -537,10 +566,12 @@ DrawingContext.prototype.downloadAsPNG = function (fileName) {
 	});
 };
 
-DrawingContext.prototype.getCanvasData = function () {
-	return this.board.renderer.canvasRoot.toDataURL();
-};
-
+/**
+ * Saves the canvas as png on users dropbox account.
+ *
+ * @param type
+ * @param fileName
+ */
 DrawingContext.prototype.shareOnDropbox = function (type, fileName) {
 	var fileExtension = type === 'png' ? '.png' : '.svg';
 
