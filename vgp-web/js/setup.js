@@ -181,6 +181,8 @@ var canvasId = 'jxgbox';
 var app = new DrawingApplication();
 app.setupDrawingContext(canvasId);
 app.activeDrawingContext = app.getContext(canvasId);
+app.activeDrawingContext.setLineColor("#00008B");
+app.activeDrawingContext.setFillColor("#F8F8FF");
 
 app.setCommandParser(new CommandParser());
 
@@ -205,6 +207,7 @@ app.registerCommand(CircleCommand);
 
 app.registerCommand(DeselectCommand);
 app.registerCommand(DeleteCommand);
+app.registerCommand(ShowPropertiesCommand);
 app.registerCommand(SetWidthCommand);
 app.registerCommand(SetFillOpacityCommand);
 app.registerCommand(SetLineColorCommand);

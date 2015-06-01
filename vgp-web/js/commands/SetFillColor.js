@@ -21,7 +21,7 @@ SetFillColorCommand.prototype.NAME = "Set fill color";
 SetFillColorCommand.prototype.REGEXP = new RegExp(['set\\sfill\\scolor\\s',
                                             '(aqua|azure|black|blue|brown|chocolate|coral|',
                                             'cyan|gold|gray|green|indigo|lime|magenta|orange|',
-                                            'pink|purple|red|silver|violet|white|yellow)'].join(''));
+                                            'pink|purple|red|silver|violet|white|yellow|ghostwhite)'].join(''));
 
 SetFillColorCommand.prototype.HELP = "set fill color blue";
 

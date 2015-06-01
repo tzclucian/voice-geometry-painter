@@ -21,7 +21,7 @@ SetLineColorCommand.prototype.NAME = "Set line color";
 SetLineColorCommand.prototype.REGEXP = new RegExp(['set\\sline\\scolor\\s',
                                                     '(aqua|azure|black|blue|brown|chocolate|coral|',
                                                     'cyan|gold|gray|green|indigo|lime|magenta|orange|',
-                                                    'pink|purple|red|silver|violet|white|yellow)'].join(''));
+                                                    'pink|purple|red|silver|violet|white|yellow|darkblue)'].join(''));
 
 SetLineColorCommand.prototype.HELP = "set line color red";
 
