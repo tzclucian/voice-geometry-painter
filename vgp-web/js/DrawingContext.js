@@ -16,7 +16,13 @@ var DrawingContext = function (canvasId) {
 DrawingContext.prototype.initBoard = function () {
 	JXG.Options.renderer = 'canvas';
 	JXG.Options.text.display = 'internal';
-	this.board = JXG.JSXGraph.initBoard(this.canvasId, { boundingbox: [-0.5, 50, 50, -2], keepaspectratio: true });
+	JXG.Options.text.useMathJax = false;
+	this.board = JXG.JSXGraph.initBoard(this.canvasId,
+		{
+			boundingbox: [-0.5, 50, 50, -2],
+			keepaspectratio: true,
+			showCopyright:false
+		});
 
 	// Axes
 	this.axisX = this.board.createElement('axis', [[0, 0], [1, 0]], {});
@@ -256,7 +262,6 @@ DrawingContext.prototype.drawIsoscelesTriangle = function (A, Ax, Ay, B, C, side
 	var pointWidth = this.getPointDrawingWidth();
 
 	var angleInRadians = angle * (Math.PI / 180);
-	angleInRadians /= 2;
 
 	var pointA = this.board.create('point', [Ax, Ay], {
 		name: A, size: pointWidth, fillColor: lineColor,
@@ -534,7 +539,7 @@ DrawingContext.prototype.downloadAsPNG = function (fileName) {
 
 DrawingContext.prototype.getCanvasData = function () {
 	return this.board.renderer.canvasRoot.toDataURL();
-}
+};
 
 DrawingContext.prototype.shareOnDropbox = function (type, fileName) {
 	var fileExtension = type === 'png' ? '.png' : '.svg';
@@ -550,7 +555,7 @@ DrawingContext.prototype.shareOnDropbox = function (type, fileName) {
 			console.log('File written successfully!');
 		}
 	})
-}
+};
 
 function _base64ToArrayBuffer(base64) {
 	base64 = base64.split('data:image/png;base64,').join('');
@@ -563,4 +568,4 @@ function _base64ToArrayBuffer(base64) {
 		bytes[i] = binary_string.charCodeAt(i);
 	}
 	return bytes.buffer;
-}
+};
