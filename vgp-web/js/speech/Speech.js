@@ -226,17 +226,9 @@ Speech.prototype.registerOnEnd = function(onEndFunction) {
 
 Speech.prototype.onResultCallback = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
-        //if ( window.console && window.console.log ) {
-        //    window.console.log('Result[' + event.results[i].isFinal + ']: ' + event.results[i][0].transcript);
-        //}
-        //var result = event.results[i][0].transcript;
-        //var tokens = result.split(' ');
-        //for (var j = 0; j < tokens.length; ++j) {
-        //    if (this.isCommand(tokens[j])) {
-        //        this.onResult(tokens[j]);
-        //    }
-        //}
-        this.onResult(event.results[i][0].transcript);
+        if (event.results[i].isFinal) {
+            this.onResult(event.results[i][0].transcript);
+        }
     }
 };
 
