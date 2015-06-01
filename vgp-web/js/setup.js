@@ -12,7 +12,6 @@ function AppViewModel() {
 			SetWidth: SetWidthCommand.prototype.HELP,
 
 			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
-			DeleteSelected: DeleteSelectedCommand.prototype.HELP,
 			DeselectElement: DeselectCommand.prototype.HELP,
 			DuplicateElement: "Duplicate Element",
 			SelectElement: "Select",
@@ -48,7 +47,6 @@ function AppViewModel() {
 			SetWidth: SetWidthCommand.prototype.NAME,
 
 			ClearBoard: ClearBoardCommand.prototype.NAME,
-			DeleteSelected: DeleteSelectedCommand.prototype.NAME,
 			DeselectElement: DeselectCommand.prototype.NAME,
 			DuplicateElement: "Duplicate Element",
 			SelectElement: "Select",
@@ -182,7 +180,7 @@ app.registerCommand(RectangleCommand);
 app.registerCommand(SquareCommand);
 app.registerCommand(CircleCommand);
 app.registerCommand(DeselectCommand);
-app.registerCommand(DeleteSelectedCommand);
+app.registerCommand(DeleteCommand);
 app.registerCommand(SetWidthCommand);
 app.registerCommand(SetLineColorCommand);
 app.registerCommand(SetFillColorCommand);
@@ -195,7 +193,7 @@ speech.init();
 
 //gbmcr8wq54fown4
 //v95celr899an9bs
-var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
+var client = new Dropbox.Client({ key: 'v95celr899an9bs' });
 
 client.authenticate(function (error, client) {
 	if (error) {

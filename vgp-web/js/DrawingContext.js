@@ -63,28 +63,6 @@ DrawingContext.prototype.addCommand = function (command) {
 	this.commandIndex++;
 };
 
-DrawingContext.prototype.deleteShape = function () {
-	if (this.selectedShape != null) {
-		var shapeId = this.selectedShape['id'];
-
-		if (this.selectedShape.type == JXG.OBJECT_TYPE_POINT) {
-
-		} else if (this.selectedShape.type == JXG.OBJECT_TYPE_LINE) {
-			this.selectedShape.point1.remove();
-			this.selectedShape.point2.remove();
-
-		} else if (this.selectedShape.type == JXG.OBJECT_TYPE_POLYGON) {
-			for (var i = 0; i < this.selectedShape.borders.length; i++) {
-				board.removeObject(this.selectedShape.borders[i]);
-			}
-		}
-
-		this.shapes[shapeId].remove();
-		this.shapes[shapeId] = null;
-		this.selectedShape = null;
-	}
-};
-
 DrawingContext.prototype.selection = function () {
 	var context = this;
 	return function () {
@@ -476,6 +454,40 @@ DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius
 
 	this.shapes[circle.id] = circle;
 	JXG.addEvent(circle.rendNode, 'mousedown', this.selection(), circle);
+};
+
+/**
+ * Deletes a shape given by its name
+ *
+ * @param shapeName
+ */
+DrawingContext.prototype.deleteShape = function (shapeName) {
+	var shapesArray = Object.getOwnPropertyNames(this.shapes);
+	for (var i = 0; i < shapesArray.length ; i++) {
+		var shape = this.shapes[shapesArray[i]];
+		if (shape.getProperty("name") === shapeName) {
+			// Delete the shape
+			var shapeId = shape['id'];
+
+			if (shape.type == JXG.OBJECT_TYPE_POINT) {
+
+			} else if (shape.type == JXG.OBJECT_TYPE_LINE) {
+				shape.point1.remove();
+				shape.point2.remove();
+
+			} else if (shape.type == JXG.OBJECT_TYPE_POLYGON) {
+				for (var j = 0; j < shape.borders.length; j++) {
+					this.board.removeObject(shape.borders[j]);
+				}
+				for (var k = 0; k < shape.vertices.length; k++) {
+					this.board.removeObject(shape.vertices[k]);
+				}
+			}
+
+			this.shapes[shapeId].remove();
+			this.shapes[shapeId] = null;
+		}
+	}
 };
 
 
