@@ -241,8 +241,114 @@ DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, C
 
 };
 
-DrawingContext.prototype.drawIsoscelesTriangle = function () {
+/**
+ *
+ * @param A
+ * @param Ax
+ * @param Ay
+ * @param B
+ * @param C
+ * @param side
+ * @param angle
+ */
+DrawingContext.prototype.drawIsoscelesTriangle = function (A, Ax, Ay, B, C, side, angle) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
 
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
+
+	var angleInRadians = angle * (Math.PI / 180);
+	angleInRadians /= 2;
+
+	var pointA = this.board.create('point', [Ax, Ay], {
+		name: A, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var Bx = Ax - side * Math.cos(angleInRadians);
+	var By = Ay - side * Math.sin(angleInRadians);
+
+	var pointB = this.board.create('point', [Bx, By], {
+		name: B, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var Cx = Ax + side * Math.cos(angleInRadians);
+	var Cy = Ay - side * Math.sin(angleInRadians);
+
+	var pointC = this.board.create('point', [Cx, Cy], {
+		name: C, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
+		borders: {
+			strokeColor: lineColor,
+			strokeWidth: lineWidth
+		},
+
+		fillColor: fillColor,
+		fillOpacity: 0
+	});
+
+	this.shapes[triangle.id] = triangle;
+
+	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
+
+};
+
+/**
+ *
+ * @param A
+ * @param Ax
+ * @param Ay
+ * @param B
+ * @param C
+ * @param cat1
+ * @param cat2
+ */
+DrawingContext.prototype.drawRectangularTriangle = function (A, Ax, Ay, B, C, cat1, cat2) {
+	var lineColor = this.getLineColor();
+	var fillColor = this.getFillColor();
+
+	var lineWidth = this.getLineDrawingWidth();
+	var pointWidth = this.getPointDrawingWidth();
+
+	var pointA = this.board.create('point', [Ax, Ay], {
+		name: A, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var Bx = Ax + cat2;
+	var By = Ay;
+
+	var pointB = this.board.create('point', [Bx, By], {
+		name: B, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var Cx = Ax;
+	var Cy = Ay + cat1;
+
+	var pointC = this.board.create('point', [Cx, Cy], {
+		name: C, size: pointWidth, fillColor: lineColor,
+		strokeColor: lineColor
+	});
+
+	var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
+		borders: {
+			strokeColor: lineColor,
+			strokeWidth: lineWidth
+		},
+
+		fillColor: fillColor,
+		fillOpacity: 0
+	});
+
+	this.shapes[triangle.id] = triangle;
+
+	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
 };
 
 /**
