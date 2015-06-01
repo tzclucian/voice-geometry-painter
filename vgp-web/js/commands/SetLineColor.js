@@ -18,7 +18,10 @@ SetLineColorCommand.prototype.execute = function(context) {
 
 SetLineColorCommand.prototype.NAME = "Set line color";
 
-SetLineColorCommand.prototype.REGEXP = /set\sline\scolor\s(\w+)/i;
+SetLineColorCommand.prototype.REGEXP = new RegExp(['set\\sline\\scolor\\s',
+                                                    '(aqua|azure|black|blue|brown|chocolate|coral|',
+                                                    'cyan|gold|gray|green|indigo|lime|magenta|orange|',
+                                                    'pink|purple|red|silver|violet|white|yellow)'].join(''));
 
 SetLineColorCommand.prototype.HELP = "set line color red";
 

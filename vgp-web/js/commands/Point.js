@@ -17,6 +17,6 @@ PointCommand.prototype.execute = function(context) {
 
 PointCommand.prototype.NAME = "Point";
 
-PointCommand.prototype.REGEXP = /point\s([a-zA-Z])\s(-?\d)\s(-?\d)/i;
+PointCommand.prototype.REGEXP = new RegExp('point\\s([a-zA-Z])\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
-PointCommand.prototype.HELP = "point A 2 3";
+PointCommand.prototype.HELP = "point A 2 " + COORDINATE_DELIMITER + " 3";
