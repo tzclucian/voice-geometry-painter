@@ -9,14 +9,15 @@ TriangleCommand.prototype.execute = function(context) {
     var reResults = this.commandString.match(this.REGEXP);
 
     var pointA = reResults[1].toUpperCase();
-    var Ax = parseFloat(reResults[2]);
-    var Ay = parseFloat(reResults[3]);
+    var pointB = reResults[2].toUpperCase();
+    var pointC = reResults[3].toUpperCase();
 
-    var pointB = reResults[4].toUpperCase();
-    var Bx = parseFloat(reResults[5]);
-    var By = parseFloat(reResults[6]);
+    var Ax = parseFloat(reResults[4]);
+    var Ay = parseFloat(reResults[5]);
 
-    var pointC = reResults[7].toUpperCase();
+    var Bx = parseFloat(reResults[6]);
+    var By = parseFloat(reResults[7]);
+
     var Cx = parseFloat(reResults[8]);
     var Cy = parseFloat(reResults[9]);
 
@@ -25,7 +26,11 @@ TriangleCommand.prototype.execute = function(context) {
 
 TriangleCommand.prototype.NAME = "Triangle";
 
-TriangleCommand.prototype.REGEXP = /triangle\s([a-zA-Z])\s(-?\d+)\s(-?\d+)\s([a-zA-Z])\s(-?\d+)\s(-?\d+)\s([a-zA-Z])\s(-?\d+)\s(-?\d+)/i;
+TriangleCommand.prototype.REGEXP = new RegExp('triangle\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+                                            COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER +
+                                            '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
+                                            COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-TriangleCommand.prototype.HELP = "triangle A -1 2 B 3 -4 C 2 3";
+TriangleCommand.prototype.HELP = "triangle ABC 1 " + COORDINATE_DELIMITER + " 4 " + COORDINATE_DELIMITER +
+                                " 8 " + COORDINATE_DELIMITER + " 6 " + COORDINATE_DELIMITER + " 9 " + COORDINATE_DELIMITER + " 8";
