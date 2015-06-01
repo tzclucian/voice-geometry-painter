@@ -45,10 +45,10 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 
 DrawingApplication.prototype.downloadAsPNG = function (canvasId, fileName) {
 	fileName = fileName || "File";
-	var canvas = this.drawingContexts[canvasId].board.renderer.canvasRoot;
-	canvas.toBlob(function (blob) {
-		saveAs(blob, fileName + ".png");
-	});
+	this.drawingContexts[canvasId].downloadAsPNG(fileName);
+	//canvas.toBlob(function (blob) {
+	//	saveAs(blob, fileName + ".png");
+	//});
 };
 
 
