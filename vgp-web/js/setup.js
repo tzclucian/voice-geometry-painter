@@ -164,6 +164,7 @@ app.activeDrawingContext = app.getContext(canvasId);
 app.setCommandParser(new CommandParser());
 
 app.registerCommand(DownloadCommand);
+app.registerCommand(DropboxCommand);
 
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
@@ -189,7 +190,7 @@ speech.setMicButtonId(start_button);
 speech.init();
 
 
-var client = new Dropbox.Client({ key: 'gbmcr8wq54fown4' });
+var client = new Dropbox.Client({ key: 'v95celr899an9bs' });
 
 client.authenticate({ interactive: false }, function (error, client) {
 	if (error) {
