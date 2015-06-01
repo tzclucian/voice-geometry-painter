@@ -36,7 +36,9 @@ function AppViewModel() {
 			Circle: volumeUpIcon + CircleCommand.prototype.HELP,
 
 			Undo: volumeUpIcon + UndoCommand.prototype.HELP,
-			Redo: volumeUpIcon + RedoCommand.prototype.HELP
+			Redo: volumeUpIcon + RedoCommand.prototype.HELP,
+			ShowProperties: volumeUpIcon + ShowPropertiesCommand.prototype.HELP,
+			SetTitle: volumeUpIcon + SetTitle.prototype.HELP
 		},
 		vocalCommandTitleMessage: {
 			SetFillColor: SetFillColorCommand.prototype.NAME,
@@ -67,7 +69,9 @@ function AppViewModel() {
 			Circle: CircleCommand.prototype.NAME,
 
 			Undo: UndoCommand.prototype.NAME,
-			Redo: RedoCommand.prototype.NAME
+			Redo: RedoCommand.prototype.NAME,
+			ShowProperties: ShowPropertiesCommand.prototype.NAME,
+			SetTitle: SetTitle.prototype.NAME
 		}
 	};
 
