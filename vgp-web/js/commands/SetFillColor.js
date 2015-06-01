@@ -18,7 +18,10 @@ SetFillColorCommand.prototype.execute = function(context) {
 
 SetFillColorCommand.prototype.NAME = "Set fill color";
 
-SetFillColorCommand.prototype.REGEXP = /set\sfill\scolor\s(\w+)/i;
+SetFillColorCommand.prototype.REGEXP = new RegExp(['set\\sfill\\scolor\\s',
+                                            '(aqua|azure|black|blue|brown|chocolate|coral|',
+                                            'cyan|gold|gray|green|indigo|lime|magenta|orange|',
+                                            'pink|purple|red|silver|violet|white|yellow)'].join(''));
 
 SetFillColorCommand.prototype.HELP = "set fill color blue";
 
