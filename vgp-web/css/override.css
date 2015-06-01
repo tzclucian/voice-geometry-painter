@@ -47,3 +47,8 @@ body {
 	width: 100%;
 	min-width: 150px;
 }
+
+	.popover i {
+		font-size: 16px !important;
+		color: #000 !important;
+	}
