@@ -17,6 +17,7 @@ var DrawingContext = function (canvasId) {
 };
 
 DrawingContext.prototype.initBoard = function () {
+	JXG.Options.renderer = 'canvas';
 	this.board = JXG.JSXGraph.initBoard(this.canvasId,
 		{
 			boundingbox: [-0.5, 50, 50, -2],
@@ -89,7 +90,6 @@ DrawingContext.prototype.selection = function () {
 	return function () {
 
 		if (context.selectedShape != null) {
-			console.log("something is selected");
 			context.selectedShape.setProperty({ strokeColor: context.selectedShape['oldStrokeColor'] });
 		}
 
@@ -190,7 +190,7 @@ DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
 	});
 
 	var line = this.board.create('line', [pointA, pointB],
-        { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor });
+        { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor, name : A + B });
 
 	this.shapes[line.id] = line;
 
@@ -236,7 +236,8 @@ DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, C
 		},
 
 		fillColor: fillColor,
-		fillOpacity: 0
+		fillOpacity: 0,
+		name: A + B + C
 	});
 
 	this.shapes[triangle.id] = triangle;
@@ -262,43 +263,15 @@ DrawingContext.prototype.drawIsoscelesTriangle = function (A, Ax, Ay, B, C, side
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
 
-	var angleInRadians = angle * (Math.PI / 180);
-
-	var pointA = this.board.create('point', [Ax, Ay], {
-		name: A, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
+	var angleInRadians = angle * (Math.PI / 180) / 2;
 
 	var Bx = Ax - side * Math.cos(angleInRadians);
 	var By = Ay - side * Math.sin(angleInRadians);
 
-	var pointB = this.board.create('point', [Bx, By], {
-		name: B, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
-
 	var Cx = Ax + side * Math.cos(angleInRadians);
 	var Cy = Ay - side * Math.sin(angleInRadians);
 
-	var pointC = this.board.create('point', [Cx, Cy], {
-		name: C, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
-
-	var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
-		borders: {
-			strokeColor: lineColor,
-			strokeWidth: lineWidth
-		},
-
-		fillColor: fillColor,
-		fillOpacity: 0
-	});
-
-	this.shapes[triangle.id] = triangle;
-
-	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
-
+	this.drawTriangle(A, Ax, Ay, B, Bx, By, C, Cx, Cy);
 };
 
 /**
@@ -318,18 +291,8 @@ DrawingContext.prototype.drawRectangularTriangle = function (A, Ax, Ay, B, C, ca
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
 
-	var pointA = this.board.create('point', [Ax, Ay], {
-		name: A, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
-
 	var Bx = Ax + cat2;
 	var By = Ay;
-
-	var pointB = this.board.create('point', [Bx, By], {
-		name: B, size: pointWidth, fillColor: lineColor,
-		strokeColor: lineColor
-	});
 
 	var Cx = Ax;
 	var Cy = Ay + cat1;
@@ -339,19 +302,7 @@ DrawingContext.prototype.drawRectangularTriangle = function (A, Ax, Ay, B, C, ca
 		strokeColor: lineColor
 	});
 
-	var triangle = this.board.createElement('polygon', [pointA, pointB, pointC], {
-		borders: {
-			strokeColor: lineColor,
-			strokeWidth: lineWidth
-		},
-
-		fillColor: fillColor,
-		fillOpacity: 0
-	});
-
-	this.shapes[triangle.id] = triangle;
-
-	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
+	this.drawTriangle(A, Ax, Ay, B, Bx, By, C, Cx, Cy);
 };
 
 /**
@@ -420,7 +371,8 @@ DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, 
 		},
 
 		fillColor: fillColor,
-		fillOpacity: 20
+		fillOpacity: 0,
+		name: A + B + C + D
 	});
 
 	this.shapes[quadri.id] = quadri;
@@ -494,7 +446,6 @@ DrawingContext.prototype.drawSquare = function (A, Ax, Ay, B, C, D, side) {
  * @param radius
  */
 DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius) {
-	console.log('start');
 	var lineColor = this.getLineColor();
 	var fillColor = this.getFillColor();
 
@@ -519,7 +470,8 @@ DrawingContext.prototype.drawCircle = function (center, centerX, centerY, radius
 		strokeWidth: lineWidth,
 
 		fillColor: fillColor,
-		fillOpacity: 0
+		fillOpacity: 0,
+		name: center
 	});
 
 	this.shapes[circle.id] = circle;

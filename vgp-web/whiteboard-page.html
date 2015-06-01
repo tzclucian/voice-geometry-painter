@@ -172,7 +172,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Line, "data-original-title" :  config.vocalCommandTitleMessage.Line}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawLineSegment('A', -1, 1,'B', 3, 2)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawLineSegment('A', 20, 30,'B', 40, 10)">
                                     <i class="fa icon-Font_Line"></i>
                                 </a>
                             </span>
@@ -198,7 +198,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Triangle, "data-original-title" :  config.vocalCommandTitleMessage.Triangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 5, 5, 'B', 'C', 6, 90)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawTriangle('A', 10, 10, 'B', 40, 40, 'C', 25, 45)">
                                     <i class="fa icon-Font_Triangle"></i>
                                 </a>
                             </span>
@@ -209,7 +209,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.IsoscelesTriangle, "data-original-title" :  config.vocalCommandTitleMessage.IsoscelesTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 5, 5, 'B', 'C', 6, 90)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawIsoscelesTriangle('A', 30, 45, 'B', 'C', 20, 70)">
                                     <i class="fa icon-Font_IsoscelesTriangle"></i>
                                 </a>
                             </span>
@@ -220,7 +220,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.EquilateralTriangle, "data-original-title" :  config.vocalCommandTitleMessage.EquilateralTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawEquilateralTriangle('A', 1 , 2, 'B', 'C', 10)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawEquilateralTriangle('A', 10 , 5, 'B', 'C', 10)">
                                     <i class="fa icon-Font_RegularTriangle"></i>
                                 </a>
                             </span>
@@ -231,7 +231,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.RightTriangle, "data-original-title" :  config.vocalCommandTitleMessage.RightTriangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawRectangularTriangle('A', 1, 2, 'B', 'C', 5, 7)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawRectangularTriangle('A', 20, 5, 'B', 'C', 30, 40)">
                                     <i class="fa icon-Font_RightTriangle"></i>
                                 </a>
                             </span>
@@ -257,7 +257,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle, "data-original-title" :  config.vocalCommandTitleMessage.Rectangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawQuadrilateral('A', 10, 10, 'B', 35, 5, 'C', 25, 22, 'D', 15, 28)">
                                     <i class="fa icon-Font_Rectangle"></i>
                                 </a>
                             </span>
@@ -268,7 +268,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Parallelogram, "data-original-title" :  config.vocalCommandTitleMessage.Parallelogram}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawParallelogram('A', 1, 1, 'B', 'C', 'D', 5, 10, 60)">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawParallelogram('A', 10, 10, 'B', 'C', 'D', 5, 10, 60)">
                                     <i class="fa icon-Font_Parallelogram"></i>
                                 </a>
                             </span>
@@ -279,7 +279,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Rectangle, "data-original-title" :  config.vocalCommandTitleMessage.Rectangle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawRectangle('A', 20, 20, 'B', 'C', 'D', 8, 12)">
                                     <i class="fa icon-Font_Rectangle"></i>
                                 </a>
                             </span>
@@ -290,7 +290,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Square, "data-original-title" :  config.vocalCommandTitleMessage.Square}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawSquare('A', 15, 15, 'B', 'C', 'D', 20)">
                                     <i class="fa icon-Font_Square"></i>
                                 </a>
                             </span>
@@ -316,7 +316,7 @@
                                   data-html="true"
                                   data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.Circle, "data-original-title" :  config.vocalCommandTitleMessage.Circle}'
                                   data-trigger="hover">
-                                <a href="#" class="tool-icon" onclick="">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawCircle('C', 20, 20, 10)">
                                     <i class="fa icon-Font_Circle"></i>
                                 </a>
                             </span>
