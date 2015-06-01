@@ -13,9 +13,7 @@ function AppViewModel() {
 			SetOpacity: 'Set Opacity',
 
 			ClearBoard: volumeUpIcon + ClearBoardCommand.prototype.HELP,
-			DeselectElement: DeselectCommand.prototype.HELP,
-			DuplicateElement: "Duplicate Element",
-			SelectElement: "Select",
+			DeleteCommand: DeleteCommand.prototype.HELP,
 
 			Point: PointCommand.prototype.HELP,
 			Line: LineCommand.prototype.HELP,
@@ -49,9 +47,7 @@ function AppViewModel() {
 			SetOpacity: 'Set Opacity',
 
 			ClearBoard: ClearBoardCommand.prototype.NAME,
-			DeselectElement: DeselectCommand.prototype.NAME,
-			DuplicateElement: "Duplicate Element",
-			SelectElement: "Select",
+			DeleteCommand: DeleteCommand.prototype.NAME,
 
 			Point: PointCommand.prototype.NAME,
 			Line: LineCommand.prototype.NAME,
@@ -103,7 +99,7 @@ function AppViewModel() {
 	]);
 
 	this.downloadSettings = ko.observable({
-		fileName: ko.observable('Image'),
+		fileName: ko.observable($('#div_1').text()),
 		download: function (type) {
 			switch (type) {
 				case 'svg':
@@ -118,7 +114,7 @@ function AppViewModel() {
 	});
 
 	this.shareSettings = ko.observable({
-		fileName: ko.observable('Image'),
+		fileName: ko.observable($('#div_1').text()),
 		shareOnDropbox: function (type) {
 			var fileName = ko.utils.unwrapObservable(this.fileName);
 
@@ -209,7 +205,7 @@ function showSuccessMessage(message, autoClose) {
 	if (autoClose) {
 		setTimeout(function () {
 			closeSuccessMessage();
-		}, 1000);
+		}, 1500);
 	}
 }
 

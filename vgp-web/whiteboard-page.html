@@ -131,7 +131,7 @@
                             <span class="voice-command clearfix"
                                   rel="popover" data-placement="right"
                                   data-html="true"
-                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeleteSelected, "data-original-title" :  config.vocalCommandTitleMessage.DeleteSelected}'
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.DeleteCommand, "data-original-title" :  config.vocalCommandTitleMessage.DeleteCommand}'
                                   data-trigger="hover">
                                 <a href="#" class="tool-icon" onclick="">
                                     <i class="fa  fa-trash-o"></i>
@@ -369,7 +369,7 @@
                     <a href="#" class="tool-icon" onclick="">
                         Opacity
                     </a>
-                    <input type="number" id="shapeOpacity" class="form-control line-stroke" value="0" max="100" min="0" >
+                    <input type="number" id="shapeOpacity" class="form-control line-stroke" value="0" max="100" min="0">
                 </span>
             </li>
         </ul>
@@ -435,7 +435,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-bind="click :download.bind($data, 'png')"> as PNG</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click :download.bind($data, 'png')"> as PNG</button>
                 </div>
             </div>
         </div>
@@ -457,7 +457,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-bind="click :shareOnDropbox.bind($data, 'png')"> as PNG</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click :shareOnDropbox.bind($data, 'png')"> as PNG</button>
                 </div>
             </div>
         </div>
