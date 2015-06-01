@@ -16,7 +16,7 @@ DropboxCommand.prototype.execute = function(context) {
 DropboxCommand.prototype.NAME = "Share on dropbox";
 
 // Command's regexp
-DropboxCommand.prototype.REGEXP = /dropbox/i;
+DropboxCommand.prototype.REGEXP = /share\son\sdropbox/i;
 
 // Command's help
-DropboxCommand.prototype.HELP = "dropbox";
+DropboxCommand.prototype.HELP = "share on dropbox";

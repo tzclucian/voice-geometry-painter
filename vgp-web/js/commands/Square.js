@@ -9,12 +9,12 @@ SquareCommand.prototype.execute = function(context) {
     var reResults = this.commandString.match(this.REGEXP);
 
     var pointA = reResults[1].toUpperCase();
-    var Ax = parseFloat(reResults[2]);
-    var Ay = parseFloat(reResults[3]);
+    var pointB = reResults[2].toUpperCase();
+    var pointC = reResults[3].toUpperCase();
+    var pointD = reResults[4].toUpperCase();
+    var Ax = parseFloat(reResults[5]);
+    var Ay = parseFloat(reResults[6]);
 
-    var pointB = reResults[4].toUpperCase();
-    var pointC = reResults[5].toUpperCase();
-    var pointD = reResults[6].toUpperCase();
     var size = parseFloat(reResults[7]);
 
     context.drawSquare(pointA, Ax, Ay, pointB, pointC, pointD, size);
@@ -22,7 +22,8 @@ SquareCommand.prototype.execute = function(context) {
 
 SquareCommand.prototype.NAME = "Square";
 
-SquareCommand.prototype.REGEXP = /square\s([a-zA-Z])\s(-?\d+)\s(-?\d+)\s([a-zA-Z])\s([a-zA-Z])\s([a-zA-Z])\s(-?\d+)/i;
+SquareCommand.prototype.REGEXP = new RegExp('square\\s([a-zA-Z])([a-zA-Z])([a-zA-Z])([a-zA-Z])\\s(\\d+)\\s' +
+                                        COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-SquareCommand.prototype.HELP = "square A 1 2 B C D 3";
+SquareCommand.prototype.HELP = "square ABCD 10 " + COORDINATE_DELIMITER + " 20 " + COORDINATE_DELIMITER + " 10";

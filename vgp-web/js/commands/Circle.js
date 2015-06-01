@@ -18,7 +18,8 @@ CircleCommand.prototype.execute = function(context) {
 
 CircleCommand.prototype.NAME = "Circle";
 
-CircleCommand.prototype.REGEXP = /circle\s([a-zA-Z])\s(-?\d+)\s(-?\d+)\s(-?\d+)/i;
+CircleCommand.prototype.REGEXP = new RegExp('circle\\s([a-zA-Z])\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' +
+                                            COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-CircleCommand.prototype.HELP = "circle C 3 3 2";
+CircleCommand.prototype.HELP = "circle C 20 " + COORDINATE_DELIMITER +" 30 " + COORDINATE_DELIMITER + " 10";

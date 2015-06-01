@@ -27,7 +27,7 @@ function AppViewModel() {
 
 			Triangle: TriangleCommand.prototype.HELP,
 			IsoscelesTriangle: "Isosceles Triangle",
-			EquilateralTriangle: EquilateralTriangleCommand.prototype.HELP,
+			EquilateralTriangle: RectangularTriangleCommand.prototype.HELP,
 			RightTriangle: "Right Triangle",
 
 			Parallelogram: "Parallelogram",
@@ -63,7 +63,7 @@ function AppViewModel() {
 
 			Triangle: TriangleCommand.prototype.NAME,
 			RegularTriangle: "Regular Triangle",
-			EquilateralTriangle: EquilateralTriangleCommand.prototype.NAME,
+			EquilateralTriangle: RectangularTriangleCommand.prototype.NAME,
 			RightTriangle: "Right Triangle",
 
 			Parallelogram: "Parallelogram",
@@ -173,7 +173,11 @@ app.registerCommand(ClearBoardCommand);
 app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);
 app.registerCommand(TriangleCommand);
+app.registerCommand(IsoscelesTriangleCommand);
 app.registerCommand(EquilateralTriangleCommand);
+app.registerCommand(RectangularTriangleCommand);
+app.registerCommand(QuadrilateralCommand);
+app.registerCommand(ParallelogramCommand);
 app.registerCommand(RectangleCommand);
 app.registerCommand(SquareCommand);
 app.registerCommand(CircleCommand);
