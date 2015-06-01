@@ -13,7 +13,7 @@ var DrawingContext = function (canvasId) {
 	this.commandIndex = 0;
 
 	this.shapes = {};
-	this.selectedShape = null;
+	this.shapeProperties = {};
 };
 
 DrawingContext.prototype.initBoard = function () {
@@ -129,23 +129,24 @@ DrawingContext.prototype.getFillOpacity = function () {
  *
  * @param x
  * @param y
- * @param name
+ * @param pointName
  */
-DrawingContext.prototype.drawPoint = function (x, y, name) {
-	var lineColor = this.getLineColor();
-	var fillColor = this.getFillColor();
+DrawingContext.prototype.drawPoint = function (x, y, pointName) {
+	if (this.isShapeAlreadyDrawn(pointName)) return;
 
-	var lineWidth = this.getLineDrawingWidth();
+	var lineColor = this.getLineColor();
 	var pointWidth = this.getPointDrawingWidth();
 
 	var point = this.board.create('point', [x, y], {
-		name: name,
+		name: pointName,
 		size: pointWidth,
 		fillColor: lineColor,
 		strokeColor: lineColor
 	});
 
+	var pointShape = new Point(pointName, x, y);
 	this.shapes[point.id] = point;
+	this.shapeProperties[point.id] = pointShape.getProperties();
 
 	JXG.addEvent(point.rendNode, 'mousedown', this.selection(), point);
 };
@@ -160,8 +161,8 @@ DrawingContext.prototype.drawPoint = function (x, y, name) {
  * @param By
  */
 DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
+	if (this.isShapeAlreadyDrawn(A + B)) return;
 	var lineColor = this.getLineColor();
-	var fillColor = this.getFillColor();
 
 	var lineWidth = this.getLineDrawingWidth();
 	var pointWidth = this.getPointDrawingWidth();
@@ -178,7 +179,9 @@ DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
 	var line = this.board.create('line', [pointA, pointB],
         { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor, name : A + B });
 
+	var lineShape = new LineSegment(new Point(A, Ax, Ay), new Point(B, Bx, By));
 	this.shapes[line.id] = line;
+	this.shapeProperties[line.id] = lineShape.getProperties();
 
 	JXG.addEvent(line.rendNode, 'mousedown', this.selection(), line);
 };
@@ -447,16 +450,31 @@ DrawingContext.prototype.drawCircle = function (C, Cx, Cy, radius) {
 	JXG.addEvent(circle.rendNode, 'mousedown', this.selection(), circle);
 };
 
-/**
- * Deletes a shape given by its name
- *
- * @param shapeName
- */
-DrawingContext.prototype.deleteShape = function (shapeName) {
+DrawingContext.prototype.isShapeAlreadyDrawn = function (shapeNameToBeChecked) {
 	var shapesArray = Object.getOwnPropertyNames(this.shapes);
 	for (var i = 0; i < shapesArray.length ; i++) {
 		var shape = this.shapes[shapesArray[i]];
-		if (shape["name"] == shapeName) {
+		var shapeName = shape["name"];
+		if (this.compareShapeNames(shapeName, shapeNameToBeChecked)) {
+			showErrorMessage("Shape with name: " + shapeName + " already exists.", true);
+			return true;
+		}
+	}
+	return false;
+};
+
+/**
+ * Deletes a shape given by its name
+ *
+ * @param shapeNameToBeDeleted
+ */
+DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
+	var shapesArray = Object.getOwnPropertyNames(this.shapes);
+	for (var i = 0; i < shapesArray.length ; i++) {
+		var shape = this.shapes[shapesArray[i]];
+		var shapeName = shape["name"];
+
+		if (this.compareShapeNames(shapeName, shapeNameToBeDeleted)) {
 			// Delete the shape
 			var shapeId = shape['id'];
 
@@ -480,7 +498,9 @@ DrawingContext.prototype.deleteShape = function (shapeName) {
 			}
 
 			this.shapes[shapeId].remove();
-			this.shapes[shapeId] = null;
+			delete this.shapes[shapeId];
+
+			delete this.shapeProperties[shapeId];
 		}
 	}
 };
@@ -490,8 +510,23 @@ DrawingContext.prototype.deleteShape = function (shapeName) {
  * @param shapeName
  */
 DrawingContext.prototype.showPropertiesOf = function (shapeName) {
-	//calculate properties
-	openFigureProperties({cat:"meow"});
+	var shapesArray = Object.getOwnPropertyNames(this.shapes);
+	for (var i = 0; i < shapesArray.length ; i++) {
+		var shape = this.shapes[shapesArray[i]];
+		if (shape["name"] == shapeName) {
+			var shapeProperties = this.shapeProperties[shape["id"]];
+			alert(JSON.stringify(shapeProperties));
+			openFigureProperties(shapeProperties);
+		}
+	}
+};
+
+DrawingContext.prototype.compareShapeNames = function (shape1, shape2) {
+	shape1 = shape1.split('').sort().join('');
+	shape2 = shape2.split('').sort().join('');
+
+	if (shape1 == shape2) return true;
+	return false;
 };
 
 DrawingContext.prototype.downloadAsPNG = function (fileName) {
