@@ -187,33 +187,36 @@ app.activeDrawingContext.setFillColor("#F8F8FF");
 
 app.setCommandParser(new CommandParser());
 
+app.registerCommand(ClearBoardCommand);
+app.registerCommand(DeleteCommand);
+app.registerCommand(ShowPropertiesCommand);
+app.registerCommand(SetTitle);
+
+app.registerCommand(SetWidthCommand);
+app.registerCommand(SetFillOpacityCommand);
+app.registerCommand(SetLineColorCommand);
+app.registerCommand(SetFillColorCommand);
+
+app.registerCommand(PointCommand);
+app.registerCommand(LineCommand);
+
+app.registerCommand(TriangleCommand);
+app.registerCommand(IsoscelesTriangleCommand);
+app.registerCommand(EquilateralTriangleCommand);
+app.registerCommand(RectangularTriangleCommand);
+
+app.registerCommand(QuadrilateralCommand);
+app.registerCommand(ParallelogramCommand);
+app.registerCommand(RectangleCommand);
+app.registerCommand(SquareCommand);
+
+app.registerCommand(CircleCommand);
+
 app.registerCommand(DownloadCommand);
 app.registerCommand(DropboxCommand);
 
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
-
-app.registerCommand(ClearBoardCommand);
-app.registerCommand(PointCommand);
-app.registerCommand(LineCommand);
-app.registerCommand(TriangleCommand);
-app.registerCommand(IsoscelesTriangleCommand);
-app.registerCommand(EquilateralTriangleCommand);
-app.registerCommand(RectangularTriangleCommand);
-app.registerCommand(QuadrilateralCommand);
-app.registerCommand(ParallelogramCommand);
-app.registerCommand(RectangleCommand);
-app.registerCommand(SquareCommand);
-app.registerCommand(CircleCommand);
-
-app.registerCommand(DeselectCommand);
-app.registerCommand(DeleteCommand);
-app.registerCommand(ShowPropertiesCommand);
-app.registerCommand(SetWidthCommand);
-app.registerCommand(SetFillOpacityCommand);
-app.registerCommand(SetLineColorCommand);
-app.registerCommand(SetFillColorCommand);
-app.registerCommand(SetTitle);
 
 var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
