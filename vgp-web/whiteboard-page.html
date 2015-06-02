@@ -25,6 +25,19 @@
     <![endif]-->
 </head>
 <body>
+    <div class="progress-bar-container hide">
+        <!--<div id="progressBackgroundFilter"></div>-->
+        <div id="processMessage">
+            <div class="progress progress-striped active ajax-progress-bar reverse-animation">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" animation-direction="reverse"
+                     aria-valuemin="0" aria-valuemax="100"
+                     style="width: 100%">
+                    <span class="ajax-processing-text">Processing …</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-default whiteboard-header-navbar">
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-left">
@@ -577,7 +590,6 @@
     <script type="text/javascript" src="js/commands/Dropbox.js"></script>
     <script type="text/javascript" src="js/commands/ShowHelp.js"></script>
     <!-- End of commands -->
-
     <!-- Speech -->
     <script type='text/javascript' src='js/speech/Speech.js'></script>
     <script type='text/javascript' src='js/speech/CommandParserStream.js'></script>
@@ -593,7 +605,6 @@
 
     <script type="text/javascript" src="js/shapes/LineSegmentUtils.js"></script>
     <!-- End of shapes-->
-
     <!-- Setup -->
     <script type='text/javascript' src='js/setup.js'></script>
     <!-- End of setup-->

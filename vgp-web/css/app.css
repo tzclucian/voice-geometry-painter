@@ -312,3 +312,21 @@ ul.settings-list li {
 .nav.navbar-nav.lower input {
 	width: 82px;
 }
+
+
+.progress {
+	height: 30px;
+}
+
+.progress-bar-container {
+	width: 150px;
+	position: fixed;
+	right: 35px;
+	top: 66px;
+	z-index: 5;
+}
+
+.ajax-processing-text {
+	top: 6px;
+	position: relative;
+}

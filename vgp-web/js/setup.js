@@ -292,9 +292,9 @@ function openFigureProperties(objectWithProperties) {
 }
 
 function showProgressbar() {
-	console.log('Show progreess Bar');
+	$('.progress-bar-container').removeClass('hide');
 }
 
 function hideProgressbar() {
-	console.log('Hide progreess Bar');
+	$('.progress-bar-container').addClass('hide');
 }
