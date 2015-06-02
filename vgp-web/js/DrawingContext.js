@@ -480,9 +480,11 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
 
 			if (shape.type == JXG.OBJECT_TYPE_POINT) {
 				this.board.removeObject(shape);
+
 			} else if (shape.type == JXG.OBJECT_TYPE_LINE) {
-				shape.point1.remove();
-				shape.point2.remove();
+				this.board.removeObject(shape);
+				this.board.removeObject(shape.point1);
+				this.board.removeObject(shape.point2);
 
 			} else if (shape.type == JXG.OBJECT_TYPE_POLYGON) {
 				for (var j = 0; j < shape.borders.length; j++) {
@@ -491,6 +493,7 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
 				for (var k = 0; k < shape.vertices.length; k++) {
 					this.board.removeObject(shape.vertices[k]);
 				}
+
 			} else if (shape.type == JXG.OBJECT_TYPE_CIRCLE) {
 				var centerPoint = shape.center;
 				this.board.removeObject(centerPoint);
@@ -511,12 +514,15 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
  */
 DrawingContext.prototype.showPropertiesOf = function (shapeName) {
 	var shapesArray = Object.getOwnPropertyNames(this.shapes);
-	for (var i = 0; i < shapesArray.length ; i++) {
+	for (var i = 0; i < shapesArray.length; i++) {
 		var shape = this.shapes[shapesArray[i]];
 		if (shape["name"] == shapeName) {
 			var shapeProperties = this.shapeProperties[shape["id"]];
-			alert(JSON.stringify(shapeProperties));
-			openFigureProperties(shapeProperties);
+			var json = JSON.stringify(shapeProperties);
+			var data = JSON.parse(json);
+
+			var yml = window.YAML.stringify(data);
+			openFigureProperties({shapeName: yml});
 		}
 	}
 };

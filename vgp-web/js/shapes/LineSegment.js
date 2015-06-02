@@ -2,19 +2,19 @@
  * Created by Lucian Tuca on 01/06/15.
  */
 
-var LineSegment = function(pointA, pointB) {
-    this.name = pointA.name + pointB.name;
-    this.pointA = pointA;
-    this.pointB = pointB;
+var LineSegment = function(point1, point2) {
+    this.name = point1.name + point2.name;
+    this.point1 = point1;
+    this.point2 = point2;
 };
 
 LineSegment.prototype.getProperties = function() {
     return {
         line: {
             name: this.name,
-            length: LineSegmentUtils.calculateLength(this.pointA, this.pointB),
-            pointA: this.pointA,
-            pointB: this.pointB
+            length: LineSegmentUtils.calculateLength(this.point1, this.point2),
+            point1: this.point1,
+            point2: this.point2
         }
     }
 };
