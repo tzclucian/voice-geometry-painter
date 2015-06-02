@@ -28,5 +28,5 @@ ParallelogramCommand.prototype.REGEXP = new RegExp('draw\\sparallelogram\\s([a-z
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-ParallelogramCommand.prototype.HELP = "rectangle ABCD 10 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP +
+ParallelogramCommand.prototype.HELP = "parallelogram ABCD 10 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP +
     " 5 " + COORDINATE_DELIMITER_HELP + " 10 " + COORDINATE_DELIMITER_HELP + " 45";

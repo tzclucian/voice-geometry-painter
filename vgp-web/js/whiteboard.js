@@ -34,7 +34,11 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 	if (command != null) {
 		command.execute(this.activeDrawingContext);
 		if (command instanceof UndoCommand == false &&
-            command instanceof RedoCommand == false) {
+            command instanceof RedoCommand == false &&
+			command instanceof ShowPropertiesCommand == false &&
+			command instanceof ClosePopupCommand == false &&
+			command instanceof ShowHelpCommand == false
+		) {
 			this.activeDrawingContext.addCommand(command);
 		}
 	}

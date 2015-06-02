@@ -54,8 +54,10 @@ CommandParserStream.prototype.getLastMatchedToken = function(tokens) {
         //console.log("getLastMatchedToken --> " + tokens[i] + ", nextState=" + nextState);
         if (nextState > 0) {
             state = nextState;
-            tokens.shift();
         } else {
+            for (var j = 0; j < i; j++) {
+                tokens.shift();
+            }
             break;
         }
     }
