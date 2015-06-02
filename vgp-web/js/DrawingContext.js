@@ -177,7 +177,7 @@ DrawingContext.prototype.drawLineSegment = function (A, Ax, Ay, B, Bx, By) {
 	});
 
 	var line = this.board.create('line', [pointA, pointB],
-        { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor, name : A + B });
+        { straightFirst: false, straightLast: false, strokeWidth: lineWidth, strokeColor: lineColor, name: A + B });
 
 	var lineShape = new LineSegment(new Point(A, Ax, Ay), new Point(B, Bx, By));
 	this.shapes[line.id] = line;
@@ -522,7 +522,7 @@ DrawingContext.prototype.showPropertiesOf = function (shapeName) {
 			var data = JSON.parse(json);
 
 			var yml = window.YAML.stringify(data);
-			openFigureProperties({shapeName: yml});
+			openFigureProperties({ shapeName: yml });
 		}
 	}
 };
@@ -530,8 +530,8 @@ DrawingContext.prototype.showPropertiesOf = function (shapeName) {
 /**
  * Closes any visible popup.
  */
-DrawingContext.prototype.closeAnyPopup = function() {
-    alert('when this executes any popup closes.');
+DrawingContext.prototype.closeAnyPopup = function () {
+	$('.modal').modal('hide');
 };
 
 /**
