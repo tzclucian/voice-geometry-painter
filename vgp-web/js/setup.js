@@ -185,8 +185,6 @@ var canvasId = 'jxgbox';
 var app = new DrawingApplication();
 app.setupDrawingContext(canvasId);
 app.activeDrawingContext = app.getContext(canvasId);
-app.activeDrawingContext.setLineColor("#00008B");
-app.activeDrawingContext.setFillColor("#F8F8FF");
 
 app.setCommandParser(new CommandParser());
 
@@ -222,6 +220,9 @@ app.registerCommand(DropboxCommand);
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
 app.registerCommand(ShowHelpCommand);
+
+app.parseAndExecute('set line color darkblue');
+app.parseAndExecute('set fill color ghostwhite');
 
 var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
