@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.command-list {
+	position: fixed;
+	width: 150px;
+	top: 50px;
+	left: 10px;
+}
+
+.command-containerlist-text {
+	margin-left: 180px;
+}
+
+.title {
+	float: left;
+}
+
+
+.navbar-logo {
+	float: right;
+	margin: 10px 10px 0 0;
+}
+
+
+.back-to-top {
+	float: right;
+	margin: 0 10px 0 0;
+}

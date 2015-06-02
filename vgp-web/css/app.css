@@ -160,9 +160,6 @@ form.white-board-title-input input {
 	display: block;
 }
 
-.nav.navbar-nav > li > a.navbar-logo {
-	padding-top: 6px !important;
-}
 
 .workspace {
 	margin: 0 5px;
