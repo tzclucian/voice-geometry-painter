@@ -4,13 +4,6 @@
 
 var Speech = function() {
 
-    this.commands = [ /*0*/'', /*1*/'draw', /*2*/'rectangle', /*3*/'triangle', /*4*/'circle',
-                      /*5*/'A', /*6*/'B'];
-
-    this.stateMachine = [[1], [2, 3, 4], [5, 6], [5, 6], [5, 6]];
-
-    this.state = 0;
-
     this.langs =
         [
             ['Afrikaans',
@@ -153,6 +146,7 @@ var Speech = function() {
     this.onEnd = null;
     this.onError = null;
     this.onResult = null;
+    this.onResCounter = 0;
 };
 
 Speech.prototype.init = function(){
@@ -226,8 +220,15 @@ Speech.prototype.registerOnEnd = function(onEndFunction) {
 
 Speech.prototype.onResultCallback = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
+        this.onResCounter++;
         if (event.results[i].isFinal) {
+            this.onResCounter = 0;
+            hideProgressbar();
             this.onResult(event.results[i][0].transcript);
+        } else {
+            if (this.onResCounter > 5) {
+                showProgressbar();
+            }
         }
     }
 };

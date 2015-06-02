@@ -26,5 +26,5 @@ RectangularTriangleCommand.prototype.REGEXP = new RegExp('draw\\srectangular\\st
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-RectangularTriangleCommand.prototype.HELP = "rectangular triangle ABC 10 " + COORDINATE_DELIMITER + " 10 " +
-    COORDINATE_DELIMITER + " 5 " + COORDINATE_DELIMITER + " 7";
+RectangularTriangleCommand.prototype.HELP = "rectangular triangle ABC 10 " + COORDINATE_DELIMITER_HELP + " 10 " +
+COORDINATE_DELIMITER_HELP + " 5 " + COORDINATE_DELIMITER_HELP + " 7";

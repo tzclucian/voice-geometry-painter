@@ -25,5 +25,5 @@ EquilateralTriangleCommand.prototype.REGEXP = new RegExp('draw\\s(equal|equilate
                                                         COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-EquilateralTriangleCommand.prototype.HELP = "equal|equilateral triangle ABC 10 " + COORDINATE_DELIMITER + " 10 " +
-                                            COORDINATE_DELIMITER + " 5";
+EquilateralTriangleCommand.prototype.HELP = "equal|equilateral triangle ABC 10 " + COORDINATE_DELIMITER_HELP + " 10 " +
+COORDINATE_DELIMITER_HELP + " 5";

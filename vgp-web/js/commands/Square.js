@@ -26,4 +26,4 @@ SquareCommand.prototype.REGEXP = new RegExp('draw\\ssquare\\s([a-zA-Z])([a-zA-Z]
                                         COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-SquareCommand.prototype.HELP = "square ABCD 10 " + COORDINATE_DELIMITER + " 20 " + COORDINATE_DELIMITER + " 10";
+SquareCommand.prototype.HELP = "square ABCD 10 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP + " 10";

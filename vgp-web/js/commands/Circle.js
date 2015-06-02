@@ -22,4 +22,4 @@ CircleCommand.prototype.REGEXP = new RegExp('draw\\scircle\\s([a-zA-Z])\\s(\\d+)
                                             COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-CircleCommand.prototype.HELP = "circle C 20 " + COORDINATE_DELIMITER +" 30 " + COORDINATE_DELIMITER + " 10";
+CircleCommand.prototype.HELP = "circle C 20 " + COORDINATE_DELIMITER_HELP +" 30 " + COORDINATE_DELIMITER_HELP + " 10";
