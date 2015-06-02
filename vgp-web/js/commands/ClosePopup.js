@@ -15,7 +15,7 @@ ClosePopupCommand.prototype.execute = function(context) {
 ClosePopupCommand.prototype.NAME = "Close";
 
 // Command's regexp
-ClosePopupCommand.prototype.REGEXP = /close/i;
+ClosePopupCommand.prototype.REGEXP = new RegExp('close', 'i');
 
 // Command's help
 ClosePopupCommand.prototype.HELP = "close";

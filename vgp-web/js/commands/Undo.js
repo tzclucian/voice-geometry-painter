@@ -15,7 +15,7 @@ UndoCommand.prototype.execute = function(context) {
 UndoCommand.prototype.NAME = "Undo";
 
 // Command's regexp
-UndoCommand.prototype.REGEXP = /undo/i;
+UndoCommand.prototype.REGEXP = new RegExp('undo', 'i');
 
 // Command's help
 UndoCommand.prototype.HELP = "undo";

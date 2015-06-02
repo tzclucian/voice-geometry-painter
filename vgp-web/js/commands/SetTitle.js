@@ -17,7 +17,7 @@ SetTitle.prototype.execute = function(context) {
 SetTitle.prototype.NAME = "Set title";
 
 // Command's regexp
-SetTitle.prototype.REGEXP = /set\stitle\s(.*)/i;
+SetTitle.prototype.REGEXP = new RegExp('set\\stitle\\s(.*)', 'i');
 
 // Command's help
 SetTitle.prototype.HELP = "set title Triangles";

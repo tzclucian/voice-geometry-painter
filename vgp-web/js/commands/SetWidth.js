@@ -18,6 +18,6 @@ SetWidthCommand.prototype.execute = function(context) {
 
 SetWidthCommand.prototype.NAME = "Set size";
 
-SetWidthCommand.prototype.REGEXP = /set\ssize\s(\d?\d)/i;
+SetWidthCommand.prototype.REGEXP = new RegExp('set\\ssize\\s(\\d?\\d)', 'i');
 
 SetWidthCommand.prototype.HELP = "set size 2";

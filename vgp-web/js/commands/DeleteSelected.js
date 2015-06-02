@@ -15,7 +15,7 @@ DeleteSelectedCommand.prototype.execute = function(context) {
 DeleteSelectedCommand.prototype.NAME = "Delete selected";
 
 // Command's regexp
-DeleteSelectedCommand.prototype.REGEXP = /delete\sselected/i;
+DeleteSelectedCommand.prototype.REGEXP = new RegExp('delete\\sselected', 'i');
 
 // Command's help
 DeleteSelectedCommand.prototype.HELP = "delete selected";

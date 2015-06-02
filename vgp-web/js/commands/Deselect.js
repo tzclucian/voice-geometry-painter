@@ -15,7 +15,7 @@ DeselectCommand.prototype.execute = function(context) {
 DeselectCommand.prototype.NAME = "Deselect";
 
 // Command's regexp
-DeselectCommand.prototype.REGEXP = /deselect/i;
+DeselectCommand.prototype.REGEXP = new RegExp('deselect', 'i');
 
 // Command's help
 DeselectCommand.prototype.HELP = "deselect";

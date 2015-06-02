@@ -9,6 +9,8 @@ var CommandParserStream = function(commandParser) {
     this.currentState = 0;
     this.command = "";
     this.initStateMachine();
+    //this.printTokens();
+    //this.printTransitionTable();
 };
 
 CommandParserStream.prototype.reset = function() {
@@ -28,7 +30,11 @@ CommandParserStream.prototype.initStateMachine = function()
 CommandParserStream.prototype.registerCommand = function(commandDefinition) {
     if (commandDefinition instanceof CommandDefinition) {
         var regexp = commandDefinition.regexp.toString();
-        var cleanRegexp = regexp.substring(1, regexp.length-2);
+        var cleanRegexp = regexp.substring(1, regexp.length-1);
+        if (cleanRegexp.lastIndexOf('/') == (cleanRegexp.length-1)) {
+            cleanRegexp = cleanRegexp.substring(0, cleanRegexp.length-1);
+        }
+        //console.log("Parsing: " + cleanRegexp);
         var regexpTokens = cleanRegexp.split("\\s");
         var state = this.getLastMatchedToken(regexpTokens);
         for (var j = 0; j < regexpTokens.length; j++) {
@@ -45,6 +51,7 @@ CommandParserStream.prototype.getLastMatchedToken = function(tokens) {
     for (var i = 0; i < tokens.length; i++) {
 
         var nextState = this.getNextState(state, tokens[i], true);
+        //console.log("getLastMatchedToken --> " + tokens[i] + ", nextState=" + nextState);
         if (nextState > 0) {
             state = nextState;
             tokens.shift();

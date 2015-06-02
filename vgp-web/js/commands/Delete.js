@@ -18,7 +18,7 @@ DeleteCommand.prototype.execute = function(context) {
 DeleteCommand.prototype.NAME = "Delete shape";
 
 // Command's regexp
-DeleteCommand.prototype.REGEXP = /delete\s(\w+)/i;
+DeleteCommand.prototype.REGEXP = new RegExp('delete\\s(\\w+)', 'i');
 
 // Command's help
 DeleteCommand.prototype.HELP = "delete ABC";
