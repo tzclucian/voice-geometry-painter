@@ -38,9 +38,19 @@ body {
 
 .command-text {
 	font-weight: bold;
+	width: auto !important;
 }
 
 
 .back-to-top:hover {
 	cursor: pointer;
 }
+
+
+.input-group {
+	padding: 2px 0 2px 0;
+}
+
+	.input-group .input-group-addon .fa.fa-volume-up {
+		color: #337ab7;
+	}
