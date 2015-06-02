@@ -224,13 +224,20 @@ DrawingContext.prototype.drawTriangle = function (A, Ax, Ay, B, Bx, By, C, Cx, C
 			strokeColor: lineColor,
 			strokeWidth: lineWidth
 		},
-
+		hasInnerPoints: true,
 		fillColor: fillColor,
 		fillOpacity: shapeFillOpacity,
 		name: A + B + C
 	});
 
+	pointA = new Point(A, Ax, Ay);
+	pointB = new Point(B, Bx, By);
+	pointC = new Point(C, Cx, Cy);
+
+	var triangleShape = new Triangle(pointA, pointB, pointC);
+
 	this.shapes[triangle.id] = triangle;
+	this.shapeProperties[triangle.id] = triangleShape.getProperties();
 
 	JXG.addEvent(triangle.rendNode, 'mousedown', this.selection(), triangle);
 };
@@ -342,7 +349,7 @@ DrawingContext.prototype.drawQuadrilateral = function (A, Ax, Ay, B, Bx, By, C, 
 			strokeColor: lineColor,
 			strokeWidth: lineWidth
 		},
-
+		hasInnerPoints: true,
 		fillColor: fillColor,
 		fillOpacity: shapeFillOpacity,
 		name: A + B + C + D
@@ -483,8 +490,8 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
 
 			} else if (shape.type == JXG.OBJECT_TYPE_LINE) {
 				this.board.removeObject(shape);
-				this.board.removeObject(shape.point1);
-				this.board.removeObject(shape.point2);
+				this.board.removeObject(shape.line1);
+				this.board.removeObject(shape.line2);
 
 			} else if (shape.type == JXG.OBJECT_TYPE_POLYGON) {
 				for (var j = 0; j < shape.borders.length; j++) {
@@ -512,11 +519,12 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
  *
  * @param shapeName
  */
-DrawingContext.prototype.showPropertiesOf = function (shapeName) {
+DrawingContext.prototype.showPropertiesOf = function (shapeNameToBeDeleted) {
 	var shapesArray = Object.getOwnPropertyNames(this.shapes);
 	for (var i = 0; i < shapesArray.length; i++) {
 		var shape = this.shapes[shapesArray[i]];
-		if (shape["name"] == shapeName) {
+		var shapeName = shape["name"];
+		if (this.compareShapeNames(shapeName, shapeNameToBeDeleted)) {
 			var shapeProperties = this.shapeProperties[shape["id"]];
 			var json = JSON.stringify(shapeProperties);
 			var data = JSON.parse(json);

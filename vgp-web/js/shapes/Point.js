@@ -10,7 +10,7 @@ var Point = function(name, x, y) {
 
 Point.prototype.getProperties = function() {
     return {
-        point: {
+        'Point' : {
             name: this.name,
             x: this.x,
             y: this.y
