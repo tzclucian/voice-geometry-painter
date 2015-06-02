@@ -226,7 +226,7 @@ Speech.prototype.onResultCallback = function(event) {
             hideProgressbar();
             this.onResult(event.results[i][0].transcript);
         } else {
-            if (this.onResCounter > 10) {
+            if (this.onResCounter > 5) {
                 showProgressbar();
             }
         }
