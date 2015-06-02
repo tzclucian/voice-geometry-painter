@@ -289,3 +289,11 @@ function openFigureProperties(objectWithProperties) {
 	appModel.updateFigureProperties(properties);
 	$('#figurePropertiesModal').modal('show');
 }
+
+function showProgressbar() {
+
+}
+
+function hideProgressbar() {
+
+}
