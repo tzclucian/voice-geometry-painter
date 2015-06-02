@@ -291,9 +291,9 @@ function openFigureProperties(objectWithProperties) {
 }
 
 function showProgressbar() {
-
+	console.log('Show progreess Bar');
 }
 
 function hideProgressbar() {
-
+	console.log('Hide progreess Bar');
 }
