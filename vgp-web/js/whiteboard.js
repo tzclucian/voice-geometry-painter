@@ -43,6 +43,12 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 	}
 };
 
+/**
+ * Downloads the cavans as png
+ *
+ * @param canvasId
+ * @param fileName
+ */
 DrawingApplication.prototype.downloadAsPNG = function (canvasId, fileName) {
 	fileName = fileName || "File";
 	this.drawingContexts[canvasId].downloadAsPNG(fileName);
