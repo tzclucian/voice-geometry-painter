@@ -490,8 +490,8 @@ DrawingContext.prototype.deleteShape = function (shapeNameToBeDeleted) {
 
 			} else if (shape.type == JXG.OBJECT_TYPE_LINE) {
 				this.board.removeObject(shape);
-				this.board.removeObject(shape.line1);
-				this.board.removeObject(shape.line2);
+				this.board.removeObject(shape.point1);
+				this.board.removeObject(shape.point2);
 
 			} else if (shape.type == JXG.OBJECT_TYPE_POLYGON) {
 				for (var j = 0; j < shape.borders.length; j++) {
