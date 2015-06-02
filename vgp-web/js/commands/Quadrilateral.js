@@ -36,6 +36,6 @@ QuadrilateralCommand.prototype.REGEXP = new RegExp('draw\\squadrilateral\\s([a-z
     COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-QuadrilateralCommand.prototype.HELP = "quadrilateral ABCD 10 " + COORDINATE_DELIMITER + " 20 " + COORDINATE_DELIMITER +
-    " 20 " + COORDINATE_DELIMITER + " 20 " + COORDINATE_DELIMITER + " 20 " + COORDINATE_DELIMITER + " 10 " +
-    COORDINATE_DELIMITER + " 10 " + COORDINATE_DELIMITER + " 10";
+QuadrilateralCommand.prototype.HELP = "quadrilateral ABCD 10 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP +
+    " 20 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP + " 10 " +
+COORDINATE_DELIMITER_HELP + " 10 " + COORDINATE_DELIMITER_HELP + " 10";

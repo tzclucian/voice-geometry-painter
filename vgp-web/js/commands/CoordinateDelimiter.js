@@ -3,3 +3,4 @@
  */
 
 var COORDINATE_DELIMITER = '\\+';
+var COORDINATE_DELIMITER_HELP = 'and';

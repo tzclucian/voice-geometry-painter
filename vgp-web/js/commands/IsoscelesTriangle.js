@@ -27,5 +27,5 @@ IsoscelesTriangleCommand.prototype.REGEXP = new RegExp('draw\\sisosceles\\strian
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-IsoscelesTriangleCommand.prototype.HELP = "isosceles triangle ABC 5 " + COORDINATE_DELIMITER + " 5 " + COORDINATE_DELIMITER +
-    " 3 " + COORDINATE_DELIMITER + " 30 ";
+IsoscelesTriangleCommand.prototype.HELP = "isosceles triangle ABC 5 " + COORDINATE_DELIMITER_HELP + " 5 " + COORDINATE_DELIMITER_HELP +
+    " 3 " + COORDINATE_DELIMITER_HELP + " 30 ";

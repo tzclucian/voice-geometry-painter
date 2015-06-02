@@ -32,5 +32,5 @@ TriangleCommand.prototype.REGEXP = new RegExp('draw\\striangle\\s([a-zA-Z])([a-z
                                             COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-TriangleCommand.prototype.HELP = "triangle ABC 1 " + COORDINATE_DELIMITER + " 4 " + COORDINATE_DELIMITER +
-                                " 8 " + COORDINATE_DELIMITER + " 6 " + COORDINATE_DELIMITER + " 9 " + COORDINATE_DELIMITER + " 8";
+TriangleCommand.prototype.HELP = "triangle ABC 1 " + COORDINATE_DELIMITER_HELP + " 4 " + COORDINATE_DELIMITER_HELP +
+                                " 8 " + COORDINATE_DELIMITER_HELP + " 6 " + COORDINATE_DELIMITER_HELP + " 9 " + COORDINATE_DELIMITER_HELP + " 8";
