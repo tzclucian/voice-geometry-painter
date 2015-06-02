@@ -69,12 +69,6 @@ SpeechApplication.prototype.onEnd = function() {
 
 SpeechApplication.prototype.onResult = function(phrase) {
     var cmdFinished = this.cmdParserStream.process(phrase);
-    if (this.cmdParserStream.getCommand().length != 0) {
-        showProgressbar();
-    } else
-    {
-        hideProgressbar();
-    }
     if (this.outputBox != null) {
         this.outputBox.value = this.cmdParserStream.getCommand();
     }
