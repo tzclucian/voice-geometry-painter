@@ -58,18 +58,89 @@
 				<ul>
 					<li><strong><a href="http://jsxgraph.uni-bayreuth.de/wp/">JSXGraph</a></strong> - Cross-browser
 						javascript library for interactive geometry, plotting and visualization.</li>
+					<li><strong><a href="http://getbootstrap.com/">Bootstrap</a></strong> - HTML, CSS, and JS framework
+						for responsive web UI development.</li>
+					<li><strong><a href="http://knockoutjs.com/">Knockout</a></strong> - Javascript library for dynamic UI</li>
+					<li><strong><a href="https://github.com/eligrey/FileSaver.js">FileSaver.js</a></strong> - implements the HTML5 W3C saveAs() FileSaver interface</li>
+					<li><strong><a href="https://github.com/eligrey/Blob.js">Blob.js</a></strong></li>
+					<li><strong><a href="https://github.com/eligrey/canvas-toBlob.js">Canvas-ToBlob.js</a></strong></li>
+					<li><strong><a href="https://www.dropbox.com/developers/datastore/sdks/js">Dropbox datastore js sdk</a></strong></li>
+					<li><strong><a href="http://shapeshed.com/html5-speech-recognition-api/">HTML5 Speech Recogntion API</a></strong></li>
 				</ul>
 			</div>
 		</div>
-		<div class="usabilityTestObjectives">
-				<h5>Subtitle</h5>
-				<p>List the objectives/goals of the usability test; what you want to study or to evaluate. Be specific in what you want achieve, to evaluate with this test (e.g. obtain quality or quantitative regarding certain product/application components, accessibility evaluation, heuristic evaluation, cognitive walk-through etc.).
-				</p><ul>
-					<li>Assess the overall effectiveness of the <strong>product/application</strong> for different types of users performing basic, common tasks;</li>
-					<li>Identify obstacles to completing <strong>a certain task or using a certain component</strong>;</li>
-					<li>Evaluate consistency and standards;</li>
-					<li>Use the <a href="http://profs.info.uaic.ro/~stefan.negru/usability/#references">References</a> to guide you in writing your objectives.</li>
+		<div class="usabilityTestInfo">
+			<h3>Features developed</h3>
+			<div class="usabilityTestObjectives">
+				<ul>
+					<li>Drawing geometric shapes
+						<ul>
+							<li>Points</li>
+							<li>Segments</li>
+							<li>Triangles (Isosceles, Rectangular, Equilateral and irregular)</li>
+							<li>Quadrilaterals (Parallelogram, Rectangle, Square and irregular)</li>
+							<li>Circles</li>
+						</ul>
+					</li>
+					<li>Select/Deselect/Delete shapes</li>
+					<li>Show properties of a shape</li>
+					<li>Set Fill/Line colors</li>
+					<li>Set Opacity</li>
+					<li>Set line size</li>
+					<li>Download on local drive</li>
+					<li>Share on Dropbox</li>
+					<li>Set board title</li>
+					<li>Clear board</li>
+					<li>Undo/Redo</li>
 				</ul>
+			</div>
+		</div>
+		<div class="usabilityTestInfo">
+			<h3>Application structure</h3>
+
+			<div class="usabilityTestObjectives">
+				<h4>User Interface</h4>
+				<p>The interface logic is concentrated in a single html file, <i>whiteboard-page.html</i>, and a set of css files,
+				as we can observe in the following screen capture:</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/ui_files.png" style="float:none;" />
+			</div>
+			<div class="usabilityTestObjectives">
+				<h4>Drawing Area</h4>
+				<p>The drawing functionality is implemented in DrawingContext.js file and uses jxgraph library.</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/drawing_area.png" style="float:none;" />
+			</div>
+			<div class="usabilityTestObjectives">
+				<h4>Speech Recognizer</h4>
+				<p>The speech recognition component uses an instance of WebkitSpeechRecognition engine, subscribing a set of
+					callbacks for recognition events like <i>OnResult</i>, <i>OnEnd</i>, etc.</p>
+				<p>In addition, having a set of commands as input, the component creates a grammar, which is later used as a
+					state machine in the recognition step. This functionality is implemented in CommandParserStream.js.</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/speech_recognizer.png" style="float: none;" />
+			</div>
+			<div class="usabilityTestObjectives">
+				<h4>Command Parsing</h4>
+				<p>Each command is defined as an object which has a parametrized regular expression property and an execute
+					method. When the Command Parser processes a new phrase, it tries to match each command from it's list, and
+					in case of success, the parser calls it's execute method, which contains the logic of the command execution.</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/command_parsing.png" style="float: none;" />
+				<br/><br/><br/><br/><br/>
+			</div>
+		</div>
+
+		<div class="usabilityTestInfo">
+			<h3>User Interaction</h3>
+			<div class="usabilityTestObjectives">
+				<h4>Speech commands</h4>
+				<p>The user can draw any shape using voice commands and also can issue other actions like <i>Undo</i>,
+					<i>Download</i>, <i>Share on Dropbox</i> and so on.</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/drawing_with_voice.png" style="float: none;" />
+			</div>
+			<div class="usabilityTestObjectives">
+				<h4>Mouse Interaction</h4>
+				<p>For users that cannot speak the language, or cannot speak at all, the application offers a mouse
+					compatible interface. This interface consists of a tool-bar with all the necessary commands.</p><br/>
+				<img src="VoiceGeometryPainter%20-%20Academic%20Report_files/mouse_interaction.png" style="float: none;" />
+			</div>
 		</div>
 
 	</article>
