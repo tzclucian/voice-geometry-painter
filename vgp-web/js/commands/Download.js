@@ -16,7 +16,7 @@ DownloadCommand.prototype.execute = function(context) {
 DownloadCommand.prototype.NAME = "Download";
 
 // Command's regexp
-DownloadCommand.prototype.REGEXP = /download/i;
+DownloadCommand.prototype.REGEXP = new RegExp('download', 'i');
 
 // Command's help
 DownloadCommand.prototype.HELP = "download";

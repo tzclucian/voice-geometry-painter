@@ -18,7 +18,7 @@ ShowPropertiesCommand.prototype.execute = function(context) {
 ShowPropertiesCommand.prototype.NAME = "Show properties";
 
 // Command's regexp
-ShowPropertiesCommand.prototype.REGEXP = /show\sproperties\sof\s(\w+)/i;
+ShowPropertiesCommand.prototype.REGEXP = new RegExp('show\\sproperties\\sof\\s(\\w+)', 'i');
 
 // Command's help
 ShowPropertiesCommand.prototype.HELP = "show properties of ABC";

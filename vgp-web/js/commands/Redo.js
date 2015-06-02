@@ -15,7 +15,7 @@ RedoCommand.prototype.execute = function(context) {
 RedoCommand.prototype.NAME = "Redo";
 
 // Command's regexp
-RedoCommand.prototype.REGEXP = /redo/i;
+RedoCommand.prototype.REGEXP = new RegExp('redo', 'i');
 
 // Command's help
 RedoCommand.prototype.HELP = "redo";

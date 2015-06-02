@@ -15,7 +15,7 @@ ClearBoardCommand.prototype.execute = function(context) {
 ClearBoardCommand.prototype.NAME = "Clear board";
 
 // Command's regexp
-ClearBoardCommand.prototype.REGEXP = /clear\sboard/i;
+ClearBoardCommand.prototype.REGEXP = new RegExp('clear\\sboard', 'i');
 
 // Command's help
 ClearBoardCommand.prototype.HELP = "clear board";

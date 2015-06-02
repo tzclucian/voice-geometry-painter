@@ -21,6 +21,6 @@ SetFillOpacityCommand.prototype.execute = function(context) {
 
 SetFillOpacityCommand.prototype.NAME = "Set fill opacity";
 
-SetFillOpacityCommand.prototype.REGEXP = /set\sfill\sopacity\s(\d?\d\d)/i;
+SetFillOpacityCommand.prototype.REGEXP = new RegExp('set\\sfill\\sopacity\\s(\\d?\\d\\d)', 'i');
 
 SetFillOpacityCommand.prototype.HELP = "set fill opacity 50";

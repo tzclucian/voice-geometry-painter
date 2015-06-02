@@ -15,7 +15,7 @@ ShowHelpCommand.prototype.execute = function(context) {
 ShowHelpCommand.prototype.NAME = "Help";
 
 // Command's regexp
-ShowHelpCommand.prototype.REGEXP = /help/i;
+ShowHelpCommand.prototype.REGEXP = new RegExp('help', 'i');
 
 // Command's help
 ShowHelpCommand.prototype.HELP = "help";
