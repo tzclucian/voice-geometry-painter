@@ -35,12 +35,22 @@
         <a data-scrollto="drawPointCmd" class="command-link list-group-item">draw point</a>
         <a data-scrollto="drawLineCmd" class="command-link list-group-item">draw line</a>
         <a data-scrollto="drawTriangleCmd" class="command-link list-group-item">draw triangle</a>
-        <a data-scrollto="drawQuadriCmd" class="command-link list-group-item">draw quadri</a>
+        <a data-scrollto="drawRectangularTriangleCmd" class="command-link list-group-item">draw rectangular triangle</a>
+        <a data-scrollto="drawEquilateralTriangleCmd" class="command-link list-group-item">draw equilateral triangle</a>
+        <a data-scrollto="drawIsoscelesTriangleCmd" class="command-link list-group-item">draw isoceles triangle</a>
+        <a data-scrollto="drawQuadriCmd" class="command-link list-group-item">draw quadrilateral</a>
+        <a data-scrollto="drawRectangleCmd" class="command-link list-group-item">draw rectangle</a>
+        <a data-scrollto="drawParalelogramCmd" class="command-link list-group-item">draw paralelogram</a>
+        <a data-scrollto="drawSquareCmd" class="command-link list-group-item">draw square</a>
         <a data-scrollto="drawCircleCmd" class="command-link list-group-item">draw circle</a>
         <a data-scrollto="clearBoardCmd" class="command-link list-group-item">clear board</a>
         <a data-scrollto="undoCmd" class="command-link list-group-item">undo</a>
         <a data-scrollto="downloadCmd" class="command-link list-group-item">download</a>
         <a data-scrollto="shareOnDropboxCmd" class="command-link list-group-item">share on dropbox</a>
+        <a data-scrollto="redoCmd" class="command-link list-group-item">redo</a>
+        <a data-scrollto="showPropertiesCmd" class="command-link list-group-item">show properties</a>
+        <a data-scrollto="closePopupCmd" class="command-link list-group-item">close popup</a>
+
 
     </div>
     <div class="command-containerlist-text">
@@ -77,10 +87,17 @@
         Easy peasy! Let's draw more complex shapes!
         Triangles:
 
-        <p id="drawTriangleCmd" class="command-text">all triangle help cmds</p>
+        <p id="drawTriangleCmd" class="command-text"> triangle ABC 1 \+ 4 \+ 8 \+ 6 \+ 9 \+ 8</p>
+        <p id="drawRectangularTriangleCmd" class="command-text"> rectangular triangle ABC 10 \+ 10 \+ 5 \+ 7</p>
+        <p id="drawEquilateralTriangleCmd" class="command-text"> equilateral triangle ABC 10 \+ 10 \+ 5</p>
+        <p id="drawIsoscelesTriangleCmd" class="command-text"> isosceles triangle ABC 5 \+ 5 \+ 3 \+ 30</p>
+
         Quadrilaterals:
 
-        <p id="drawQuadriCmd" class="command-text">all quadri help cmds</p>
+        <p id="drawQuadriCmd" class="command-text">quadrilateral ABCD 10 \+ 20 \+ 20 \+ 20 \+ 20 \+ 10 \+ 10 \+ 10</p>
+        <p id="drawRectangleCmd" class="command-text">rectangle ABCD 10 \+ 20 \+ 5 \+ 10</p>
+        <p id="drawParalelogramCmd" class="command-text">paralelogram ABCD 10 \+ 20 \+ 5 \+ 10</p>
+        <p id="drawSquareCmd" class="command-text">square ABCD 10 \+ 20 \+ 10</p>
 
         Circular shapes:
 
@@ -91,13 +108,28 @@
         <p id="clearBoardCmd" class="command-text">clear board cmd help</p>
 
         Oups! We forgot to save a copy of the drawing or share it? What do we do?
-        1. Let's undo: <span id="undoCmd" class="command-text">undo cmd help</span>
-        2. Download: <span id="downloadCmd" class="command-text">download cmd help</span>
-        3. Share on dropbox: <span id="shareOnDropboxCmd" class="command-text">share on dropbox cmd help</span>
+        <p>1. Let's undo: <span id="undoCmd" class="command-text">undo cmd help</span></p>
+        <p>2. Download: <span id="downloadCmd" class="command-text">download cmd help</span></p>
+        <p>3. Share on dropbox: <span id="shareOnDropboxCmd" class="command-text">share on dropbox cmd help</span></p>
 
+        Nice. We successfully downloaded and shared our app. What next?
+        ... Ah! We were trying to start a new whiteboard. Use the simple redo command to get one step forward: <span id="redoCmd" class="command-text">redo cmd help</span>
+
+        Now we got a clean whiteboard again. Let's draw again!
+
+        <p> 1. <span class="command-text">draw square ABCD 5 5 10 </span></p>
+        <p> 2. <span class="command-text">draw equilateral triangle ABC 10 10 6</span>  Hmmm, do you like this triangle? Let's take a better look at its properties by using: <span id="showPropertiesCmd" class="command-text">show properties of ABC</span></p>
+
+
+        It is too pointy. We'll achieve this using delete ABC
+        Are we stuck now? How do we close the pop-up?
+        <p id="closePopupCmd" class="command-text">Close popup cmd help</p>
+
+        ... Actually wait! You should have learned all the things you need in order to continue drawing by yourself. If you like what we did so far you can keep drawing or start a new whiteboard.
+        Good luck!
     </div>
 
-    <a id="goToTop" class="back-to-top" href="#top">
+    <a id="goToTop" class="back-to-top">
         Back to top
     </a>
 

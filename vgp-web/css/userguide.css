@@ -5,13 +5,18 @@ body {
 
 .command-list {
 	position: fixed;
-	width: 150px;
+	width: 220px;
 	top: 50px;
 	left: 10px;
 }
 
+.command-link {
+	text-transform: capitalize;
+	padding: 2px 0 2px 10px;
+}
+
 .command-containerlist-text {
-	margin-left: 180px;
+	margin-left: 240px;
 }
 
 .title {
@@ -33,4 +38,9 @@ body {
 
 .command-text {
 	font-weight: bold;
+}
+
+
+.back-to-top:hover {
+	cursor: pointer;
 }

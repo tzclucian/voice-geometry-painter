@@ -8,13 +8,13 @@ $(function () {
 
 		$("#" + scrolToElementId) && $('html, body').animate({
 			scrollTop: $("#" + scrolToElementId).offset().top
-		}, 2000);
+		}, 1000);
 	});
 
 	$('#goToTop').on('click', function () {
 		$('html, body').animate({
 			scrollTop: $('body').offset().top
-		}, 2000);
+		}, 1000);
 	});
 
 	$(window).scroll(function () {
