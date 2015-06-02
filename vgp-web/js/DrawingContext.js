@@ -542,6 +542,10 @@ DrawingContext.prototype.closeAnyPopup = function () {
 	$('.modal').modal('hide');
 };
 
+DrawingContext.prototype.showHelp = function () {
+	alert('show the help!');
+};
+
 /**
  * Compares 2 shape names by ignoring the letter order.
  * This way triangle ABC is the same with triangle BAC

@@ -221,6 +221,7 @@ app.registerCommand(DropboxCommand);
 
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
+app.registerCommand(ShowHelpCommand);
 
 var speech = new SpeechApplication(app.getCommandParser());
 speech.setOutputBoxId(helpInput);
