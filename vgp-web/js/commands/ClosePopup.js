@@ -12,10 +12,10 @@ ClosePopupCommand.prototype.execute = function(context) {
 };
 
 // Command's name
-ClosePopupCommand.prototype.NAME = "Close popup";
+ClosePopupCommand.prototype.NAME = "Close";
 
 // Command's regexp
-ClosePopupCommand.prototype.REGEXP = /close\spopup/i;
+ClosePopupCommand.prototype.REGEXP = /close/i;
 
 // Command's help
-ClosePopupCommand.prototype.HELP = "close popup";
+ClosePopupCommand.prototype.HELP = "close";
