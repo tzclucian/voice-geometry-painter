@@ -17,6 +17,7 @@
     <link href="./css/icomoon.css" rel="stylesheet">
     <link href="./css/override.css" rel="stylesheet">
     <link href="./css/app.css" rel="stylesheet">
+    <link href="./css/userguide.css" rel="stylesheet">
 
 
     <!--[if lt IE 9]>
@@ -78,7 +79,7 @@
                 <li>
                     <a href="#" data-toggle="modal" data-target="#settingsModal" role="button" aria-expanded="false"><i class="fa fa-cog"></i></a>
                 </li>
-                <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#userGuideModal" role="button" aria-expanded="false"><i class="fa fa-question-circle"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-share-alt"></i></a>
                     <ul class="share-options dropdown-menu" role="menu">
@@ -512,6 +513,244 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="userGuideModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog userguide-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="userGuideLabel">User Guide</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="command-list list-group top">
+                        <a data-scrollto="setTitileCmd" class="command-link list-group-item">set title</a>
+                        <a data-scrollto="setLineColorCmd" class="command-link list-group-item">set line color</a>
+                        <a data-scrollto="setFillColorCmd" class="command-link list-group-item">set fill color</a>
+                        <a data-scrollto="setSizeCmd" class="command-link list-group-item">set size</a>
+                        <a data-scrollto="setOpacityCmd" class="command-link list-group-item">set opacity</a>
+                        <a data-scrollto="drawPointCmd" class="command-link list-group-item">draw point</a>
+                        <a data-scrollto="drawLineCmd" class="command-link list-group-item">draw line</a>
+                        <a data-scrollto="drawTriangleCmd" class="command-link list-group-item">draw triangle</a>
+                        <a data-scrollto="drawRectangularTriangleCmd" class="command-link list-group-item">draw rectangular triangle</a>
+                        <a data-scrollto="drawEquilateralTriangleCmd" class="command-link list-group-item">draw equilateral triangle</a>
+                        <a data-scrollto="drawIsoscelesTriangleCmd" class="command-link list-group-item">draw isoceles triangle</a>
+                        <a data-scrollto="drawQuadriCmd" class="command-link list-group-item">draw quadrilateral</a>
+                        <a data-scrollto="drawRectangleCmd" class="command-link list-group-item">draw rectangle</a>
+                        <a data-scrollto="drawParalelogramCmd" class="command-link list-group-item">draw paralelogram</a>
+                        <a data-scrollto="drawSquareCmd" class="command-link list-group-item">draw square</a>
+                        <a data-scrollto="drawCircleCmd" class="command-link list-group-item">draw circle</a>
+                        <a data-scrollto="clearBoardCmd" class="command-link list-group-item">clear board</a>
+                        <a data-scrollto="undoCmd" class="command-link list-group-item">undo</a>
+                        <a data-scrollto="downloadCmd" class="command-link list-group-item">download</a>
+                        <a data-scrollto="shareOnDropboxCmd" class="command-link list-group-item">share on dropbox</a>
+                        <a data-scrollto="redoCmd" class="command-link list-group-item">redo</a>
+                        <a data-scrollto="showPropertiesCmd" class="command-link list-group-item">show properties</a>
+                        <a data-scrollto="closePopupCmd" class="command-link list-group-item">close popup</a>
+                    </div>
+                    <div class="command-containerlist-text">
+                        <div id="herderGuide" class="header clearfix">
+                            <h1 class="title">User Guide</h1>
+
+                            <span>
+                                <a class="navbar-logo" href="#">
+                                    <img alt="Voice Geometry Painter" width="100" height="50" src="./img/vgp-logo.png" />
+                                </a>
+                            </span>
+                        </div>
+                        <p>
+                            It's finally here. We can now explore the beautiful world of geometry using only voice!
+                            But how do we do that? Lets see below.
+
+                            Let's get started by setting our whiteboard title:
+                        </p>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="setTitileCmd" class="command-text form-control">set title shapes</p>
+                        </div>
+
+                        <h4>White Board Properties</h4>
+
+                        Since we're still in the beginning let's also define the drawing properties that we are going to use:
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="setLineColorCmd" class="command-text form-control">set line color blue</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="setFillColorCmd" class="command-text form-control">set fill color white</p>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="setSizeCmd" class="command-text form-control">set size 3</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="setOpacityCmd" class="command-text form-control">set opacity 0</p>
+                        </div>
+
+                        <h4>Basic Shapes Commands</h4>
+
+                        Now that we are 'prepared', lets draw!
+                        We'll start with something simple, a point:
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawPointCmd" class="command-text form-control">draw point A 10 and 12</p>
+                        </div>
+                        ... and continue with something twice more complex:
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawLineCmd" class="command-text form-control">draw line MN 5 and 7 and 20 and 30</p>
+                        </div>
+                        Easy peasy! Let's draw more complex shapes!
+
+                        <h4>Triangular Shapes</h4>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawTriangleCmd" class="command-text form-control"> triangle ABC 10 and 40 and 12 and 35 and 15 and 45</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawRectangularTriangleCmd" class="command-text form-control"> rectangular triangle DEF 20 and 35 and 10 and 7</p>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawEquilateralTriangleCmd" class="command-text form-control"> equilateral triangle GHI 30 and 35 and 10</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawIsoscelesTriangleCmd" class="command-text form-control"> isosceles triangle JKL 4 and 45 and 10 and 150</p>
+                        </div>
+                        <div>
+                            <img src="./img/triangle-example.png" alt="Triangles example" />
+                        </div>
+
+                        <h4>Quadrilateral Shapes</h4>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawQuadriCmd" class="command-text form-control">quadrilateral ABCD 10 and 35 and 20 and 35 and 20 and 45 and 10 and 40</p>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawRectangleCmd" class="command-text form-control">rectangle EFGH 25 and 35 and 8 and 10</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawParalelogramCmd" class="command-text form-control">parallelogram IJKL 40 and 45 and 5 and 10 and 75</p>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawSquareCmd" class="command-text form-control">square MNOP 3 and 35 and 5</p>
+                        </div>
+
+                        <div>
+                            <img src="./img/quadrilaterals-example.png" alt="Quadrilaterals example" />
+                        </div>
+
+                        <h4>Circular Shapes</h4>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="drawCircleCmd" class="command-text form-control">circle C 20 and 30 and 10</p>
+                        </div>
+
+                        <div>
+                            <img src="./img/circle-example.png" alt="Circle example" />
+                        </div>
+
+                        By trying all the commands above we ended up with a full board. How do we clear it? Simple:
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="clearBoardCmd" class="command-text form-control">clear board</p>
+                        </div>
+
+                        <h4>Other Commands</h4>
+
+                        Oups! We forgot to save a copy of the drawing or share it? What do we do?
+                        <p>
+                            1. Let's undo:
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span id="undoCmd" class="command-text form-control">undo</span>
+                            </div>
+                        </p>
+                        <p>
+                            2. Download:
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span id="downloadCmd" class="command-text form-control">download</span>
+                            </div>
+                        </p>
+                        <p>
+                            3. Share on dropbox:
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span id="shareOnDropboxCmd" class="command-text form-control">share on dropbox</span>
+                            </div>
+                        </p>
+
+                        Nice. We successfully downloaded and shared our app. What next?
+                        ... Ah! We were trying to start a new whiteboard. Use the simple redo command to get one step forward:
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span id="redoCmd" class="command-text form-control">redo</span>
+                        </div>
+                        Now we got a clean whiteboard again. Let's draw again!
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span class="command-text form-control">draw square ABCD 5 and 5 and 10 </span>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span class="command-text form-control">draw equilateral triangle ABC 10 and 10 and 6</span>
+                            </div>
+                            Hmmm, do you like this triangle? Let's take a better look at its properties by using:
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                                <span id="showPropertiesCmd" class="command-text form-control">show properties of ABC</span>
+                            </div>
+                        </p>
+
+
+                        It is too pointy. We'll achieve this using delete ABC
+                        Are we stuck now? How do we close the pop-up?
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <p id="closePopupCmd" class="command-text form-control">close popup</p>
+                        </div>
+
+                        ... Actually wait! You should have learned all the things you need in order to continue drawing by yourself. If you like what we did so far you can keep drawing or start a new whiteboard.
+                        Good luck!
+
+                        <div>
+                            <img src="./img/funnyface.png" alt="Quadrilaterals example" />
+                        </div>
+                    </div>
+
+                    <a id="goToTop" class="back-to-top">
+                        Back to top
+                    </a>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

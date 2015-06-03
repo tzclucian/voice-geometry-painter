@@ -327,3 +327,8 @@ ul.settings-list li {
 	top: 6px;
 	position: relative;
 }
+
+
+.userguide-modal {
+	width: 100%;
+}
