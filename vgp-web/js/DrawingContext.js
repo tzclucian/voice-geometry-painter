@@ -543,7 +543,7 @@ DrawingContext.prototype.closeAnyPopup = function () {
 };
 
 DrawingContext.prototype.showHelp = function () {
-	alert('show the help!');
+	$('#userGuideModal').modal('show');
 };
 
 /**
