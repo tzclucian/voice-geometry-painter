@@ -26,5 +26,5 @@ RectangleCommand.prototype.REGEXP = new RegExp('draw\\srectangle\\s([a-zA-Z])([a
     COORDINATE_DELIMITER + '\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)\\s'  + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
 // Command's help
-RectangleCommand.prototype.HELP = "rectangle ABCD 10 " + COORDINATE_DELIMITER_HELP + " 20 " + COORDINATE_DELIMITER_HELP +
-                                    " 5 " + COORDINATE_DELIMITER_HELP + " 10";
+RectangleCommand.prototype.HELP = "rectangle ABCD 10 [Ax] " + COORDINATE_DELIMITER_HELP + " 20 [Ay] " + COORDINATE_DELIMITER_HELP +
+                                    " 5 [small side] " + COORDINATE_DELIMITER_HELP + " 10 [large side]";

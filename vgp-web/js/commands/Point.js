@@ -19,4 +19,4 @@ PointCommand.prototype.NAME = "Point";
 
 PointCommand.prototype.REGEXP = new RegExp('draw\\spoint\\s([a-zA-Z])\\s(\\d+)\\s' + COORDINATE_DELIMITER + '\\s(\\d+)', 'i');
 
-PointCommand.prototype.HELP = "point A 2 " + COORDINATE_DELIMITER_HELP + " 3";
+PointCommand.prototype.HELP = "point A 2 [x] " + COORDINATE_DELIMITER_HELP + " 3 [y]";

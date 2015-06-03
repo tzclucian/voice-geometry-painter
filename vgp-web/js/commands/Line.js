@@ -25,4 +25,4 @@ LineCommand.prototype.REGEXP = new RegExp('draw\\sline\\s([a-zA-Z])([a-zA-Z])\\s
                                         '\\s(\\d+)','i');
 
 // Command's help
-LineCommand.prototype.HELP = "line MN 2 " + COORDINATE_DELIMITER_HELP + " 3 " + COORDINATE_DELIMITER_HELP + " 5 " + COORDINATE_DELIMITER_HELP + " 7";
+LineCommand.prototype.HELP = "line MN 2 [Mx] " + COORDINATE_DELIMITER_HELP + " 3 [My] " + COORDINATE_DELIMITER_HELP + " 5 [Nx] " + COORDINATE_DELIMITER_HELP + " 7 [Ny]";
