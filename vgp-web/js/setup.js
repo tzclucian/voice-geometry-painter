@@ -240,7 +240,7 @@ client.authenticate(function (error, client) {
 
 
 function showSuccessMessage(message, autoClose) {
-	$('#successMessage #messageContent').text(message);
+	$('#successMessage #successMessageContent').text(message);
 	$('#successMessage').removeClass('hide');
 
 	if (autoClose) {
@@ -251,13 +251,13 @@ function showSuccessMessage(message, autoClose) {
 }
 
 function closeSuccessMessage() {
-	$('#successMessage #messageContent').text("");
+	$('#successMessage #successMessageContent').text("");
 	$('#successMessage').addClass('hide');
 
 }
 
 function showErrorMessage(message, autoClose) {
-	$('#errorMessage #messageContent').text(message);
+	$('#errorMessage #errorMessageContent').text(message);
 	$('#errorMessage').removeClass('hide');
 
 	if (!!autoClose) {
@@ -268,7 +268,7 @@ function showErrorMessage(message, autoClose) {
 }
 
 function closeErrorMessage() {
-	$('#errorMessage #messageContent').text("");
+	$('#errorMessage #errorMessageContent').text("");
 	$('#errorMessage').addClass('hide');
 }
 

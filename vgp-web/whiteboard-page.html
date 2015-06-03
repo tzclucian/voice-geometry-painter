@@ -425,12 +425,12 @@
     </div>
 
     <!-- Settings Modal -->
-    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                    <h4 class="modal-title" id="settingsModalLabel">Settings</h4>
                 </div>
                 <div class="modal-body">
                     <ul class="settings-list" data-bind="foreach: settings">
@@ -518,7 +518,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="userGuideModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="userGuideModal" tabindex="-1" role="dialog" aria-labelledby="userGuideLabel" aria-hidden="true">
         <div class="modal-dialog userguide-modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -679,27 +679,22 @@
                         <h4>Other Commands</h4>
 
                         Oups! We forgot to save a copy of the drawing or share it? What do we do?
-                        <p>
-                            1. Let's undo:
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span id="undoCmd" class="command-text form-control">undo</span>
-                            </div>
-                        </p>
-                        <p>
-                            2. Download:
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span id="downloadCmd" class="command-text form-control">download</span>
-                            </div>
-                        </p>
-                        <p>
-                            3. Share on dropbox:
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span id="shareOnDropboxCmd" class="command-text form-control">share on dropbox</span>
-                            </div>
-                        </p>
+                        <br />
+                        1. Let's undo:
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span id="undoCmd" class="command-text form-control">undo</span>
+                        </div>
+                        2. Download:
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span id="downloadCmd" class="command-text form-control">download</span>
+                        </div>
+                        3. Share on dropbox:
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span id="shareOnDropboxCmd" class="command-text form-control">share on dropbox</span>
+                        </div>
 
                         Nice. We successfully downloaded and shared our app. What next?
                         ... Ah! We were trying to start a new whiteboard. Use the simple redo command to get one step forward:
@@ -709,23 +704,19 @@
                         </div>
                         Now we got a clean whiteboard again. Let's draw again!
 
-                        <p>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span class="command-text form-control">draw square ABCD 5 and 5 and 10 </span>
-                            </div>
-                        </p>
-                        <p>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span class="command-text form-control">draw equilateral triangle ABC 10 and 10 and 6</span>
-                            </div>
-                            Hmmm, do you like this triangle? Let's take a better look at its properties by using:
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
-                                <span id="showPropertiesCmd" class="command-text form-control">show properties of ABC</span>
-                            </div>
-                        </p>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span class="command-text form-control">draw square ABCD 5 and 5 and 10 </span>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span class="command-text form-control">draw equilateral triangle ABC 10 and 10 and 6</span>
+                        </div>
+                        Hmmm, do you like this triangle? Let's take a better look at its properties by using:
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-volume-up"></i></div>
+                            <span id="showPropertiesCmd" class="command-text form-control">show properties of ABC</span>
+                        </div>
 
 
                         It is too pointy. We'll achieve this using delete ABC
@@ -760,14 +751,14 @@
     <div id="successMessage" class="hide success-message">
         <div class="alert alert-success" role="alert">
             <button type="button" class="close" aria-label="Close" onclick="closeSuccessMessage()"><span aria-hidden="true">&times;</span></button>
-            <div id="messageContent"></div>
+            <div id="successMessageContent"></div>
         </div>
     </div>
 
     <div id="errorMessage" class="hide error-message">
         <div class="alert alert-danger" role="alert">
             <button type="button" class="close" aria-label="Close" onclick="closeErrorMessage()"><span aria-hidden="true">&times;</span></button>
-            <div id="messageContent"></div>
+            <div id="errorMessageContent"></div>
         </div>
     </div>
 
@@ -778,8 +769,8 @@
     <script type='text/javascript' src='js/lib/knockout-3.1.0.js'></script>
     <script type='text/javascript' src='js/lib/jquery.jeditable.js'></script>
     <script type='text/javascript' src='js/lib/FileSaver.js'></script>
-    <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/Blob.js/master/Blob.js" type="text/javascript"></script>
-    <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js" type="text/javascript"></script>
+    <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/Blob.js/master/Blob.js"></script>
+    <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
     <script type='text/javascript' src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
     <script type="text/javascript" src="js/lib/json2yaml.js"></script>
     <!-- End of libs -->
