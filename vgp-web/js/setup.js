@@ -17,6 +17,7 @@ function AppViewModel() {
 
 			Point: volumeUpIcon + PointCommand.prototype.HELP,
 			Line: volumeUpIcon + LineCommand.prototype.HELP,
+			FunctionGraph: volumeUpIcon + FunctionGraphCommand.prototype.HELP,
 
 			Download: volumeUpIcon + DownloadCommand.prototype.HELP,
 			SendToGmail: volumeUpIcon + "Send to Gmail",
@@ -35,7 +36,7 @@ function AppViewModel() {
 
 			Circle: volumeUpIcon + CircleCommand.prototype.HELP,
 
-			Undo: volumeUpIcon + UndoCommand.prototype.HELP,
+			Undo: volumeUpIcon + ZoomOutCommand.prototype.HELP,
 			Redo: volumeUpIcon + RedoCommand.prototype.HELP,
 			ShowProperties: volumeUpIcon + ShowPropertiesCommand.prototype.HELP,
 			SetTitle: volumeUpIcon + SetTitle.prototype.HELP
@@ -51,6 +52,7 @@ function AppViewModel() {
 
 			Point: PointCommand.prototype.NAME,
 			Line: LineCommand.prototype.NAME,
+			FunctionGraph: FunctionGraphCommand.prototype.NAME,
 
 			Download: DownloadCommand.prototype.NAME,
 			SendToGmail: "Send to Gmail",
@@ -68,7 +70,7 @@ function AppViewModel() {
 
 			Circle: CircleCommand.prototype.NAME,
 
-			Undo: UndoCommand.prototype.NAME,
+			Undo: ZoomOutCommand.prototype.NAME,
 			Redo: RedoCommand.prototype.NAME,
 			ShowProperties: ShowPropertiesCommand.prototype.NAME,
 			SetTitle: SetTitle.prototype.NAME
@@ -202,6 +204,7 @@ app.registerCommand(SetFillColorCommand);
 
 app.registerCommand(PointCommand);
 app.registerCommand(LineCommand);
+app.registerCommand(FunctionGraphCommand);
 
 app.registerCommand(TriangleCommand);
 app.registerCommand(IsoscelesTriangleCommand);
@@ -220,6 +223,8 @@ app.registerCommand(DropboxCommand);
 
 app.registerCommand(UndoCommand);
 app.registerCommand(RedoCommand);
+app.registerCommand(ZoomInCommand);
+app.registerCommand(ZoomOutCommand);
 app.registerCommand(ShowHelpCommand);
 
 app.parseAndExecute('set line color darkblue');

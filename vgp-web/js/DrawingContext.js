@@ -58,6 +58,14 @@ DrawingContext.prototype.redo = function () {
 	this.repaint();
 };
 
+DrawingContext.prototype.zoomIn = function () {
+	this.board.zoomIn(2, 2);
+};
+
+DrawingContext.prototype.zoomOut = function () {
+	this.board.zoomOut(2,2);
+};
+
 DrawingContext.prototype.addCommand = function (command) {
 	this.executedCommands.splice(this.commandIndex + 1, 0, command);
 	this.commandIndex++;
@@ -149,6 +157,57 @@ DrawingContext.prototype.drawPoint = function (x, y, pointName) {
 	this.shapeProperties[point.id] = pointShape.getProperties();
 
 	JXG.addEvent(point.rendNode, 'mousedown', this.selection(), point);
+};
+
+/**
+ * Plots the function given as parameter.
+ * @param symbol The symbol for the function to be plotted
+ * @param func The function to be plotted
+ */
+DrawingContext.prototype.drawFunctionGraph = function (symbol, func) {
+	var lineColor = this.getLineColor();
+	var pointWidth = this.getPointDrawingWidth();
+
+	var f = this.board.jc.snippet(func, true, 'x', true);
+	var functionGraph = this.board.create('functiongraph', [f,
+			function () {
+				var c = new JXG.Coords(JXG.COORDS_BY_SCREEN, [0, 0], this.board);
+				return c.usrCoords[1];
+			},
+			function () {
+				var c = new JXG.Coords(JXG.COORDS_BY_SCREEN, [this.board.canvasWidth, 0], this.board);
+				return c.usrCoords[1];
+			}
+		], {
+			name: symbol + "(x) =" + func,
+			size: 1,
+			strokeWidth: pointWidth,
+			strokeColor: lineColor,
+			withLabel: true,
+			highlight: false
+		}
+	);
+
+	var q = this.board.create('glider', [2, 1, functionGraph], {withLabel: false});
+
+	var t = this.board.create('text', [
+			function () {
+				return q.X() + 0.1;
+			},
+			function () {
+				return q.Y() + 0.1;
+			},
+			function () {
+				return "x=" + q.X().toFixed(2) + ", " + symbol + "(x)=" + (JXG.Math.Numerics.D(f))(q.X()).toFixed(2);
+			}
+		],
+		{fontSize: 12});
+
+	var functionGraphShape = new FunctionGraph(symbol, func);
+
+	this.shapes[functionGraph.id] = functionGraph;
+	this.shapeProperties[functionGraph.id] = functionGraphShape.getProperties();
+	JXG.addEvent(functionGraph.rendNode, 'mousedown', this.selection(), functionGraph);
 };
 
 /**

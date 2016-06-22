@@ -204,7 +204,17 @@
                                     <i class="fa icon-Font_Line"></i>
                                 </a>
                             </span>
-
+                        </li>
+                        <li>
+                            <span class="voice-command clearfix"
+                                  rel="popover" data-placement="right"
+                                  data-html="true"
+                                  data-bind='attr: {"data-content" :  config.vocalCommandHelpMessages.FunctionGraph, "data-original-title" :  config.vocalCommandTitleMessage.FunctionGraph}'
+                                  data-trigger="hover">
+                                <a href="#" class="tool-icon" onclick="app.activeDrawingContext.drawFunctionGraph('f','cos(x)')">
+                                    <i>f(x)</i>
+                                </a>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -771,8 +781,10 @@
     <script type='text/javascript' src='js/lib/FileSaver.js'></script>
     <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/Blob.js/master/Blob.js"></script>
     <script type='text/javascript' src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
-    <script type='text/javascript' src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
+    <!--<script type='text/javascript' src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>-->
     <script type="text/javascript" src="js/lib/json2yaml.js"></script>
+    <script type="text/javascript" src="js/lib/mathjs.js"></script>
+
     <!-- End of libs -->
 
     <script type="text/javascript" src="./js/DrawingContext.js"></script>
@@ -795,6 +807,7 @@
 
     <script type="text/javascript" src="js/commands/Point.js"></script>
     <script type="text/javascript" src="js/commands/Line.js"></script>
+    <script type="text/javascript" src="js/commands/FunctionGraph.js"></script>
 
     <script type="text/javascript" src="js/commands/Triangle.js"></script>
     <script type="text/javascript" src="js/commands/IsoscelesTriangle.js"></script>
@@ -810,6 +823,9 @@
 
     <script type="text/javascript" src="js/commands/Undo.js"></script>
     <script type="text/javascript" src="js/commands/Redo.js"></script>
+
+    <script type="text/javascript" src="js/commands/ZoomIn.js"></script>
+    <script type="text/javascript" src="js/commands/ZoomOut.js"></script>
 
     <script type="text/javascript" src="js/commands/Download.js"></script>
     <script type="text/javascript" src="js/commands/Dropbox.js"></script>
@@ -827,6 +843,7 @@
     <script type="text/javascript" src="js/shapes/LineSegment.js"></script>
     <script type="text/javascript" src="js/shapes/Angle.js"></script>
     <script type="text/javascript" src="js/shapes/Triangle.js"></script>
+    <script type="text/javascript" src="js/shapes/FunctionGraph.js"></script>
 
     <script type="text/javascript" src="js/shapes/LineSegmentUtils.js"></script>
     <!-- End of shapes-->

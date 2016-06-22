@@ -24,4 +24,4 @@ CommandParser.prototype.parse = function(commandString) {
 
 CommandParser.prototype.getCommands = function() {
     return this.commands;
-}
+};

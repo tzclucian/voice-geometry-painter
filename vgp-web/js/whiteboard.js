@@ -33,7 +33,7 @@ DrawingApplication.prototype.parseAndExecute = function (commandString) {
 
 	if (command != null) {
 		command.execute(this.activeDrawingContext);
-		if (command instanceof UndoCommand == false &&
+		if (command instanceof ZoomOutCommand == false &&
             command instanceof RedoCommand == false &&
 			command instanceof ShowPropertiesCommand == false &&
 			command instanceof ClosePopupCommand == false &&
